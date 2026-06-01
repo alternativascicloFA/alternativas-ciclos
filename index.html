@@ -88,11 +88,9 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
-    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
+    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-gradient-to-br from-[#2E0814] via-[#121212] to-[#3B1422] flex flex-col justify-center items-center p-4 transition-all duration-500">
         
-        <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
-        
-        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
+        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/10 max-w-md w-full text-center animate-fade-in">
             <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             
@@ -313,7 +311,12 @@
             }
         }
 
-        async function shareImage(url, cod, desc) {
+        async function shareImage(btn) {
+            const container = btn.closest('.relative');
+            const img = container.querySelector('img');
+            const url = img ? img.src : getImg(state.tab, btn.getAttribute('data-cod'));
+            const cod = btn.getAttribute('data-cod');
+            const desc = btn.getAttribute('data-desc');
             const fileName = `${cod}_${desc.replace(/[^a-z0-9]/gi, '_')}.jpg`;
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
@@ -367,37 +370,40 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        // MOTOR BUSCADOR DE STOCK ULTRA FLEXIBLE RESTAURADO Y MEJORADO 🌟
+                        // MOTOR BUSCADOR DE STOCK SEGURO Y ULTRA-FLEXIBLE 🌟
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
-                        if (state.gerenciaId) { 
+                        if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
                             const gerenciaKey = Object.keys(db.cuotas).find(k => String(k).trim().toLowerCase() === currentGid);
                             
                             if (gerenciaKey) {
                                 const gerenciaStock = db.cuotas[gerenciaKey];
                                 const searchCod = String(plan.cod).trim();
-                                
                                 let stock = undefined;
                                 
-                                // Paso 1: Intentar buscar coincidencia directa como texto
-                                if (gerenciaStock[searchCod] !== undefined) {
-                                    stock = gerenciaStock[searchCod];
-                                } else {
-                                    // Paso 2: Buscar limpiando posibles espacios extras en las llaves del JSON
-                                    const foundKey = Object.keys(gerenciaStock).find(k => String(k).trim() === searchCod);
-                                    if (foundKey) {
-                                        stock = gerenciaStock[foundKey];
+                                if (gerenciaStock) {
+                                    // 1. Intenta coincidencia de texto directa
+                                    if (gerenciaStock[searchCod] !== undefined) {
+                                        stock = gerenciaStock[searchCod];
                                     } else {
-                                        // Paso 3: Forzar comparación como número entero puro por si se guardó como número en vez de texto
-                                        const searchNum = parseInt(searchCod, 10);
-                                        const foundNumKey = Object.keys(gerenciaStock).find(k => parseInt(k, 10) === searchNum);
-                                        if (foundNumKey) stock = gerenciaStock[foundNumKey];
+                                        // 2. Busca limpiando espacios en blanco invisibles
+                                        const foundKey = Object.keys(gerenciaStock).find(k => String(k).trim() === searchCod);
+                                        if (foundKey) {
+                                            stock = gerenciaStock[foundKey];
+                                        } else {
+                                            // 3. Intenta forzar búsqueda como número entero puro
+                                            const searchNum = parseInt(searchCod, 10);
+                                            if (!isNaN(searchNum)) {
+                                                const foundNumKey = Object.keys(gerenciaStock).find(k => parseInt(k, 10) === searchNum);
+                                                if (foundNumKey) stock = gerenciaStock[foundNumKey];
+                                            }
+                                        }
                                     }
                                 }
 
-                                if (stock !== undefined) {
+                                if (stock !== undefined && stock !== null) {
                                     const numStock = Number(stock);
                                     quotaText = numStock > 0 ? `Disponibles: ${numStock} unidades` : "SIN STOCK";
                                     quotaClass = numStock > 0 ? (state.tab === 'Natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
@@ -414,7 +420,7 @@
                         slide.innerHTML = `
                             <div class="relative mb-4">
                                 ${!isMain ? `<span class="absolute top-2 left-2 z-10 ${badgeColor} text-white text-[9px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-sm">Alt ${plan.type}</span>` : ''}
-                                <button onclick="shareImage(getImg('${item.marca.replace(/'/g, "\\'")}', '${plan.cod}'), '${plan.cod}', '${safeDesc}')" title="${isMobile ? 'Compartir' : 'Descargar'}" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
+                                <button onclick="shareImage(this)" data-cod="${plan.cod}" data-desc="${safeDesc}" title="${isMobile ? 'Compartir' : 'Descargar'}" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
                                      <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                 </button>
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
