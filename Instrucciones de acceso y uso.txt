@@ -1,0 +1,36 @@
+"""INSTRUCTIVO: ACTUALIZACIÓN DEL SHOWROOM (EQUIPO ESTRATEGIA)
+===========================================================
+--- PREPARACIÓN (Solo se hace una vez) ---
+
+1. DESCARGAR GIT:
+   Vaya a https://git-scm.com/download/win y descargue el instalador.
+   Instálelo en su PC (presione "Next" a todas las opciones).
+
+2. CONFIGURAR IDENTIDAD:
+   Haga clic derecho en cualquier lugar de su escritorio y elija 
+   "Abrir terminal" o "Git Bash". Copie y pegue estos dos comandos:
+   
+   git config --global user.name "Su Nombre y Apellido"
+   git config --global user.email "su-mail@natura.net"
+
+3. VINCULAR LA LLAVE (TOKEN):
+   Pídale al administrador el "Token de Acceso". Luego, abra la carpeta 
+   del proyecto en su PC, abra una terminal allí y pegue:
+
+G:\Unidades compartidas\Gestion Comercial\Tableros y Automatizaciones\Site tendencia
+
+git remote set-url origin https://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@github.com/pablorouco-ux/site_estrategia.git
+
+--- ACTUALIZACIÓN DIARIA (Uso común) ---
+
+Para actualizar el sitio después de hacer cambios, siga estos pasos:
+
+1. Edite el Excel "Brief Site Estrategia.xlsx" en el Disco G.
+2. Guarde los cambios y cierre el Excel.
+3. Si agregó fotos nuevas, asegúrese de que estén en la carpeta "Imagenes".
+4. Haga doble clic en el ACCESO DIRECTO "Actualizar site estrategia.bat" que está en:
+   G:\Unidades compartidas\Gestion Comercial\1. Estrategias\2026\Padres\Site Showroom
+5. Espere a que la ventana negra diga "OPERACIÓN EXITOSA".
+
+¡El sitio se actualizará automáticamente en pocos minutos!
+==========================================================="""
