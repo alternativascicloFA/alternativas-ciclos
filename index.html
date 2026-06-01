@@ -88,9 +88,11 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
-    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-gradient-to-br from-[#2E0814] via-[#121212] to-[#3B1422] flex flex-col justify-center items-center p-4 transition-all duration-500">
+    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         
-        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/10 max-w-md w-full text-center animate-fade-in">
+        <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
+        
+        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
             <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             
@@ -311,6 +313,7 @@
             }
         }
 
+        // ACCION DE DESCARGA ESPEJO (SOLUCIONADO) 🌟
         async function shareImage(btn) {
             const container = btn.closest('.relative');
             const img = container.querySelector('img');
@@ -370,7 +373,7 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        // MOTOR BUSCADOR DE STOCK SEGURO Y ULTRA-FLEXIBLE 🌟
+                        // MOTOR BUSCADOR DE STOCK ULTRA-FLEXIBLE COMPLETO 🌟
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
@@ -384,16 +387,13 @@
                                 let stock = undefined;
                                 
                                 if (gerenciaStock) {
-                                    // 1. Intenta coincidencia de texto directa
                                     if (gerenciaStock[searchCod] !== undefined) {
                                         stock = gerenciaStock[searchCod];
                                     } else {
-                                        // 2. Busca limpiando espacios en blanco invisibles
                                         const foundKey = Object.keys(gerenciaStock).find(k => String(k).trim() === searchCod);
                                         if (foundKey) {
                                             stock = gerenciaStock[foundKey];
                                         } else {
-                                            // 3. Intenta forzar búsqueda como número entero puro
                                             const searchNum = parseInt(searchCod, 10);
                                             if (!isNaN(searchNum)) {
                                                 const foundNumKey = Object.keys(gerenciaStock).find(k => parseInt(k, 10) === searchNum);
