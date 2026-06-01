@@ -93,8 +93,8 @@
             <div class="inline-flex p-4 bg-brand-light text-brand-orange rounded-2xl mb-5">
                 <i data-lucide="layers" class="w-8 h-8 stroke-[2.2]"></i>
             </div>
-        <h2 class="text-2xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
-<p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
+            <h2 class="text-2xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
+            <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
@@ -159,7 +159,7 @@
     <main id="main-content" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 invisible">
         
         <div id="loading" class="flex flex-col justify-center items-center py-20">
-            <div id="spinner" class="animate-spin rounded-full h-12 w-12 border-[3px] border-[3px] border-brand-gray border-t-brand-orange"></div>
+            <div id="spinner" class="animate-spin rounded-full h-12 w-12 border-[3px] border-brand-gray border-t-brand-orange"></div>
             <p class="mt-5 text-brand-orange font-bold tracking-widest text-[10px] uppercase animate-pulse">Sincronizando Planes...</p>
         </div>
 
@@ -207,12 +207,10 @@
             };
         }
 
-        // Esta funcion se activa al tocar uno de los dos botones de bienvenida
         async function selectInitialCiclo(cicloId) {
             state.ciclo = cicloId;
             document.getElementById('ciclo-select').value = cicloId;
             
-            // Hacemos desaparecer la bienvenida y mostramos el contenido real
             document.getElementById('cycle-modal').classList.add('opacity-0', 'pointer-events-none');
             document.getElementById('main-header').classList.remove('invisible');
             document.getElementById('main-content').classList.remove('invisible');
@@ -295,9 +293,30 @@
             render();
         }
 
-        function getImg(marca, cod, type) {
-            const folder = type === 'A' ? marca.trim() : 'Alternativas';
-            return `./Imagenes/${folder}/${state.ciclo}/${cod}.jpg`;
+        function getImg(marca, cod) {
+            // Arranca buscando obligatoriamente en la ruta ideal con el ciclo
+            return `./Imagenes/${marca.trim()}/${state.ciclo}/${cod}.jpg`;
+        }
+
+        // MOTOR INTELIGENTE: Si la foto falla, salta aca y empieza a buscar en formatos alternativos
+        function handleImageError(img, marca, cod) {
+            const src = img.src;
+            const brand = marca.trim();
+            
+            if (src.includes(`/${state.ciclo}/${cod}.jpg`)) {
+                // 1. Si no estaba como JPG en ciclo, busca como PNG en ciclo
+                img.src = `./Imagenes/${brand}/${state.ciclo}/${cod}.png`;
+            } else if (src.includes(`/${state.ciclo}/${cod}.png`)) {
+                // 2. Si no estaba en subcarpeta de ciclo, busca como JPG suelto en la raiz de la marca
+                img.src = `./Imagenes/${brand}/${cod}.jpg`;
+            } else if (src.includes(`/${brand}/${cod}.jpg`)) {
+                // 3. Si no, busca como PNG suelto en la raiz de la marca
+                img.src = `./Imagenes/${brand}/${cod}.png`;
+            } else {
+                // 4. Si falló todo, estampa el Proximamente definitivo
+                img.src = 'https://placehold.co/400x400/F4F4F4/9CA3AF?text=Próximamente';
+                img.onerror = null;
+            }
         }
 
         async function shareImage(url, cod, desc) {
@@ -380,7 +399,6 @@
                         }
 
                         const actionIcon = isMobile ? 'share-2' : 'download';
-                        const imgPath = getImg(item.marca, plan.cod, plan.type);
                         const safeDesc = plan.desc.replace(/'/g, "\\'");
                         
                         slide.innerHTML = `
@@ -391,15 +409,15 @@
                                     </span>
                                 ` : ''}
 
-                                <button onclick="shareImage('${imgPath}', '${plan.cod}', '${safeDesc}')" 
+                                <button onclick="shareImage(getImg('${item.marca.replace(/'/g, "\\'")}', '${plan.cod}'), '${plan.cod}', '${safeDesc}')" 
                                    title="${isMobile ? 'Compartir' : 'Descargar'}"
                                    class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white transition-colors cursor-pointer">
                                      <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                 </button>
 
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
-                                    <img src="${imgPath}" 
-                                         onerror="this.src='https://placehold.co/400x400/F4F4F4/9CA3AF?text=Próximamente'" 
+                                    <img src="${getImg(item.marca, plan.cod)}" 
+                                         onerror="handleImageError(this, '${item.marca.replace(/'/g, "\\'")}', '${plan.cod}')" 
                                          class="max-w-full max-h-full object-contain mix-blend-multiply">
                                 </div>
                             </div>
