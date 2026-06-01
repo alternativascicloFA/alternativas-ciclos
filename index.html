@@ -88,8 +88,11 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
-    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-ui-app/90 backdrop-blur-xl flex flex-col justify-center items-center p-4 transition-all duration-500">
-        <div class="bg-white p-8 sm:p-10 rounded-[2.5rem] shadow-xl border border-gray-100 max-w-md w-full text-center animate-fade-in">
+    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?q=80&w=1920');">
+        
+        <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
+        
+        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
             <div class="inline-flex p-4 bg-brand-light text-brand-orange rounded-2xl mb-5">
                 <i data-lucide="layers" class="w-8 h-8 stroke-[2.2]"></i>
             </div>
@@ -97,12 +100,11 @@
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button onclick="selectInitialCiclo('C08')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
-                </button>
-                    Ciclo 8
-                </button>
-                 <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider"></button>
+                <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
                     Ciclo 9
+                </button>
+                <button onclick="selectInitialCiclo('C08')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                    Ciclo 8
                 </button>
             </div>
         </div>
@@ -380,7 +382,6 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        // MOTOR BUSCADOR DE STOCK ULTRA FLEXIBLE (CORREGIDO)
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
