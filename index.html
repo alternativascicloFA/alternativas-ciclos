@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alternativas de los ciclos | Natura & Avon</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- PapaParse -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
-    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Fuentes de Marca -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -65,7 +60,6 @@
             font-display: swap;
         }
 
-        /* Estética de Scrollbar para PC */
         ::-webkit-scrollbar { height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
@@ -79,12 +73,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Snap behavior for horizontal scroll */
         .snap-x { scroll-snap-type: x mandatory; }
         .snap-start { scroll-snap-align: start; }
     </style>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTCKV8TKXL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -96,13 +88,30 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Header & Filtros -->
-    <header class="bg-white border-b border-gray-100 shadow-soft sticky top-0 z-50">
+    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-ui-app/90 backdrop-blur-xl flex flex-col justify-center items-center p-4 transition-all duration-500">
+        <div class="bg-white p-8 sm:p-10 rounded-[2.5rem] shadow-xl border border-gray-100 max-w-md w-full text-center animate-fade-in">
+            <div class="inline-flex p-4 bg-brand-light text-brand-orange rounded-2xl mb-5">
+                <i data-lucide="layers" class="w-8 h-8 stroke-[2.2]"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-text-main mb-2 tracking-tight">¡Hola, Flor!</h2>
+            <p class="text-text-sec text-sm mb-8 leading-relaxed">¿Qué ciclo comercial querés consultar y actualizar hoy?</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                    Ciclo 9
+                </button>
+                <button onclick="selectInitialCiclo('C08')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                    Ciclo 8
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header id="main-header" class="bg-white border-b border-gray-100 shadow-soft sticky top-0 z-50 invisible">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-5 relative">
             <div class="flex-1 w-full">
                 <div class="flex items-center gap-3">
                     <div id="brand-logo-container" class="transition-all duration-300">
-                         <!-- Logo placeholder/text -->
                          <span class="text-2xl font-bold tracking-tight text-brand-orange" id="brand-title">Natura</span>
                     </div>
                     <div class="h-6 w-px bg-gray-200"></div>
@@ -113,36 +122,47 @@
                 </p>
             </div>
             
-            <div class="w-full md:w-80">
-                <label for="gerencia-select" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
-                    Gerencia de Ventas
-                </label>
-                <div class="relative">
-                    <select id="gerencia-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
-                        <option value="">Cargando gerencias...</option>
-                    </select>
-                    <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
+            <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+                <div class="w-full sm:w-32">
+                    <label for="ciclo-select" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
+                        Ciclo
+                    </label>
+                    <div class="relative">
+                        <select id="ciclo-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
+                            <option value="C09">Ciclo 9</option>
+                            <option value="C08">Ciclo 8</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
+                    </div>
+                </div>
+
+                <div class="w-full sm:w-64">
+                    <label for="gerencia-select" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
+                        Gerencia de Ventas
+                    </label>
+                    <div class="relative">
+                        <select id="gerencia-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
+                            <option value="">Seleccionar Gerencia...</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Navigation Tabs -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-8">
             <button onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
             <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
         </div>
     </header>
 
-    <!-- App Main -->
-    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <main id="main-content" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 invisible">
         
-        <!-- Loading State -->
         <div id="loading" class="flex flex-col justify-center items-center py-20">
-            <div id="spinner" class="animate-spin rounded-full h-12 w-12 border-[3px] border-brand-gray border-t-brand-orange"></div>
+            <div id="spinner" class="animate-spin rounded-full h-12 w-12 border-[3px] border-[3px] border-brand-gray border-t-brand-orange"></div>
             <p class="mt-5 text-brand-orange font-bold tracking-widest text-[10px] uppercase animate-pulse">Sincronizando Planes...</p>
         </div>
 
-        <!-- Empty State -->
         <div id="empty-state" class="hidden flex-col justify-center items-center py-24 text-center">
             <div class="bg-white p-6 rounded-3xl shadow-soft border border-gray-100 mb-5">
                 <i data-lucide="search-x" class="w-12 h-12 text-text-mut stroke-[1.5]"></i>
@@ -151,39 +171,71 @@
             <p class="text-text-sec text-sm leading-relaxed max-w-md">No encontramos productos para esta selección. Prueba cambiando la marca o la gerencia.</p>
         </div>
 
-        <!-- Product Grid -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hidden"></div>
 
     </main>
 
-    <footer class="bg-white border-t border-gray-100 py-8 text-center px-4">
+    <footer id="main-footer" class="bg-white border-t border-gray-100 py-8 text-center px-4 invisible">
         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-text-mut">
             &copy; <span id="year"></span> Natura &Co <span class="mx-2 opacity-30">|</span> Bien Estar Bien
         </p>
     </footer>
 
     <script>
-        const SHEET_ID = '1_rLxNuEIP1JBxUJ3MZwse_RVZuu0WA52nNJ_Vp3vH3o';
-        
         let db = {
             site: [],
             gerencias: [],
-            cuotas: {} // Map: gerenciaId -> { codVenta: quantity }
+            cuotas: {}
         };
         
         let state = {
             tab: 'Natura',
-            gerenciaId: ''
+            gerenciaId: '',
+            ciclo: 'C09'
         };
 
-        async function init() {
+        function init() {
+            lucide.createIcons();
+            setupCicloSelect();
+        }
+
+        function setupCicloSelect() {
+            const sel = document.getElementById('ciclo-select');
+            sel.onchange = async e => {
+                state.ciclo = e.target.value;
+                await loadData();
+            };
+        }
+
+        // Esta funcion se activa al tocar uno de los dos botones de bienvenida
+        async function selectInitialCiclo(cicloId) {
+            state.ciclo = cicloId;
+            document.getElementById('ciclo-select').value = cicloId;
+            
+            // Hacemos desaparecer la bienvenida y mostramos el contenido real
+            document.getElementById('cycle-modal').classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('main-header').classList.remove('invisible');
+            document.getElementById('main-content').classList.remove('invisible');
+            document.getElementById('main-footer').classList.remove('invisible');
+            
+            setTimeout(() => {
+                document.getElementById('cycle-modal').classList.add('hidden');
+            }, 500);
+
+            await loadData();
+        }
+
+        async function loadData() {
             try {
-                // Ahora cargamos un único archivo consolidado desde GitHub para evitar bloqueos corporativos
-                const response = await fetch('./data.json');
+                document.getElementById('loading').classList.remove('hidden');
+                document.getElementById('product-grid').classList.add('hidden');
+                
+                const fileName = state.ciclo === 'C09' ? './data.json' : `./data_${state.ciclo}.json`;
+                
+                const response = await fetch(fileName);
                 if (!response.ok) throw new Error('No se encontró el archivo de datos');
                 
                 const data = await response.json();
-                
                 db.site = data.site || [];
                 db.gerencias = data.gerencias || [];
                 db.cuotas = data.cuotas || {};
@@ -196,9 +248,10 @@
 
             } catch (err) {
                 console.error(err);
+                document.getElementById('loading').classList.add('hidden');
                 Swal.fire({
                     title: 'Sincronización pendiente',
-                    text: 'Aún no se han sincronizado los datos desde la planilla original.',
+                    text: `Aún no se han cargado los datos de Excel para el ${state.ciclo}.`,
                     icon: 'info',
                     confirmButtonColor: '#FF6B00',
                     customClass: { popup: 'rounded-3xl' }
@@ -206,15 +259,15 @@
             }
         }
 
-        // Se eliminan parseGerencias, parseCuotas, parseSite ya que el JSON viene limpio del script
-
         function populateGerencias() {
             const sel = document.getElementById('gerencia-select');
+            const currentSel = state.gerenciaId;
             sel.innerHTML = '<option value="">Seleccionar Gerencia...</option>';
             db.gerencias.sort((a,b) => a.name.localeCompare(b.name)).forEach(g => {
                 const opt = document.createElement('option');
                 opt.value = g.id;
                 opt.textContent = g.name;
+                if(g.id === currentSel) opt.selected = true;
                 sel.appendChild(opt);
             });
             sel.onchange = e => { state.gerenciaId = e.target.value; render(); };
@@ -224,7 +277,6 @@
             state.tab = t;
             const isNatura = t === 'Natura';
             
-            // UI Updates
             const btnN = document.getElementById('tab-natura');
             const btnA = document.getElementById('tab-avon');
             const title = document.getElementById('brand-title');
@@ -245,7 +297,7 @@
 
         function getImg(marca, cod, type) {
             const folder = type === 'A' ? marca.trim() : 'Alternativas';
-            return `./imagenes/${folder}/${cod}.jpg`;
+            return `./Imagenes/${folder}/${state.ciclo}/${cod}.jpg`;
         }
 
         async function shareImage(url, cod, desc) {
@@ -253,7 +305,6 @@
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
             try {
-                // Si es movil y soporta share, usamos el menu nativo
                 if (isMobile && navigator.canShare && navigator.share) {
                     const response = await fetch(url);
                     const blob = await response.blob();
@@ -268,8 +319,6 @@
                         return;
                     }
                 }
-                
-                // Fallback / Desktop: Descarga tradicional
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = fileName;
@@ -342,11 +391,10 @@
                                     </span>
                                 ` : ''}
 
-                                <!-- Botón Acción Dinámico -->
                                 <button onclick="shareImage('${imgPath}', '${plan.cod}', '${safeDesc}')" 
                                    title="${isMobile ? 'Compartir' : 'Descargar'}"
                                    class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white transition-colors cursor-pointer">
-                                    <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
+                                     <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                 </button>
 
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
@@ -389,4 +437,4 @@
         window.onload = init;
     </script>
 </body>
-</html> 
+</html>
