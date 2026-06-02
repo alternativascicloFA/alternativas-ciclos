@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-06-02T17:22:56Z",
+    "updatedAt":  "2026-06-02T17:32:22Z",
     "site":  [
                  {
                      "plans":  [
@@ -165,6 +165,81 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Insuperable Kitx3 AC 400ml Frutas tropicales",
+                                       "cod":  "260334"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Insuperable Kitx3 AC 400ml",
+                                       "cod":  "246931"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "timeless perfume femenino",
+                                       "cod":  "186461"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Passion gitana perfume femenino",
+                                       "cod":  "158649"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Trekking perfume para hombre",
+                                       "cod":  "158773"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Exclusive perfume para hombre",
+                                       "cod":  "207493"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo insuperable kitx3 Clearskin jabones",
+                                       "cod":  "260344"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo insuperable kitx3 Clearskin jabones + gel",
+                                       "cod":  "273526"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Avon care 400ml frutas tropicales",
+                                       "cod":  "207654"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "aceite jojoba",
+                                       "cod":  "207814"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
