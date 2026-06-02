@@ -290,19 +290,31 @@
             render();
         }
 
+        // RUTA ADAPTADA A TUS CARPETAS REALES CON MAYÚSCULAS DE GITHUB 🌟
         function getImg(marca, cod) {
-            const brand = marca.trim().toLowerCase();
-            const ciclo = state.ciclo.trim().toLowerCase();
-            return `./imagenes/${brand}/${ciclo}/${cod}.jpg`;
+            const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
+            const ciclo = state.ciclo.trim().toUpperCase(); // Asegura "C09" o "C10"
+            return `./Imagenes/${brand}/${ciclo}/${cod}.jpg`;
         }
 
         function handleImageError(img, marca, cod) {
-            const brand = marca.trim().toLowerCase();
-            const ciclo = state.ciclo.trim().toLowerCase();
-            const src = img.src;
+            if (!img.dataset.tryStep) img.dataset.tryStep = "1";
+            const step = parseInt(img.dataset.tryStep);
             
-            if (src.includes('.jpg')) {
-                img.src = `./imagenes/${brand}/${ciclo}/${cod}.png`;
+            const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
+            const ciclo = state.ciclo.trim().toUpperCase();
+            
+            const fallbacks = [
+                `./Imagenes/${brand}/${ciclo}/${cod}.png`,
+                `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.jpg`,
+                `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.png`,
+                `./Imagenes/${brand}/${cod}.jpg`,
+                `./Imagenes/${brand}/${cod}.png`
+            ];
+            
+            if (step <= fallbacks.length) {
+                img.src = fallbacks[step - 1];
+                img.dataset.tryStep = (step + 1).toString();
             } else {
                 img.src = 'https://placehold.co/400x400/F4F4F4/9CA3AF?text=Próximamente';
                 img.onerror = null;
@@ -376,38 +388,34 @@
                         
                         if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
-                            
-                            // TRIPLE CRUCE AUTOMÁTICO DE MATRIZ DE PABLO (BUSCA POR ID O POR NOMBRE) 🎯
                             const gerenciaObj = db.gerencias.find(g => String(g.id).trim().toLowerCase() === currentGid || String(g.name).trim().toLowerCase() === currentGid);
                             let gerenciaStock = undefined;
                             
                             if (gerenciaObj) {
                                 const idKey = String(gerenciaObj.id).trim().toLowerCase();
                                 const nameKey = String(gerenciaObj.name).trim().toLowerCase();
-                                
                                 const exactKey = Object.keys(db.cuotas).find(k => {
                                     const cleanKey = String(k).trim().toLowerCase();
                                     return cleanKey === idKey || cleanKey === nameKey;
                                 });
-                                
-                                if (exactKey) {
-                                    gerenciaStock = db.cuotas[exactKey];
-                                }
+                                if (exactKey) gerenciaStock = db.cuotas[exactKey];
                             }
 
                             if (gerenciaStock) {
-                                const searchCodClean = String(plan.cod).trim();
+                                // COMPARADOR DE DÍGITOS PUROS BLINDADO CONTRA DECIMALES (.0) 🎯
+                                const searchDigits = String(plan.cod).replace(/\D/g, '');
                                 let stock = undefined;
                                 
-                                if (gerenciaStock[searchCodClean] !== undefined) {
-                                    stock = gerenciaStock[searchCodClean];
-                                } else {
-                                    const searchNum = parseInt(searchCodClean, 10);
-                                    const foundKey = Object.keys(gerenciaStock).find(k => parseInt(String(k).trim(), 10) === searchNum);
-                                    if (foundKey) stock = gerenciaStock[foundKey];
+                                const targetKey = Object.keys(gerenciaStock).find(k => {
+                                    const keyDigits = String(k).replace(/\D/g, '');
+                                    return keyDigits === searchDigits;
+                                });
+                                
+                                if (targetKey !== undefined) {
+                                    stock = gerenciaStock[targetKey];
                                 }
 
-                                if (stock !== undefined && stock !== null) {
+                                if (stock !== undefined && stock !== null && String(stock).trim() !== '') {
                                     const numStock = Number(stock);
                                     quotaText = numStock > 0 ? `Disponibles: ${numStock} un.` : "SIN STOCK";
                                     quotaClass = numStock > 0 ? (state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
