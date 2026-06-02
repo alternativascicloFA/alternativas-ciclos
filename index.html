@@ -369,14 +369,14 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        // TEXTO POR DEFECTO MIENTRAS NO HAYA FILTRO
+                        // MOTOR CRUZADOR DE COLUMNA Q (MATRIZ INTERNA) + COLUMNA E (CANTIDAD) 🌟
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
                         if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
                             
-                            // BUSCADOR INTELIGENTE EN MATRIZ DE CUOTAS (COLUMNA Q Y COLUMNA E)
+                            // Mapea la gerencia por texto o codigo interno de estructura (Columna Q)
                             const gerenciaKey = Object.keys(db.cuotas).find(k => String(k).trim().toLowerCase() === currentGid);
                             
                             if (gerenciaKey) {
@@ -385,11 +385,10 @@
                                 let stock = undefined;
                                 
                                 if (gerenciaStock) {
-                                    // 1. Coincidencia directa por texto
+                                    // Rastrea el codigo de venta en la Columna B
                                     if (gerenciaStock[searchCodClean] !== undefined) {
                                         stock = gerenciaStock[searchCodClean];
                                     } else {
-                                        // 2. Coincidencia por mapeo numérico puro (vuela ceros o errores de formato)
                                         const searchNum = parseInt(searchCodClean, 10);
                                         const foundKey = Object.keys(gerenciaStock).find(k => parseInt(String(k).trim(), 10) === searchNum);
                                         if (foundKey) stock = gerenciaStock[foundKey];
@@ -398,7 +397,7 @@
 
                                 if (stock !== undefined && stock !== null) {
                                     const numStock = Number(stock);
-                                    // Muestra el valor de 'remainingQuantity' (Columna E)
+                                    // Extrae el valor remanente de la columna E
                                     quotaText = numStock > 0 ? `Disponibles: ${numStock} un.` : "SIN STOCK";
                                     quotaClass = numStock > 0 ? (state.tab === 'Natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
                                 } else {
