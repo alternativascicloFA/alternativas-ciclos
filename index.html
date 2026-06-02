@@ -290,7 +290,6 @@
             render();
         }
 
-        // CORRECCIÓN HISTÓRICA PARA GITHUB PAGES: FORZA RUTAS EN MINÚSCULAS 🌟
         function getImg(marca, cod) {
             const brand = marca.trim().toLowerCase();
             const ciclo = state.ciclo.trim().toLowerCase();
@@ -344,7 +343,6 @@
             const empty = document.getElementById('empty-state');
             grid.innerHTML = '';
 
-            // FILTRO ULTRA-DEFENSIVO PARA "MARCA" / "MARCA" EN MAYÚSCULAS 🎯
             const filtered = db.site.filter(i => {
                 const m = i.marca || i.Marca || i.MARCA || '';
                 return m.trim().toLowerCase() === state.tab.trim().toLowerCase();
@@ -378,21 +376,35 @@
                         
                         if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
-                            const gerenciaKey = Object.keys(db.cuotas).find(k => String(k).trim().toLowerCase() === currentGid);
                             
-                            if (gerenciaKey) {
-                                const gerenciaStock = db.cuotas[gerenciaKey];
+                            // TRIPLE CRUCE AUTOMÁTICO DE MATRIZ DE PABLO (BUSCA POR ID O POR NOMBRE) 🎯
+                            const gerenciaObj = db.gerencias.find(g => String(g.id).trim().toLowerCase() === currentGid || String(g.name).trim().toLowerCase() === currentGid);
+                            let gerenciaStock = undefined;
+                            
+                            if (gerenciaObj) {
+                                const idKey = String(gerenciaObj.id).trim().toLowerCase();
+                                const nameKey = String(gerenciaObj.name).trim().toLowerCase();
+                                
+                                const exactKey = Object.keys(db.cuotas).find(k => {
+                                    const cleanKey = String(k).trim().toLowerCase();
+                                    return cleanKey === idKey || cleanKey === nameKey;
+                                });
+                                
+                                if (exactKey) {
+                                    gerenciaStock = db.cuotas[exactKey];
+                                }
+                            }
+
+                            if (gerenciaStock) {
                                 const searchCodClean = String(plan.cod).trim();
                                 let stock = undefined;
                                 
-                                if (gerenciaStock) {
-                                    if (gerenciaStock[searchCodClean] !== undefined) {
-                                        stock = gerenciaStock[searchCodClean];
-                                    } else {
-                                        const searchNum = parseInt(searchCodClean, 10);
-                                        const foundKey = Object.keys(gerenciaStock).find(k => parseInt(String(k).trim(), 10) === searchNum);
-                                        if (foundKey) stock = gerenciaStock[foundKey];
-                                    }
+                                if (gerenciaStock[searchCodClean] !== undefined) {
+                                    stock = gerenciaStock[searchCodClean];
+                                } else {
+                                    const searchNum = parseInt(searchCodClean, 10);
+                                    const foundKey = Object.keys(gerenciaStock).find(k => parseInt(String(k).trim(), 10) === searchNum);
+                                    if (foundKey) stock = gerenciaStock[foundKey];
                                 }
 
                                 if (stock !== undefined && stock !== null) {
@@ -410,7 +422,6 @@
                         const safeDesc = plan.desc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                         const brandString = item.marca || item.Marca || 'natura';
                         
-                        // TEXTO DE LA PLACA ADAPTADO COMO PLAN B / PLAN C 🌟
                         let planBadgeText = `Plan ${plan.type}`;
                         
                         slide.innerHTML = `
