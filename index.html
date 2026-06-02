@@ -89,13 +89,10 @@
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
-        
         <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
-        
         <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
             <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
                     Ciclo 9
@@ -265,7 +262,7 @@
                 const opt = document.createElement('option');
                 opt.value = g.id;
                 opt.textContent = g.name;
-                if(g.id === currentSel) opt.selected = true;
+                if(String(g.id).trim() === String(currentSel).trim()) opt.selected = true;
                 sel.appendChild(opt);
             });
             sel.onchange = e => { state.gerenciaId = e.target.value; render(); };
@@ -313,7 +310,6 @@
             }
         }
 
-        // ACCION DE DESCARGA ESPEJO (SOLUCIONADO) 🌟
         async function shareImage(btn) {
             const container = btn.closest('.relative');
             const img = container.querySelector('img');
@@ -373,39 +369,37 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        // MOTOR BUSCADOR DE STOCK ULTRA-FLEXIBLE COMPLETO 🌟
+                        // TEXTO POR DEFECTO MIENTRAS NO HAYA FILTRO
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
                         if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
+                            
+                            // BUSCADOR INTELIGENTE EN MATRIZ DE CUOTAS (COLUMNA Q Y COLUMNA E)
                             const gerenciaKey = Object.keys(db.cuotas).find(k => String(k).trim().toLowerCase() === currentGid);
                             
                             if (gerenciaKey) {
                                 const gerenciaStock = db.cuotas[gerenciaKey];
-                                const searchCod = String(plan.cod).trim();
+                                const searchCodClean = String(plan.cod).trim();
                                 let stock = undefined;
                                 
                                 if (gerenciaStock) {
-                                    if (gerenciaStock[searchCod] !== undefined) {
-                                        stock = gerenciaStock[searchCod];
+                                    // 1. Coincidencia directa por texto
+                                    if (gerenciaStock[searchCodClean] !== undefined) {
+                                        stock = gerenciaStock[searchCodClean];
                                     } else {
-                                        const foundKey = Object.keys(gerenciaStock).find(k => String(k).trim() === searchCod);
-                                        if (foundKey) {
-                                            stock = gerenciaStock[foundKey];
-                                        } else {
-                                            const searchNum = parseInt(searchCod, 10);
-                                            if (!isNaN(searchNum)) {
-                                                const foundNumKey = Object.keys(gerenciaStock).find(k => parseInt(k, 10) === searchNum);
-                                                if (foundNumKey) stock = gerenciaStock[foundNumKey];
-                                            }
-                                        }
+                                        // 2. Coincidencia por mapeo numérico puro (vuela ceros o errores de formato)
+                                        const searchNum = parseInt(searchCodClean, 10);
+                                        const foundKey = Object.keys(gerenciaStock).find(k => parseInt(String(k).trim(), 10) === searchNum);
+                                        if (foundKey) stock = gerenciaStock[foundKey];
                                     }
                                 }
 
                                 if (stock !== undefined && stock !== null) {
                                     const numStock = Number(stock);
-                                    quotaText = numStock > 0 ? `Disponibles: ${numStock} unidades` : "SIN STOCK";
+                                    // Muestra el valor de 'remainingQuantity' (Columna E)
+                                    quotaText = numStock > 0 ? `Disponibles: ${numStock} un.` : "SIN STOCK";
                                     quotaClass = numStock > 0 ? (state.tab === 'Natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
                                 } else {
                                     quotaText = "CON STOCK";
