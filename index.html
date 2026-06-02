@@ -89,13 +89,10 @@
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
 
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
-        
         <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
-        
         <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
             <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
                     Ciclo 9
@@ -293,20 +290,20 @@
             render();
         }
 
+        // CORRECCIÓN HISTÓRICA PARA GITHUB PAGES: FORZA RUTAS EN MINÚSCULAS 🌟
         function getImg(marca, cod) {
-            return `./Imagenes/${marca.trim()}/${state.ciclo}/${cod}.jpg`;
+            const brand = marca.trim().toLowerCase();
+            const ciclo = state.ciclo.trim().toLowerCase();
+            return `./imagenes/${brand}/${ciclo}/${cod}.jpg`;
         }
 
         function handleImageError(img, marca, cod) {
+            const brand = marca.trim().toLowerCase();
+            const ciclo = state.ciclo.trim().toLowerCase();
             const src = img.src;
-            const brand = marca.trim();
             
-            if (src.includes(`/${state.ciclo}/${cod}.jpg`)) {
-                img.src = `./Imagenes/${brand}/${state.ciclo}/${cod}.png`;
-            } else if (src.includes(`/${state.ciclo}/${cod}.png`)) {
-                img.src = `./Imagenes/${brand}/${cod}.jpg`;
-            } else if (src.includes(`/${brand}/${cod}.jpg`)) {
-                img.src = `./Imagenes/${brand}/${cod}.png`;
+            if (src.includes('.jpg')) {
+                img.src = `./imagenes/${brand}/${ciclo}/${cod}.png`;
             } else {
                 img.src = 'https://placehold.co/400x400/F4F4F4/9CA3AF?text=Próximamente';
                 img.onerror = null;
@@ -347,7 +344,11 @@
             const empty = document.getElementById('empty-state');
             grid.innerHTML = '';
 
-            const filtered = db.site.filter(i => i.marca.trim().toLowerCase() === state.tab.trim().toLowerCase());
+            // FILTRO ULTRA-DEFENSIVO PARA "MARCA" / "MARCA" EN MAYÚSCULAS 🎯
+            const filtered = db.site.filter(i => {
+                const m = i.marca || i.Marca || i.MARCA || '';
+                return m.trim().toLowerCase() === state.tab.trim().toLowerCase();
+            });
 
             if (filtered.length === 0) {
                 grid.classList.add('hidden');
@@ -370,14 +371,13 @@
                         const slide = document.createElement('div');
                         slide.className = "min-w-full snap-start p-5 flex flex-col";
                         const isMain = plan.type === 'A';
-                        const badgeColor = isMain ? (state.tab === 'Natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
+                        const badgeColor = isMain ? (state.tab.trim().toLowerCase() === 'natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
                         
                         if (state.gerenciaId && db.cuotas) { 
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
-                            
                             const gerenciaKey = Object.keys(db.cuotas).find(k => String(k).trim().toLowerCase() === currentGid);
                             
                             if (gerenciaKey) {
@@ -398,7 +398,7 @@
                                 if (stock !== undefined && stock !== null) {
                                     const numStock = Number(stock);
                                     quotaText = numStock > 0 ? `Disponibles: ${numStock} un.` : "SIN STOCK";
-                                    quotaClass = numStock > 0 ? (state.tab === 'Natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
+                                    quotaClass = numStock > 0 ? (state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
                                 } else {
                                     quotaText = "CON STOCK";
                                     quotaClass = "text-green-600 font-bold";
@@ -408,12 +408,10 @@
 
                         const actionIcon = isMobile ? 'share-2' : 'download';
                         const safeDesc = plan.desc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                        const brandString = item.marca || item.Marca || 'natura';
                         
-                        // DEFINICION DEL TEXTO DE LA PLACA SEGUN EL PLAN (A, B, C, D) 🌟
-                        let planBadgeText = '';
-                        if (plan.type === 'B') planBadgeText = 'Plan B';
-                        else if (plan.type === 'C') planBadgeText = 'Plan C';
-                        else if (plan.type === 'D') planBadgeText = 'Plan D';
+                        // TEXTO DE LA PLACA ADAPTADO COMO PLAN B / PLAN C 🌟
+                        let planBadgeText = `Plan ${plan.type}`;
                         
                         slide.innerHTML = `
                             <div class="relative mb-4">
@@ -422,12 +420,11 @@
                                         ${planBadgeText}
                                     </span>
                                 ` : ''}
-
                                 <button onclick="shareImage(this)" data-cod="${plan.cod}" data-desc="${safeDesc}" title="${isMobile ? 'Compartir' : 'Descargar'}" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
                                      <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                 </button>
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
-                                    <img src="${getImg(item.marca, plan.cod)}" onerror="handleImageError(this, '${item.marca.replace(/'/g, "\\'")}', '${plan.cod}')" class="max-w-full max-h-full object-contain mix-blend-multiply">
+                                    <img src="${getImg(brandString, plan.cod)}" onerror="handleImageError(this, '${brandString.replace(/'/g, "\\'")}', '${plan.cod}')" class="max-w-full max-h-full object-contain mix-blend-multiply">
                                 </div>
                             </div>
                             <div class="flex-1 flex flex-col">
