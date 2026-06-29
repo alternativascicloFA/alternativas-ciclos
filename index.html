@@ -215,13 +215,14 @@
             };
         }
 
-        // LÓGICA CAPTURADORA PARA EL CUADRO ENEBRADO DE BÚSQUEDA 🌟
         function setupCodeSearch() {
             const input = document.getElementById('codigo-search');
-            input.oninput = e => {
-                state.searchCode = e.target.value.trim();
-                render();
-            };
+            if (input) {
+                input.oninput = e => {
+                    state.searchCode = e.target.value.trim();
+                    render();
+                };
+            }
         }
 
         async function selectInitialCiclo(cicloId) {
@@ -247,8 +248,9 @@
                 
                 const fileName = state.ciclo === 'C11' ? './data.json' : `./data_${state.ciclo}.json`;
                 
-                const response = await fetch(fileName);
-                if (!response.ok) throw new Error('No se encontró el archivo de datos');
+                // 🌟 BOTÓN ADICIONAL ROMPE-CACHÉ QUE OBLIGA A RELEER EL ARCHIVO REAL DE INTERNET 🌟
+                const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error('No se encontró el archivo de datos en el servidor');
                 
                 const data = await response.json();
                 db.site = data.site || [];
@@ -265,8 +267,8 @@
                 console.error(err);
                 document.getElementById('loading').classList.add('hidden');
                 Swal.fire({
-                    title: 'Sincronización pendiente',
-                    text: `Aún no se han cargado los datos de Excel para el ${state.ciclo}.`,
+                    title: 'Aviso de Carga',
+                    text: `Detalle: ${err.message}. Si recién corriste el actualizador, aguarda 1 minuto y recarga.`,
                     icon: 'info',
                     confirmButtonColor: '#FF6B00',
                     customClass: { popup: 'rounded-3xl' }
@@ -374,14 +376,12 @@
             const empty = document.getElementById('empty-state');
             grid.innerHTML = '';
 
-            // MOTOR INTEGRADO DE FILTRADO MARCA + CÓDIGO AGRESIVO 🎯
             const filtered = db.site.filter(i => {
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
                 
                 if (!matchesBrand) return false;
                 
-                // Si escribiste números en la caja de búsqueda, comprueba si el Plan A o B matchea
                 if (state.searchCode) {
                     const searchDigits = state.searchCode.replace(/\D/g, '');
                     return i.plans.some(plan => String(plan.cod).replace(/\D/g, '').includes(searchDigits));
