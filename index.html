@@ -94,11 +94,11 @@
             <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button onclick="selectInitialCiclo('C09')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
-                    Ciclo 9
+                <button onclick="selectInitialCiclo('C11')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                    Ciclo 11
                 </button>
-                <button onclick="selectInitialCiclo('C10')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
-                    Ciclo 10
+                <button onclick="selectInitialCiclo('C12')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                    Ciclo 12
                 </button>
             </div>
         </div>
@@ -119,21 +119,30 @@
                 </p>
             </div>
             
-            <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-                <div class="w-full sm:w-32">
+            <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4 items-end">
+                <div class="w-full sm:w-44">
+                    <label for="codigo-search" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
+                        Buscar por Código
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="codigo-search" placeholder="Ej: 207441" class="w-full bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors shadow-none" />
+                    </div>
+                </div>
+
+                <div class="w-full sm:w-28">
                     <label for="ciclo-select" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
                         Ciclo
                     </label>
                     <div class="relative">
                         <select id="ciclo-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
-                            <option value="C09">Ciclo 9</option>
-                            <option value="C10">Ciclo 10</option>
+                            <option value="C11">Ciclo 11</option>
+                            <option value="C12">Ciclo 12</option>
                         </select>
                         <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
                     </div>
                 </div>
 
-                <div class="w-full sm:w-64">
+                <div class="w-full sm:w-56">
                     <label for="gerencia-select" class="block text-[10px] font-bold uppercase tracking-widest text-text-sec mb-1.5 pl-1">
                         Gerencia de Ventas
                     </label>
@@ -165,7 +174,7 @@
                 <i data-lucide="search-x" class="w-12 h-12 text-text-mut stroke-[1.5]"></i>
             </div>
             <h3 class="text-xl font-bold text-text-main mb-2 tracking-tight">Sin resultados</h3>
-            <p class="text-text-sec text-sm leading-relaxed max-w-md">No encontramos productos para esta selección. Prueba cambiando la marca o la gerencia.</p>
+            <p class="text-text-sec text-sm leading-relaxed max-w-md">No encontramos productos para esta combinación. Intenta cambiando el código o los filtros.</p>
         </div>
 
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hidden"></div>
@@ -188,12 +197,14 @@
         let state = {
             tab: 'Natura',
             gerenciaId: '',
-            ciclo: 'C09'
+            ciclo: 'C11',
+            searchCode: ''
         };
 
         function init() {
             lucide.createIcons();
             setupCicloSelect();
+            setupCodeSearch();
         }
 
         function setupCicloSelect() {
@@ -201,6 +212,15 @@
             sel.onchange = async e => {
                 state.ciclo = e.target.value;
                 await loadData();
+            };
+        }
+
+        // LÓGICA CAPTURADORA PARA EL CUADRO ENEBRADO DE BÚSQUEDA 🌟
+        function setupCodeSearch() {
+            const input = document.getElementById('codigo-search');
+            input.oninput = e => {
+                state.searchCode = e.target.value.trim();
+                render();
             };
         }
 
@@ -225,7 +245,7 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('product-grid').classList.add('hidden');
                 
-                const fileName = state.ciclo === 'C09' ? './data.json' : `./data_${state.ciclo}.json`;
+                const fileName = state.ciclo === 'C11' ? './data.json' : `./data_${state.ciclo}.json`;
                 
                 const response = await fetch(fileName);
                 if (!response.ok) throw new Error('No se encontró el archivo de datos');
@@ -290,10 +310,9 @@
             render();
         }
 
-        // RUTA ADAPTADA A TUS CARPETAS REALES CON MAYÚSCULAS DE GITHUB 🌟
         function getImg(marca, cod) {
             const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
-            const ciclo = state.ciclo.trim().toUpperCase(); // Asegura "C09" o "C10"
+            const ciclo = state.ciclo.trim().toUpperCase();
             return `./Imagenes/${brand}/${ciclo}/${cod}.jpg`;
         }
 
@@ -355,9 +374,20 @@
             const empty = document.getElementById('empty-state');
             grid.innerHTML = '';
 
+            // MOTOR INTEGRADO DE FILTRADO MARCA + CÓDIGO AGRESIVO 🎯
             const filtered = db.site.filter(i => {
                 const m = i.marca || i.Marca || i.MARCA || '';
-                return m.trim().toLowerCase() === state.tab.trim().toLowerCase();
+                const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
+                
+                if (!matchesBrand) return false;
+                
+                // Si escribiste números en la caja de búsqueda, comprueba si el Plan A o B matchea
+                if (state.searchCode) {
+                    const searchDigits = state.searchCode.replace(/\D/g, '');
+                    return i.plans.some(plan => String(plan.cod).replace(/\D/g, '').includes(searchDigits));
+                }
+                
+                return true;
             });
 
             if (filtered.length === 0) {
@@ -402,7 +432,6 @@
                             }
 
                             if (gerenciaStock) {
-                                // COMPARADOR DE DÍGITOS PUROS BLINDADO CONTRA DECIMALES (.0) 🎯
                                 const searchDigits = String(plan.cod).replace(/\D/g, '');
                                 let stock = undefined;
                                 
