@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-06-29T14:34:27Z",
+    "updatedAt":  "2026-07-01T20:51:53Z",
     "site":  [
                  {
                      "plans":  [
@@ -240,6 +240,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "xxxxx",
+                                       "cod":  "207441"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "cocoroo",
+                                       "cod":  "207443"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
