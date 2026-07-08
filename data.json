@@ -1,17 +1,17 @@
 ﻿{
-    "updatedAt":  "2026-07-01T20:53:21Z",
+    "updatedAt":  "2026-07-08T12:50:12Z",
     "site":  [
                  {
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Promo CN CB Kit Manos Ekos AR C09",
-                                       "cod":  "271085"
+                                       "desc":  "CHRONOS SERUM MULTICLAREADOR PS 30ML",
+                                       "cod":  "169222"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "PROMO CN kit manos maracuya + tukuma",
-                                       "cod":  "270313"
+                                       "desc":  "chronos serum",
+                                       "cod":  "169264"
                                    }
                                ],
                      "marca":  "Natura"
@@ -20,13 +20,13 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "CPV KIT MATERA + AZUCARERA",
-                                       "cod":  "269221"
+                                       "desc":  "BODY SPLASH DESODORANTE COLÔNIA AMORA VERMELHA E JABUTICABA",
+                                       "cod":  "88075"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Matera + mate",
-                                       "cod":  "270319"
+                                       "desc":  "TDIA SPRAY DES PERF FRUVER 200ML ARG NV",
+                                       "cod":  "72197"
                                    }
                                ],
                      "marca":  "Natura"
@@ -35,13 +35,13 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Máscara de Reparación",
-                                       "cod":  "154875"
+                                       "desc":  "CPV BOTELLAS DE VIAJE 2026 ARG",
+                                       "cod":  "242465"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Tododia spray ac verano",
-                                       "cod":  "192102"
+                                       "desc":  "CPV BOTELLA 2025 ARG",
+                                       "cod":  "184266"
                                    }
                                ],
                      "marca":  "Natura"
@@ -50,13 +50,13 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "TODODIA. Reparación Kit Completo (SH + AC + Masc + CPP)",
-                                       "cod":  "255517"
+                                       "desc":  "TODODIA MORA ROJA COMP C11ARG",
+                                       "cod":  "262875"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Tododia kit completo verano",
-                                       "cod":  "270288"
+                                       "desc":  "Tododia Fresa y Vainilla Dorada oleo + spray + jabones",
+                                       "cod":  "272844"
                                    }
                                ],
                      "marca":  "Natura"
@@ -65,452 +65,20 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "TODODIA SAB BAR 4X90G",
-                                       "cod":  "200637"
+                                       "desc":  "CLEARSKIN GEL EXFOLIAN PUNTOS NEGROS 60G",
+                                       "cod":  "136095"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Presente Natura Tododia Sabonetes Sortidos",
-                                       "cod":  "179256"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "TODODIA BFF MONTADO FRASE HIDRATANTE 3x100ML",
-                                       "cod":  "230814"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "TODODIA MONTADO HIDRATANTE 3x100ML",
-                                       "cod":  "171354"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "UNA GLOSS LABIAL HIDRA ATIV CHERRY 8 5ML",
-                                       "cod":  "205329"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Gloss Multifuncional Una Celebrar 7 g",
-                                       "cod":  "192148"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "EKOS SAB LIQ ESFOL CORP ACAI 185ML LTM",
-                                       "cod":  "97261"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Jabón Líquido Exfoliante Ekos Maracuyá 100 ml",
-                                       "cod":  "170797"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Dia del amigo - transforma",
-                                       "cod":  "272849"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Dia del amigo - regalo perfu + spray humor",
-                                       "cod":  "272850"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Acondicionador de Reparación",
-                                       "cod":  "154876"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Acondicionador verano tododia",
-                                       "cod":  "190391"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "exfoliante tododia vainilla y fresa",
-                                       "cod":  "219299"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Jabón Exfoliante Corporal Tododia Mora Roja y Jabuticaba 100 g",
-                                       "cod":  "174345"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Promo Insuperable Kitx3 AC 400ml Frutas tropicales",
-                                       "cod":  "260334"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Promo Insuperable Kitx3 AC 400ml",
-                                       "cod":  "246931"
+                                       "desc":  "CLEARSKIN MASCARILLA PUNTOS NEGROS 60G",
+                                       "cod":  "136040"
                                    }
                                ],
                      "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "timeless perfume femenino",
-                                       "cod":  "186461"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Passion gitana perfume femenino",
-                                       "cod":  "158649"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Trekking perfume para hombre",
-                                       "cod":  "158773"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Exclusive perfume para hombre",
-                                       "cod":  "207493"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Promo insuperable kitx3 Clearskin jabones",
-                                       "cod":  "260344"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Promo insuperable kitx3 Clearskin jabones + gel",
-                                       "cod":  "273526"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Avon care 400ml frutas tropicales",
-                                       "cod":  "207654"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "aceite jojoba",
-                                       "cod":  "207814"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "xxxxx",
-                                       "cod":  "207441"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "cocoroo",
-                                       "cod":  "207443"
-                                   }
-                               ],
-                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
-                   "300001404":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  17,
-                                     "111172":  0,
-                                     "207441":  54,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300001694":  {
-                                     "154876":  1,
-                                     "207654":  1,
-                                     "70983":  1,
-                                     "158783":  18,
-                                     "111172":  1,
-                                     "218364":  1,
-                                     "72177":  1,
-                                     "207441":  55,
-                                     "207653":  1,
-                                     "207603":  1
-                                 },
-                   "300000021":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "158783":  15,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  49,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001000":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "158783":  0,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  0,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300000025":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  3,
-                                     "111172":  0,
-                                     "72177":  0,
-                                     "70983":  0,
-                                     "207441":  33,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001234":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  17,
-                                     "111172":  0,
-                                     "207441":  59,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001403":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  11,
-                                     "111172":  0,
-                                     "207441":  34,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001693":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "158783":  16,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  52,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300000024":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "158783":  18,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  58,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300001377":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "158783":  0,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  0,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300001293":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  15,
-                                     "111172":  0,
-                                     "72177":  0,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207441":  48,
-                                     "207603":  0
-                                 },
-                   "300001692":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "158783":  2,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  42,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001550":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "158783":  0,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  0,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300000022":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "158783":  13,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  43,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001292":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  9,
-                                     "111172":  0,
-                                     "72177":  0,
-                                     "207441":  29,
-                                     "207653":  0,
-                                     "207603":  0,
-                                     "70983":  0
-                                 },
-                   "300001123":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  0,
-                                     "111172":  0,
-                                     "207441":  51,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001121":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  3,
-                                     "111172":  0,
-                                     "207441":  48,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300001425":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "158783":  0,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  0,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001122":  {
-                                     "154876":  0,
-                                     "72177":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  15,
-                                     "111172":  0,
-                                     "207441":  48,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "207603":  0
-                                 },
-                   "300001367":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "158783":  17,
-                                     "111172":  0,
-                                     "218364":  0,
-                                     "207441":  54,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "186461":  54,
-                                     "72177":  0,
-                                     "207603":  0
-                                 },
-                   "300001235":  {
-                                     "154876":  0,
-                                     "207654":  0,
-                                     "218364":  0,
-                                     "158783":  21,
-                                     "111172":  0,
-                                     "207441":  67,
-                                     "70983":  0,
-                                     "207653":  0,
-                                     "72177":  0,
-                                     "207603":  0
-                                 }
+
                },
     "gerencias":  [
                       {
