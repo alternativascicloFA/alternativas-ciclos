@@ -1,16 +1,16 @@
 ﻿{
-    "updatedAt":  "2026-07-08T12:51:39Z",
+    "updatedAt":  "2026-07-08T12:58:34Z",
     "site":  [
                  {
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "CHRONOS SERUM MULTICLAREADOR PS 30ML",
+                                       "desc":  "Sérum Intensivo Multiaclarador Chronos 30 ml",
                                        "cod":  "169222"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "chronos serum",
+                                       "desc":  "Super Sérum Reductor de Arrugas Chronos Derma 30 ml",
                                        "cod":  "169264"
                                    }
                                ],
@@ -25,7 +25,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TDIA SPRAY DES PERF FRUVER 200ML ARG NV",
+                                       "desc":  "Body Splash Femenino Frutas Rojas 200ml Natura Tododia",
                                        "cod":  "72197"
                                    }
                                ],
