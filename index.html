@@ -60,6 +60,11 @@
             font-display: swap;
         }
 
+        /* Bloquear scroll de fondo mientras esté el modal */
+        body.modal-open {
+            overflow: hidden !important;
+        }
+
         ::-webkit-scrollbar { height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
@@ -86,25 +91,25 @@
     </script>
 </head>
 
-<body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open">
 
-    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center flex flex-col justify-center items-center p-4 transition-all duration-500" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
-        <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
-        <div class="relative bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 max-w-md w-full text-center animate-fade-in">
-            <h2 class="text-3xl font-bold text-text-main mb-2 tracking-tight">¡Hola!</h2>
-            <p class="text-text-sec text-sm mb-8 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button onclick="selectInitialCiclo('C11')" class="py-4 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+    <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
+        <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
+        <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
+            <h2 class="text-xl font-bold text-text-main mb-0.5 tracking-tight">¡Hola!</h2>
+            <p class="text-text-sec text-[11px] mb-4 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
+            <div class="grid grid-cols-2 gap-2.5">
+                <button onclick="selectInitialCiclo('C11')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 11
                 </button>
-                <button onclick="selectInitialCiclo('C12')" class="py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer text-sm uppercase tracking-wider">
+                <button onclick="selectInitialCiclo('C12')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 12
                 </button>
             </div>
         </div>
     </div>
 
-    <header id="main-header" class="bg-white border-b border-gray-100 shadow-soft sticky top-0 z-50 invisible">
+    <header id="main-header" class="bg-white border-b border-gray-100 shadow-soft z-50 invisible">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-5 relative">
             <div class="flex-1 w-full">
                 <div class="flex items-center gap-3">
@@ -230,6 +235,7 @@
             document.getElementById('ciclo-select').value = cicloId;
             
             document.getElementById('cycle-modal').classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('modal-open');
             document.getElementById('main-header').classList.remove('invisible');
             document.getElementById('main-content').classList.remove('invisible');
             document.getElementById('main-footer').classList.remove('invisible');
@@ -248,7 +254,6 @@
                 
                 const fileName = state.ciclo === 'C11' ? './data.json' : `./data_${state.ciclo}.json`;
                 
-                // 🌟 BOTÓN ADICIONAL ROMPE-CACHÉ QUE OBLIGA A RELEER EL ARCHIVO REAL DE INTERNET 🌟
                 const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error('No se encontró el archivo de datos en el servidor');
                 
