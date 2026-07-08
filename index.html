@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alternativas de los ciclos | Natura & Avon</title>
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- PapaParse -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
+    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Fuentes de Marca -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -60,7 +65,6 @@
             font-display: swap;
         }
 
-        /* Bloquear scroll de fondo mientras esté el modal */
         body.modal-open {
             overflow: hidden !important;
         }
@@ -93,6 +97,7 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open">
 
+    <!-- PANTALLA BIENVENIDA ULTRA COMPACTA -->
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
         <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
@@ -109,6 +114,7 @@
         </div>
     </div>
 
+    <!-- Header & Filtros -->
     <header id="main-header" class="bg-white border-b border-gray-100 shadow-soft z-50 invisible">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-5 relative">
             <div class="flex-1 w-full">
@@ -167,6 +173,7 @@
         </div>
     </header>
 
+    <!-- App Main -->
     <main id="main-content" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 invisible">
         
         <div id="loading" class="flex flex-col justify-center items-center py-20">
@@ -193,18 +200,8 @@
     </footer>
 
     <script>
-        let db = {
-            site: [],
-            gerencias: [],
-            cuotas: {}
-        };
-        
-        let state = {
-            tab: 'Natura',
-            gerenciaId: '',
-            ciclo: 'C11',
-            searchCode: ''
-        };
+        let db = { site: [], gerencias: [], cuotas: {} };
+        let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C11', searchCode: '' };
 
         function init() {
             lucide.createIcons();
@@ -253,9 +250,8 @@
                 document.getElementById('product-grid').classList.add('hidden');
                 
                 const fileName = state.ciclo === 'C11' ? './data.json' : `./data_${state.ciclo}.json`;
-                
                 const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
-                if (!response.ok) throw new Error('No se encontró el archivo de datos en el servidor');
+                if (!response.ok) throw new Error('No se encontró el archivo de datos');
                 
                 const data = await response.json();
                 db.site = data.site || [];
@@ -298,7 +294,6 @@
         function setTab(t) {
             state.tab = t;
             const isNatura = t === 'Natura';
-            
             const btnN = document.getElementById('tab-natura');
             const btnA = document.getElementById('tab-avon');
             const title = document.getElementById('brand-title');
@@ -326,7 +321,6 @@
         function handleImageError(img, marca, cod) {
             if (!img.dataset.tryStep) img.dataset.tryStep = "1";
             const step = parseInt(img.dataset.tryStep);
-            
             const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
             const ciclo = state.ciclo.trim().toUpperCase();
             
@@ -347,32 +341,38 @@
             }
         }
 
+        // 🌟 NUEVO MENÚ DE DOS OPCIONES PERFECTO PARA SITES EN CELULAR 🌟
         async function shareImage(btn) {
             const container = btn.closest('.relative');
             const img = container.querySelector('img');
-            const url = img ? img.src : getImg(state.tab, btn.getAttribute('data-cod'));
+            
+            // Obtenemos la URL absoluta para que WhatsApp la lea perfecto
+            const url = img ? img.src : window.location.origin + window.location.pathname + getImg(state.tab, btn.getAttribute('data-cod'));
             const cod = btn.getAttribute('data-cod');
             const desc = btn.getAttribute('data-desc');
-            const fileName = `${cod}_${desc.replace(/[^a-z0-9]/gi, '_')}.jpg`;
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
-            try {
-                if (isMobile && navigator.canShare && navigator.share) {
-                    const response = await fetch(url);
-                    const blob = await response.blob();
-                    const file = new File([blob], fileName, { type: "image/jpeg" });
-                    if (navigator.canShare({ files: [file] })) {
-                        await navigator.share({ files: [file], title: desc });
-                        return;
-                    }
+            // Texto formateado con negritas para el chat de WhatsApp
+            const textToShare = encodeURIComponent(`✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}\n\n👉 Mirá la placa acá:\n${url}`);
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${textToShare}`;
+
+            Swal.fire({
+                title: '¿Qué querés hacer con la placa?',
+                html: `
+                    <div class="flex flex-col gap-3 mt-4">
+                        <a href="${whatsappUrl}" target="_blank" onclick="Swal.close()" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-[#25D366] hover:bg-[#20BA56] text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-sm uppercase tracking-wider cursor-pointer">
+                            💬 Enviar por WhatsApp
+                        </a>
+                        <button onclick="window.open('${url}', '_blank'); Swal.close();" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-sm uppercase tracking-wider cursor-pointer">
+                            📥 Descargar / Ver Imagen
+                        </button>
+                    </div>
+                `,
+                showConfirmButton: false,
+                showCloseButton: true,
+                customClass: {
+                    popup: 'rounded-3xl p-6'
                 }
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = fileName;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            } catch (err) { console.error(err); }
+            });
         }
 
         function render() {
@@ -384,14 +384,11 @@
             const filtered = db.site.filter(i => {
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
-                
                 if (!matchesBrand) return false;
-                
                 if (state.searchCode) {
                     const searchDigits = state.searchCode.replace(/\D/g, '');
                     return i.plans.some(plan => String(plan.cod).replace(/\D/g, '').includes(searchDigits));
                 }
-                
                 return true;
             });
 
@@ -439,15 +436,8 @@
                             if (gerenciaStock) {
                                 const searchDigits = String(plan.cod).replace(/\D/g, '');
                                 let stock = undefined;
-                                
-                                const targetKey = Object.keys(gerenciaStock).find(k => {
-                                    const keyDigits = String(k).replace(/\D/g, '');
-                                    return keyDigits === searchDigits;
-                                });
-                                
-                                if (targetKey !== undefined) {
-                                    stock = gerenciaStock[targetKey];
-                                }
+                                const targetKey = Object.keys(gerenciaStock).find(k => String(k).replace(/\D/g, '') === searchDigits);
+                                if (targetKey !== undefined) stock = gerenciaStock[targetKey];
 
                                 if (stock !== undefined && stock !== null && String(stock).trim() !== '') {
                                     const numStock = Number(stock);
@@ -460,20 +450,18 @@
                             }
                         }
 
-                        const actionIcon = isMobile ? 'share-2' : 'download';
+                        const actionIcon = 'share-2'; // Dejamos el ícono universal de compartir
                         const safeDesc = plan.desc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                         const brandString = item.marca || item.Marca || 'natura';
-                        
-                        let planBadgeText = `Plan ${plan.type}`;
                         
                         slide.innerHTML = `
                             <div class="relative mb-4">
                                 ${!isMain ? `
                                     <span class="absolute top-2 left-2 z-10 ${badgeColor} text-white text-[9px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-sm">
-                                        ${planBadgeText}
+                                        Plan ${plan.type}
                                     </span>
                                 ` : ''}
-                                <button onclick="shareImage(this)" data-cod="${plan.cod}" data-desc="${safeDesc}" title="${isMobile ? 'Compartir' : 'Descargar'}" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
+                                <button onclick="shareImage(this)" data-cod="${plan.cod}" data-desc="${safeDesc}" title="Opciones de Placa" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
                                      <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                 </button>
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
