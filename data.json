@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-07-08T20:03:30Z",
+    "updatedAt":  "2026-07-13T13:54:14Z",
     "site":  [
                  {
                      "plans":  [
@@ -87,6 +87,21 @@
                                        "type":  "B",
                                        "desc":  "Kit esenciales",
                                        "cod":  "272861"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kaiak Sonar RDC normal + mini",
+                                       "cod":  "272072"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kaiak sonar RDC Bolsa + perfume femenino 100ml",
+                                       "cod":  "272072"
                                    }
                                ],
                      "marca":  "Natura"
