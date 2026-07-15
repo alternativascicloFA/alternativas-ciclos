@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-07-13T14:30:02Z",
+    "updatedAt":  "2026-07-15T18:14:01Z",
     "site":  [
                  {
                      "plans":  [
@@ -105,6 +105,36 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Anew Agua Micelar Bifasica 150ml",
+                                       "cod":  "207811"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "ANEW AGUA MICELAR FACIAL 150ML",
+                                       "cod":  "207705"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LOV/U ORIGINAL EDP 50ml",
+                                       "cod":  "207446"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LOV U Together Eau de Parfum - 50ml",
+                                       "cod":  "207702"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
