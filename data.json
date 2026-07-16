@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-07-16T17:34:44Z",
+    "updatedAt":  "2026-07-16T18:41:54Z",
     "site":  [
                  {
                      "plans":  [
@@ -150,6 +150,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS ESENCIA SERUM C11ARG",
+                                       "cod":  "262858"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CHRONOS ESENCIA SERUM C11ARG",
+                                       "cod":  "272836"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
