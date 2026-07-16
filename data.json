@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-07-15T18:14:01Z",
+    "updatedAt":  "2026-07-16T17:34:44Z",
     "site":  [
                  {
                      "plans":  [
@@ -132,6 +132,21 @@
                                        "type":  "B",
                                        "desc":  "LOV U Together Eau de Parfum - 50ml",
                                        "cod":  "207702"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "PROMO OP 1 75PTOS",
+                                       "cod":  "262906"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "PROMO OP 1 75PTOS",
+                                       "cod":  "273514"
                                    }
                                ],
                      "marca":  "Avon"
