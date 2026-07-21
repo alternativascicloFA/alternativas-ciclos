@@ -172,17 +172,25 @@
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+        <!-- BOTONERA INFERIOR DEL HEADER -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4 mt-2">
             <div class="flex gap-8">
                 <button onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
                 <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
             </div>
 
-            <!-- BOTÓN MODO SELECCIÓN -->
-            <button id="btn-selection-mode" onclick="toggleSelectionMode()" class="mb-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer">
-                <i data-lucide="check-square" class="w-4 h-4 text-brand-orange"></i>
-                <span id="selection-btn-text">Seleccionar varias</span>
-            </button>
+            <!-- LOS DOS BOTONES ESTRELLA -->
+            <div class="flex flex-wrap items-center gap-2 mb-2 sm:mb-0">
+                <button id="btn-selection-mode" onclick="toggleSelectionMode()" class="py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer shadow-sm active:scale-95">
+                    <i data-lucide="check-square" class="w-4 h-4 text-brand-orange"></i>
+                    <span id="selection-btn-text">Selección manual</span>
+                </button>
+
+                <button onclick="downloadAllAlternativesLoose()" class="py-2 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
+                    <i data-lucide="download-cloud" class="w-4 h-4 text-brand-orange"></i>
+                    Descargar TODAS (Plan B)
+                </button>
+            </div>
         </div>
     </header>
 
@@ -207,13 +215,20 @@
     </main>
 
     <!-- BARRA FLOTANTE DE DESCARGA MASIVA SELECCIONADA -->
-    <div id="selection-bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden bg-gray-900/95 backdrop-blur-md text-white px-6 py-3.5 rounded-full shadow-2xl border border-white/10 flex items-center gap-5 transition-all duration-300">
-        <span id="selected-count" class="text-xs font-bold tracking-wider uppercase text-gray-300">0 seleccionadas</span>
-        <div class="flex items-center gap-2">
-            <button onclick="downloadSelectedBatch()" class="py-2 px-4 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-1.5 uppercase tracking-wider">
-                <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar
+    <div id="selection-bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden bg-gray-900/95 backdrop-blur-md text-white px-5 py-3 rounded-full shadow-2xl border border-white/10 flex-col sm:flex-row items-center gap-3 sm:gap-5 transition-all duration-300 w-[90%] sm:w-auto">
+        
+        <div class="flex items-center gap-4 justify-between w-full sm:w-auto">
+            <button onclick="selectAllInGrid()" class="text-[10px] uppercase font-bold text-brand-orange hover:text-white transition-colors underline whitespace-nowrap">
+                Marcar todas
             </button>
-            <button onclick="toggleSelectionMode(false)" class="p-2 text-gray-400 hover:text-white transition-colors cursor-pointer" title="Cancelar">
+            <span id="selected-count" class="text-xs font-bold tracking-wider uppercase text-gray-300 whitespace-nowrap">0 sel.</span>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-center">
+            <button onclick="downloadSelectedBatch()" class="py-2 px-6 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-1.5 uppercase tracking-wider w-full sm:w-auto justify-center">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> Bajar
+            </button>
+            <button onclick="toggleSelectionMode(false)" class="p-2 text-gray-400 hover:text-white transition-colors cursor-pointer bg-white/10 rounded-full" title="Cancelar">
                 <i data-lucide="x" class="w-4 h-4"></i>
             </button>
         </div>
@@ -230,7 +245,7 @@
         let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C11', searchCode: '' };
         let currentFilteredItems = [];
         let selectionMode = false;
-        let selectedPlansMap = new Map(); // Guarda las placas elegidas para descargar
+        let selectedPlansMap = new Map(); 
 
         function init() {
             lucide.createIcons();
@@ -338,6 +353,8 @@
                 title.textContent = "Avon";
                 title.className = "text-2xl font-bold tracking-tight text-avon-primary";
             }
+            // Si cambian de solapa, apagamos el modo selección
+            toggleSelectionMode(false);
             render();
         }
 
@@ -403,14 +420,14 @@
                     return;
                 }
             } catch (e) {
-                console.log("Web Share no soportado, recurriendo a enlace web");
+                console.log("Web Share no soportado");
             }
 
             const textToShare = encodeURIComponent(`✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}\n\n👉 Mirá la placa acá:\n${url}`);
             window.open(`https://api.whatsapp.com/send?text=${textToShare}`, '_blank');
         }
 
-        // 🌟 MODO SELECCIÓN MULTIPLE 🌟
+        // 🌟 BOTÓN ESTRELLA 1: MODO SELECCIÓN MANUAL 🌟
         function toggleSelectionMode(forceValue) {
             selectionMode = forceValue !== undefined ? forceValue : !selectionMode;
             const btn = document.getElementById('btn-selection-mode');
@@ -418,13 +435,13 @@
             const bar = document.getElementById('selection-bar');
 
             if (selectionMode) {
-                btn.className = "mb-2 py-2 px-4 bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2 cursor-pointer";
+                btn.className = "py-2 px-4 bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2 cursor-pointer active:scale-95";
                 text.textContent = "Cancelar selección";
                 bar.classList.remove('hidden');
                 bar.classList.add('flex');
             } else {
-                btn.className = "mb-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer";
-                text.textContent = "Seleccionar varias";
+                btn.className = "py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer active:scale-95";
+                text.textContent = "Selección manual";
                 bar.classList.add('hidden');
                 bar.classList.remove('flex');
                 selectedPlansMap.clear();
@@ -444,47 +461,95 @@
 
         function updateSelectionCount() {
             const count = selectedPlansMap.size;
-            document.getElementById('selected-count').textContent = `${count} ${count === 1 ? 'placa seleccionada' : 'placas seleccionadas'}`;
+            document.getElementById('selected-count').textContent = `${count} sel.`;
+        }
+
+        function selectAllInGrid() {
+            currentFilteredItems.forEach(item => {
+                item.plans.forEach(plan => {
+                    const brandString = item.marca || item.Marca || 'natura';
+                    const uniqueKey = `${brandString}_${state.ciclo}_${plan.cod}_${plan.type}`;
+                    const imgUrl = getImg(brandString, plan.cod);
+                    const fileName = `${brandString}_${state.ciclo}_Cod${plan.cod}_Plan${plan.type}.jpg`;
+                    selectedPlansMap.set(uniqueKey, { url: imgUrl, fileName: fileName });
+                });
+            });
+            updateSelectionCount();
+            render(); 
         }
 
         async function downloadSelectedBatch() {
             if (selectedPlansMap.size === 0) {
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Ninguna placa seleccionada',
-                    text: 'Tildá los casilleros de las placas que quieras descargar.',
-                    customClass: { popup: 'rounded-3xl p-6' }
-                });
+                Swal.fire({ icon: 'info', title: 'Ninguna seleccionada', text: 'Tildá los casilleros de las placas.', customClass: { popup: 'rounded-3xl p-6' }});
                 return;
             }
 
             const total = selectedPlansMap.size;
             Swal.fire({
-                title: 'Descargando placas...',
-                text: `Guardando ${total} imágenes sueltas en tu dispositivo...`,
+                title: 'Descargando...',
+                text: `Guardando ${total} imágenes sueltas...`,
                 allowOutsideClick: false,
                 didOpen: () => Swal.showLoading(),
                 customClass: { popup: 'rounded-3xl p-6' }
             });
 
-            let i = 0;
             for (const [key, item] of selectedPlansMap.entries()) {
-                i++;
                 await forceDownload(item.url, item.fileName);
-                // Pausa de 350ms entre descargas para que el navegador no las bloquee
+                await new Promise(r => setTimeout(r, 350));
+            }
+
+            Swal.fire({ icon: 'success', title: '¡Listo!', text: `Se guardaron ${total} placas.`, timer: 2000, showConfirmButton: false, customClass: { popup: 'rounded-3xl p-6' }});
+            toggleSelectionMode(false);
+        }
+
+        // 🌟 BOTÓN ESTRELLA 2: DESCARGAR TODAS LAS ALTERNATIVAS (PLAN B, C, D) 🌟
+        async function downloadAllAlternativesLoose() {
+            const altItems = [];
+            currentFilteredItems.forEach(item => {
+                item.plans.forEach(plan => {
+                    if (plan.type !== 'A') { // Solo alternativas (B, C, D...)
+                        const brandString = item.marca || item.Marca || 'natura';
+                        altItems.push({
+                            url: getImg(brandString, plan.cod),
+                            fileName: `${brandString}_${state.ciclo}_Cod${plan.cod}_Plan${plan.type}.jpg`
+                        });
+                    }
+                });
+            });
+
+            if (altItems.length === 0) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Sin alternativas',
+                    text: 'No hay Planes B en esta vista para descargar.',
+                    confirmButtonColor: '#FF6B00',
+                    customClass: { popup: 'rounded-3xl p-6' }
+                });
+                return;
+            }
+
+            Swal.fire({
+                title: 'Descargando Planes B...',
+                text: `Guardando automáticamente ${altItems.length} imágenes sueltas...`,
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading(),
+                customClass: { popup: 'rounded-3xl p-6' }
+            });
+
+            for (let i = 0; i < altItems.length; i++) {
+                await forceDownload(altItems[i].url, altItems[i].fileName);
+                // Pausa para que el navegador no bloquee por spam de descargas
                 await new Promise(r => setTimeout(r, 350));
             }
 
             Swal.fire({
                 icon: 'success',
-                title: '¡Descargas listas!',
-                text: `Se guardaron las ${total} placas en tu carpeta de descargas/galería.`,
-                timer: 2000,
+                title: '¡Descargas completadas!',
+                text: `Se bajaron las ${altItems.length} placas alternativas correctamente.`,
+                timer: 2500,
                 showConfirmButton: false,
                 customClass: { popup: 'rounded-3xl p-6' }
             });
-
-            toggleSelectionMode(false);
         }
 
         async function shareImage(btn, itemIdx) {
@@ -504,7 +569,7 @@
                             💬 Enviar Foto por WhatsApp
                         </button>
                         <button onclick="Swal.close(); forceDownload('${url}', '${singleFileName}');" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-xs uppercase tracking-wider cursor-pointer">
-                            📥 Descargar Imagen al Dispositivo
+                            📥 Descargar Imagen
                         </button>
                     </div>
                 `,
