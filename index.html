@@ -69,10 +69,9 @@
             overflow: hidden !important;
         }
 
-        ::-webkit-scrollbar { height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+        /* Estilo para ocultar la barra de scroll y mantener la interfaz limpia */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         .animate-fade-in {
             animation: fadeIn 0.3s ease-in-out both;
@@ -341,17 +340,14 @@
             }
         }
 
-        // 🌟 NUEVO MENÚ DE DOS OPCIONES PERFECTO PARA SITES EN CELULAR 🌟
         async function shareImage(btn) {
             const container = btn.closest('.relative');
             const img = container.querySelector('img');
             
-            // Obtenemos la URL absoluta para que WhatsApp la lea perfecto
             const url = img ? img.src : window.location.origin + window.location.pathname + getImg(state.tab, btn.getAttribute('data-cod'));
             const cod = btn.getAttribute('data-cod');
             const desc = btn.getAttribute('data-desc');
             
-            // Texto formateado con negritas para el chat de WhatsApp
             const textToShare = encodeURIComponent(`✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}\n\n👉 Mirá la placa acá:\n${url}`);
             const whatsappUrl = `https://api.whatsapp.com/send?text=${textToShare}`;
 
@@ -402,12 +398,14 @@
                 empty.classList.remove('flex');
 
                 filtered.forEach((item, idx) => {
+                    // Contenedor principal con clase relative para fijar las flechas
                     const card = document.createElement('div');
-                    card.className = "animate-fade-in bg-white rounded-2xl border border-gray-100 shadow-soft hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden";
+                    card.className = "relative animate-fade-in bg-white rounded-2xl border border-gray-100 shadow-soft hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden";
                     card.style.animationDelay = `${idx * 0.05}s`;
 
+                    // Carrusel horizontal con scroll suave y sin barra nativa visible
                     const carousel = document.createElement('div');
-                    carousel.className = "flex overflow-x-auto snap-x";
+                    carousel.className = "flex overflow-x-auto snap-x scroll-smooth hide-scrollbar";
                     
                     item.plans.forEach(plan => {
                         const slide = document.createElement('div');
@@ -450,7 +448,7 @@
                             }
                         }
 
-                        const actionIcon = 'share-2'; // Dejamos el ícono universal de compartir
+                        const actionIcon = 'share-2';
                         const safeDesc = plan.desc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                         const brandString = item.marca || item.Marca || 'natura';
                         
@@ -478,7 +476,29 @@
                         `;
                         carousel.appendChild(slide);
                     });
+                    
                     card.appendChild(carousel);
+
+                    // 🌟 INYECCIÓN DE FLECHAS NAVEGABLES 🌟
+                    if (item.plans.length > 1) {
+                        const brandColor = state.tab.trim().toLowerCase() === 'natura' ? 'bg-brand-orange' : 'bg-avon-primary';
+
+                        // Flecha Izquierda
+                        const btnLeft = document.createElement('button');
+                        btnLeft.className = "absolute left-0 top-1/3 -translate-y-1/2 z-30 w-9 h-11 flex items-center justify-center bg-white/90 backdrop-blur-sm shadow-md rounded-r-lg border border-gray-100 text-text-mut hover:text-text-main transition-colors opacity-90 cursor-pointer";
+                        btnLeft.innerHTML = '<i data-lucide="chevron-left" class="w-6 h-6 stroke-[2.5]"></i>';
+                        btnLeft.onclick = () => carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+
+                        // Flecha Derecha (con animación pulse)
+                        const btnRight = document.createElement('button');
+                        btnRight.className = `absolute right-0 top-1/3 -translate-y-1/2 z-30 w-9 h-11 flex items-center justify-center ${brandColor} shadow-md rounded-l-lg text-white hover:opacity-90 transition-colors opacity-95 animate-pulse cursor-pointer`;
+                        btnRight.innerHTML = '<i data-lucide="chevron-right" class="w-6 h-6 stroke-[3]"></i>';
+                        btnRight.onclick = () => carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+
+                        card.appendChild(btnLeft);
+                        card.appendChild(btnRight);
+                    }
+
                     grid.appendChild(card);
                 });
             }
