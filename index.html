@@ -69,9 +69,15 @@
             overflow: hidden !important;
         }
 
-        /* Estilo para ocultar la barra de scroll y mantener la interfaz limpia */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
 
         .animate-fade-in {
             animation: fadeIn 0.3s ease-in-out both;
@@ -94,9 +100,9 @@
     </script>
 </head>
 
-<body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open">
+<body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open pb-24">
 
-    <!-- PANTALLA BIENVENIDA ULTRA COMPACTA -->
+    <!-- PANTALLA BIENVENIDA -->
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
         <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
@@ -166,9 +172,17 @@
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-8">
-            <button onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
-            <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex gap-8">
+                <button onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
+                <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
+            </div>
+
+            <!-- BOTÓN MODO SELECCIÓN -->
+            <button id="btn-selection-mode" onclick="toggleSelectionMode()" class="mb-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer">
+                <i data-lucide="check-square" class="w-4 h-4 text-brand-orange"></i>
+                <span id="selection-btn-text">Seleccionar varias</span>
+            </button>
         </div>
     </header>
 
@@ -192,6 +206,19 @@
 
     </main>
 
+    <!-- BARRA FLOTANTE DE DESCARGA MASIVA SELECCIONADA -->
+    <div id="selection-bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden bg-gray-900/95 backdrop-blur-md text-white px-6 py-3.5 rounded-full shadow-2xl border border-white/10 flex items-center gap-5 transition-all duration-300">
+        <span id="selected-count" class="text-xs font-bold tracking-wider uppercase text-gray-300">0 seleccionadas</span>
+        <div class="flex items-center gap-2">
+            <button onclick="downloadSelectedBatch()" class="py-2 px-4 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-1.5 uppercase tracking-wider">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar
+            </button>
+            <button onclick="toggleSelectionMode(false)" class="p-2 text-gray-400 hover:text-white transition-colors cursor-pointer" title="Cancelar">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+
     <footer id="main-footer" class="bg-white border-t border-gray-100 py-8 text-center px-4 invisible">
         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-text-mut">
             &copy; <span id="year"></span> Natura &Co <span class="mx-2 opacity-30">|</span> Bien Estar Bien
@@ -201,6 +228,9 @@
     <script>
         let db = { site: [], gerencias: [], cuotas: {} };
         let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C11', searchCode: '' };
+        let currentFilteredItems = [];
+        let selectionMode = false;
+        let selectedPlansMap = new Map(); // Guarda las placas elegidas para descargar
 
         function init() {
             lucide.createIcons();
@@ -340,26 +370,141 @@
             }
         }
 
-        async function shareImage(btn) {
+        async function forceDownload(url, fileName) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Error al descargar');
+                const blob = await response.blob();
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = fileName || 'placa.jpg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            } catch (err) {
+                window.open(url, '_blank');
+            }
+        }
+
+        async function shareDirectToWhatsApp(url, cod, desc) {
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const file = new File([blob], `${state.tab}_Cod_${cod}.jpg`, { type: 'image/jpeg' });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        files: [file],
+                        title: `Ampliación ${state.tab}`,
+                        text: `✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}`
+                    });
+                    return;
+                }
+            } catch (e) {
+                console.log("Web Share no soportado, recurriendo a enlace web");
+            }
+
+            const textToShare = encodeURIComponent(`✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}\n\n👉 Mirá la placa acá:\n${url}`);
+            window.open(`https://api.whatsapp.com/send?text=${textToShare}`, '_blank');
+        }
+
+        // 🌟 MODO SELECCIÓN MULTIPLE 🌟
+        function toggleSelectionMode(forceValue) {
+            selectionMode = forceValue !== undefined ? forceValue : !selectionMode;
+            const btn = document.getElementById('btn-selection-mode');
+            const text = document.getElementById('selection-btn-text');
+            const bar = document.getElementById('selection-bar');
+
+            if (selectionMode) {
+                btn.className = "mb-2 py-2 px-4 bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2 cursor-pointer";
+                text.textContent = "Cancelar selección";
+                bar.classList.remove('hidden');
+                bar.classList.add('flex');
+            } else {
+                btn.className = "mb-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer";
+                text.textContent = "Seleccionar varias";
+                bar.classList.add('hidden');
+                bar.classList.remove('flex');
+                selectedPlansMap.clear();
+                updateSelectionCount();
+            }
+            render();
+        }
+
+        function togglePlanSelection(key, url, fileName, checkbox) {
+            if (checkbox.checked) {
+                selectedPlansMap.set(key, { url, fileName });
+            } else {
+                selectedPlansMap.delete(key);
+            }
+            updateSelectionCount();
+        }
+
+        function updateSelectionCount() {
+            const count = selectedPlansMap.size;
+            document.getElementById('selected-count').textContent = `${count} ${count === 1 ? 'placa seleccionada' : 'placas seleccionadas'}`;
+        }
+
+        async function downloadSelectedBatch() {
+            if (selectedPlansMap.size === 0) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Ninguna placa seleccionada',
+                    text: 'Tildá los casilleros de las placas que quieras descargar.',
+                    customClass: { popup: 'rounded-3xl p-6' }
+                });
+                return;
+            }
+
+            const total = selectedPlansMap.size;
+            Swal.fire({
+                title: 'Descargando placas...',
+                text: `Guardando ${total} imágenes sueltas en tu dispositivo...`,
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading(),
+                customClass: { popup: 'rounded-3xl p-6' }
+            });
+
+            let i = 0;
+            for (const [key, item] of selectedPlansMap.entries()) {
+                i++;
+                await forceDownload(item.url, item.fileName);
+                // Pausa de 350ms entre descargas para que el navegador no las bloquee
+                await new Promise(r => setTimeout(r, 350));
+            }
+
+            Swal.fire({
+                icon: 'success',
+                title: '¡Descargas listas!',
+                text: `Se guardaron las ${total} placas en tu carpeta de descargas/galería.`,
+                timer: 2000,
+                showConfirmButton: false,
+                customClass: { popup: 'rounded-3xl p-6' }
+            });
+
+            toggleSelectionMode(false);
+        }
+
+        async function shareImage(btn, itemIdx) {
             const container = btn.closest('.relative');
             const img = container.querySelector('img');
             
             const url = img ? img.src : window.location.origin + window.location.pathname + getImg(state.tab, btn.getAttribute('data-cod'));
             const cod = btn.getAttribute('data-cod');
             const desc = btn.getAttribute('data-desc');
-            
-            const textToShare = encodeURIComponent(`✨ *Ampliación ${state.tab}* \n📌 *Código:* ${cod}\n📝 ${desc}\n\n👉 Mirá la placa acá:\n${url}`);
-            const whatsappUrl = `https://api.whatsapp.com/send?text=${textToShare}`;
+            const singleFileName = `${state.tab}_${state.ciclo}_Cod${cod}.jpg`;
 
             Swal.fire({
                 title: '¿Qué querés hacer con la placa?',
                 html: `
                     <div class="flex flex-col gap-3 mt-4">
-                        <a href="${whatsappUrl}" target="_blank" onclick="Swal.close()" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-[#25D366] hover:bg-[#20BA56] text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-sm uppercase tracking-wider cursor-pointer">
-                            💬 Enviar por WhatsApp
-                        </a>
-                        <button onclick="window.open('${url}', '_blank'); Swal.close();" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-sm uppercase tracking-wider cursor-pointer">
-                            📥 Descargar / Ver Imagen
+                        <button onclick="Swal.close(); shareDirectToWhatsApp('${url}', '${cod}', '${desc}');" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-[#25D366] hover:bg-[#20BA56] text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-xs uppercase tracking-wider cursor-pointer">
+                            💬 Enviar Foto por WhatsApp
+                        </button>
+                        <button onclick="Swal.close(); forceDownload('${url}', '${singleFileName}');" class="flex items-center justify-center gap-2 py-3.5 px-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all shadow-md active:scale-95 text-xs uppercase tracking-wider cursor-pointer">
+                            📥 Descargar Imagen al Dispositivo
                         </button>
                     </div>
                 `,
@@ -371,13 +516,19 @@
             });
         }
 
+        function scrollCarousel(btn, dir) {
+            const carousel = btn.closest('.snap-x');
+            if (carousel) {
+                carousel.scrollBy({ left: dir * carousel.clientWidth, behavior: 'smooth' });
+            }
+        }
+
         function render() {
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             const grid = document.getElementById('product-grid');
             const empty = document.getElementById('empty-state');
             grid.innerHTML = '';
 
-            const filtered = db.site.filter(i => {
+            currentFilteredItems = db.site.filter(i => {
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
                 if (!matchesBrand) return false;
@@ -388,7 +539,7 @@
                 return true;
             });
 
-            if (filtered.length === 0) {
+            if (currentFilteredItems.length === 0) {
                 grid.classList.add('hidden');
                 empty.classList.remove('hidden');
                 empty.classList.add('flex');
@@ -397,17 +548,17 @@
                 empty.classList.add('hidden');
                 empty.classList.remove('flex');
 
-                filtered.forEach((item, idx) => {
-                    // Contenedor principal con clase relative para fijar las flechas
+                currentFilteredItems.forEach((item, itemIdx) => {
                     const card = document.createElement('div');
                     card.className = "relative animate-fade-in bg-white rounded-2xl border border-gray-100 shadow-soft hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden";
-                    card.style.animationDelay = `${idx * 0.05}s`;
+                    card.style.animationDelay = `${itemIdx * 0.05}s`;
 
-                    // Carrusel horizontal con scroll suave y sin barra nativa visible
                     const carousel = document.createElement('div');
-                    carousel.className = "flex overflow-x-auto snap-x scroll-smooth hide-scrollbar";
+                    carousel.className = "flex overflow-x-auto snap-x scroll-smooth no-scrollbar";
                     
-                    item.plans.forEach(plan => {
+                    const totalPlans = item.plans.length;
+
+                    item.plans.forEach((plan, planIdx) => {
                         const slide = document.createElement('div');
                         slide.className = "min-w-full snap-start p-5 flex flex-col";
                         const isMain = plan.type === 'A';
@@ -452,19 +603,40 @@
                         const safeDesc = plan.desc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                         const brandString = item.marca || item.Marca || 'natura';
                         
+                        const planLabel = totalPlans > 1 ? `Plan ${plan.type} (${planIdx + 1}/${totalPlans})` : (isMain ? 'Plan Original' : `Plan ${plan.type}`);
+                        const uniqueKey = `${brandString}_${state.ciclo}_${plan.cod}_${plan.type}`;
+                        const imgUrl = getImg(brandString, plan.cod);
+                        const fileName = `${brandString}_${state.ciclo}_Cod${plan.cod}_Plan${plan.type}.jpg`;
+                        const isChecked = selectedPlansMap.has(uniqueKey) ? 'checked' : '';
+
                         slide.innerHTML = `
                             <div class="relative mb-4">
-                                ${!isMain ? `
-                                    <span class="absolute top-2 left-2 z-10 ${badgeColor} text-white text-[9px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-sm">
-                                        Plan ${plan.type}
-                                    </span>
-                                ` : ''}
-                                <button onclick="shareImage(this)" data-cod="${plan.cod}" data-desc="${safeDesc}" title="Opciones de Placa" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
-                                     <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
-                                </button>
+                                <span class="absolute top-2 left-2 z-10 ${badgeColor} text-white text-[9px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-sm">
+                                    ${planLabel}
+                                </span>
+
+                                ${selectionMode ? `
+                                    <label class="absolute top-2 right-2 z-30 bg-white/90 backdrop-blur-md p-1.5 rounded-xl shadow-md border border-gray-200 flex items-center justify-center cursor-pointer hover:bg-white active:scale-95 transition-all">
+                                        <input type="checkbox" ${isChecked} onchange="togglePlanSelection('${uniqueKey}', '${imgUrl}', '${fileName}', this)" class="w-5 h-5 text-brand-orange rounded-md border-gray-300 focus:ring-brand-orange cursor-pointer">
+                                    </label>
+                                ` : `
+                                    <button onclick="shareImage(this, ${itemIdx})" data-cod="${plan.cod}" data-desc="${safeDesc}" title="Opciones de Placa" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
+                                         <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
+                                    </button>
+                                `}
+
                                 <div class="aspect-square bg-brand-gray rounded-xl flex items-center justify-center p-6 border border-gray-50">
-                                    <img src="${getImg(brandString, plan.cod)}" onerror="handleImageError(this, '${brandString.replace(/'/g, "\\'")}', '${plan.cod}')" class="max-w-full max-h-full object-contain mix-blend-multiply">
+                                    <img src="${imgUrl}" onerror="handleImageError(this, '${brandString.replace(/'/g, "\\'")}', '${plan.cod}')" class="max-w-full max-h-full object-contain mix-blend-multiply">
                                 </div>
+
+                                ${totalPlans > 1 ? `
+                                    <button onclick="scrollCarousel(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-md shadow-md rounded-full border border-gray-200 text-gray-800 hover:bg-white active:scale-95 transition-all cursor-pointer">
+                                        <i data-lucide="chevron-left" class="w-5 h-5 stroke-[2.5]"></i>
+                                    </button>
+                                    <button onclick="scrollCarousel(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center ${badgeColor} text-white shadow-md rounded-full hover:opacity-90 active:scale-95 transition-all cursor-pointer animate-pulse">
+                                        <i data-lucide="chevron-right" class="w-5 h-5 stroke-[3]"></i>
+                                    </button>
+                                ` : ''}
                             </div>
                             <div class="flex-1 flex flex-col">
                                 <span class="text-[10px] text-text-mut font-bold tracking-widest uppercase mb-1">Cód: ${plan.cod}</span>
@@ -478,27 +650,6 @@
                     });
                     
                     card.appendChild(carousel);
-
-                    // 🌟 INYECCIÓN DE FLECHAS NAVEGABLES 🌟
-                    if (item.plans.length > 1) {
-                        const brandColor = state.tab.trim().toLowerCase() === 'natura' ? 'bg-brand-orange' : 'bg-avon-primary';
-
-                        // Flecha Izquierda
-                        const btnLeft = document.createElement('button');
-                        btnLeft.className = "absolute left-0 top-1/3 -translate-y-1/2 z-30 w-9 h-11 flex items-center justify-center bg-white/90 backdrop-blur-sm shadow-md rounded-r-lg border border-gray-100 text-text-mut hover:text-text-main transition-colors opacity-90 cursor-pointer";
-                        btnLeft.innerHTML = '<i data-lucide="chevron-left" class="w-6 h-6 stroke-[2.5]"></i>';
-                        btnLeft.onclick = () => carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
-
-                        // Flecha Derecha (con animación pulse)
-                        const btnRight = document.createElement('button');
-                        btnRight.className = `absolute right-0 top-1/3 -translate-y-1/2 z-30 w-9 h-11 flex items-center justify-center ${brandColor} shadow-md rounded-l-lg text-white hover:opacity-90 transition-colors opacity-95 animate-pulse cursor-pointer`;
-                        btnRight.innerHTML = '<i data-lucide="chevron-right" class="w-6 h-6 stroke-[3]"></i>';
-                        btnRight.onclick = () => carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
-
-                        card.appendChild(btnLeft);
-                        card.appendChild(btnRight);
-                    }
-
                     grid.appendChild(card);
                 });
             }
