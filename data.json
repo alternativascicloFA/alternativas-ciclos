@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-07-23T15:42:07Z",
+    "updatedAt":  "2026-07-24T13:19:01Z",
     "site":  [
                  {
                      "plans":  [
@@ -282,6 +282,21 @@
                                        "type":  "B",
                                        "desc":  "Set x 3 Cepillo + jabones toy story + colonia",
                                        "cod":  "272876"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo imbatible CB anew bifasica x2",
+                                       "cod":  "271273"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo imbatible CB anew x2",
+                                       "cod":  "273519"
                                    }
                                ],
                      "marca":  "Avon"
