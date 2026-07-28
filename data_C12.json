@@ -1,7 +1,71 @@
 ﻿{
-    "updatedAt":  "2026-07-28T13:04:49Z",
+    "updatedAt":  "2026-07-28T20:16:18Z",
     "site":  [
-
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Cereza negra y praline pote 200grs",
+                                       "cod":  "189571"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Crema Merengue para el Cuerpo Cereza",
+                                       "cod":  "174612"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "Crema Merengue para el Cuerpo Morango",
+                                       "cod":  "205941"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "PROMO OPORTUNIDAD 2 C12AR",
+                                       "cod":  "263082"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "PROMO OPORTUNIDAD 2 C12AR",
+                                       "cod":  "272843"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "PROMO OPORTUNIDAD 3 C12ARG",
+                                       "cod":  "263115"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "PROMO OPORTUNIDAD 3 C12ARG",
+                                       "cod":  "272867"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "deo roll on vainilla ameixa",
+                                       "cod":  "189447"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Desodorante Roll-on Tododia Hojas de Limón y Guanábana 70 ml",
+                                       "cod":  "189449"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 }
              ],
     "cuotas":  {
                    "300001404":  {
