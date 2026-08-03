@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-03T19:52:18Z",
+    "updatedAt":  "2026-08-03T22:56:12Z",
     "site":  [
                  {
                      "plans":  [
@@ -95,6 +95,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit x 2 Anew Ultimate Día y Noche",
+                                       "cod":  "276441"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit x2 Anew Ultimate Día y Protinol",
+                                       "cod":  "273556"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
