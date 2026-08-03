@@ -1,21 +1,21 @@
 ﻿{
-    "updatedAt":  "2026-08-03T15:44:13Z",
+    "updatedAt":  "2026-08-03T19:52:18Z",
     "site":  [
                  {
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Cereza negra y praline pote 200grs",
+                                       "desc":  "Tododia Cereza negra y praline pote 200grs",
                                        "cod":  "189571"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Crema Merengue para el Cuerpo Cereza",
+                                       "desc":  "Tododia Cereza y Avellana pote 200grs",
                                        "cod":  "174612"
                                    },
                                    {
                                        "type":  "C",
-                                       "desc":  "Crema Merengue para el Cuerpo Morango",
+                                       "desc":  "Tododia Fresa y Vainilla Dorada pote 200grs",
                                        "cod":  "205941"
                                    }
                                ],
@@ -55,12 +55,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "deo roll on vainilla ameixa",
+                                       "desc":  "Tododia Desodorante Roll-on Roll On Ciruela y Flor de Vainilla 70ml",
                                        "cod":  "189447"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Desodorante Roll-on Tododia Hojas de Limón y Guanábana 70 ml",
+                                       "desc":  "Tododia Desodorante Roll-on Roll On Hojas de Limón y Guanábana 70 ml",
                                        "cod":  "189449"
                                    }
                                ],

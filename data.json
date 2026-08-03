@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-03T15:44:13Z",
+    "updatedAt":  "2026-08-03T19:52:18Z",
     "site":  [
                  {
                      "plans":  [
@@ -215,12 +215,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Shampoo de Nutrición",
+                                       "desc":  "Tododia Shampoo de Nutrición",
                                        "cod":  "154869"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "sh reparacion",
+                                       "desc":  "Tododia Shampoo de Reparación",
                                        "cod":  "155601"
                                    }
                                ],
