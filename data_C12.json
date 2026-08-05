@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-05T15:45:27Z",
+    "updatedAt":  "2026-08-05T15:46:44Z",
     "site":  [
                  {
                      "plans":  [
@@ -107,6 +107,16 @@
                                        "type":  "B",
                                        "desc":  "Kit x2 Anew Ultimate Día y Protinol",
                                        "cod":  "273556"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit x 2 Avon Care Depilatorios",
+                                       "cod":  "276427"
                                    }
                                ],
                      "marca":  "Avon"
