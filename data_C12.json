@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-06T20:47:25Z",
+    "updatedAt":  "2026-08-06T21:16:16Z",
     "site":  [
                  {
                      "plans":  [
@@ -105,12 +105,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "TODODIA CEREZA BASICO C12ARG jb + 400",
+                                       "desc":  "TODODIA CEREZA BASICO C12ARG JB + HC 400ML",
                                        "cod":  "263080"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TODODIA CEREZA y avellana JL+400ml",
+                                       "desc":  "TODODIA CEREZA Y AVELLANA JL+ HC400ML",
                                        "cod":  "270282"
                                    }
                                ],
@@ -125,7 +125,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TODODIA CEREZA y avellanaCOMPLETO JL+SPRAY+400ml",
+                                       "desc":  "TODODIA CEREZA Y AVELLANA COMPLETO JL+SPRAY+HC 400ml",
                                        "cod":  "270302"
                                    }
                                ],
@@ -140,7 +140,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Tododia fresa y vainilla 400ml + spray+ oleo",
+                                       "desc":  "TODODIA FRESA Y VAINILLA  BS+OLEO+ HC 400ML",
                                        "cod":  "270279"
                                    }
                                ],
