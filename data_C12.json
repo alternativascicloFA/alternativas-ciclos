@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-05T15:51:43Z",
+    "updatedAt":  "2026-08-06T15:52:40Z",
     "site":  [
                  {
                      "plans":  [
@@ -12,11 +12,6 @@
                                        "type":  "B",
                                        "desc":  "Tododia Cereza y Avellana pote 200grs",
                                        "cod":  "174612"
-                                   },
-                                   {
-                                       "type":  "C",
-                                       "desc":  "Tododia Fresa y Vainilla Dorada pote 200grs",
-                                       "cod":  "205941"
                                    }
                                ],
                      "marca":  "Natura"
