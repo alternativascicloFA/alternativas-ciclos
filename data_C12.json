@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-06T17:29:15Z",
+    "updatedAt":  "2026-08-06T17:31:16Z",
     "site":  [
                  {
                      "plans":  [
@@ -95,21 +95,6 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Kit x 2 Anew Ultimate Día y Noche",
-                                       "cod":  "276441"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Kit x2 Anew Ultimate Día y Protinol",
-                                       "cod":  "273556"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
                                        "desc":  "Kit x 2 Avon Care Depilatorios",
                                        "cod":  "276427"
                                    }
@@ -120,12 +105,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "TODODIA CEREZA BASICO C12ARG",
+                                       "desc":  "TODODIA CEREZA BASICO C12ARG jb + 400",
                                        "cod":  "263080"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TODODIA CEREZA Y AVELLANA BASICO C12ARG",
+                                       "desc":  "TODODIA CEREZA y avellana JL+400ml",
                                        "cod":  "270282"
                                    }
                                ],
@@ -140,7 +125,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TODODIA CEREZA y avellana COMPLETO",
+                                       "desc":  "TODODIA CEREZA y avellanaCOMPLETO JL+SPRAY+400ml",
                                        "cod":  "270302"
                                    }
                                ],
@@ -155,11 +140,26 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "TODODIA FRESA Y VAINILLA DORADA  BRO PLA C12ARG",
+                                       "desc":  "Tododia fresa y vainilla 400ml + spray+ oleo",
                                        "cod":  "270279"
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit x 2 Anew Ultimate Día y Noche",
+                                       "cod":  "276441"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit x2 Anew Ultimate Día y Protinol",
+                                       "cod":  "273556"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
