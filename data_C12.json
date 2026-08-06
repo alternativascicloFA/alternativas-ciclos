@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-06T15:58:29Z",
+    "updatedAt":  "2026-08-06T16:19:57Z",
     "site":  [
                  {
                      "plans":  [
@@ -115,6 +115,51 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA CEREZA BASICO C12ARG",
+                                       "cod":  "263080"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA CEREZA Y AVELLANA BASICO C12ARG",
+                                       "cod":  "270282"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA CEREZA negra y praline COMPLETO C12ARG",
+                                       "cod":  "263122"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA CEREZA y avellana COMPLETO",
+                                       "cod":  "270302"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA CEREZA BRO PLA C12ARG",
+                                       "cod":  "263071"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA FRESA Y VAINILLA DORADA  BRO PLA C12ARG",
+                                       "cod":  "270279"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
