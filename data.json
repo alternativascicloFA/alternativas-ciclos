@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-10T18:34:26Z",
+    "updatedAt":  "2026-08-10T19:55:17Z",
     "site":  [
                  {
                      "plans":  [
@@ -315,6 +315,36 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Anew Agua Micelar Bifasica 150ml",
+                                       "cod":  "207811"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Avon Care Agua Micelar Bifasica 150ml",
+                                       "cod":  "207811"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo imbatible CB anew bifasica x2",
+                                       "cod":  "271273"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo imbatible CB anew bifasica x2",
+                                       "cod":  "273530"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
