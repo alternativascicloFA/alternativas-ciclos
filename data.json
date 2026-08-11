@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-11T20:43:03Z",
+    "updatedAt":  "2026-08-11T21:04:17Z",
     "site":  [
                  {
                      "plans":  [
@@ -267,6 +267,11 @@
                                        "type":  "B",
                                        "desc":  "Set x 3 Cepillo + jabones toy story + colonia",
                                        "cod":  "273546"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "Set Toy story x2 Buzzlightyear",
+                                       "cod":  "273551"
                                    }
                                ],
                      "marca":  "Avon"
