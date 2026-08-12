@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-12T16:18:11Z",
+    "updatedAt":  "2026-08-12T17:10:40Z",
     "site":  [
                  {
                      "plans":  [
@@ -232,6 +232,11 @@
                                        "type":  "A",
                                        "desc":  "Avon Care Crema Depilatoria rostro",
                                        "cod":  "224604"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Avon care crema de manos Coco",
+                                       "cod":  "207456"
                                    }
                                ],
                      "marca":  "Avon"
@@ -242,6 +247,11 @@
                                        "type":  "A",
                                        "desc":  "Avon Care Crema Depilatoria Cuerpo 125 g -",
                                        "cod":  "224574"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Serum 6 en 1",
+                                       "cod":  "175117"
                                    }
                                ],
                      "marca":  "Avon"
