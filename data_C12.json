@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-12T14:18:20Z",
+    "updatedAt":  "2026-08-12T16:18:11Z",
     "site":  [
                  {
                      "plans":  [
@@ -242,6 +242,21 @@
                                        "type":  "A",
                                        "desc":  "Avon Care Crema Depilatoria Cuerpo 125 g -",
                                        "cod":  "224574"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit Avon depilatorios CB",
+                                       "cod":  "276427"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit cb serum + crema de manos",
+                                       "cod":  "273524"
                                    }
                                ],
                      "marca":  "Avon"
