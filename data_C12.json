@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-12T17:23:56Z",
+    "updatedAt":  "2026-08-12T17:45:18Z",
     "site":  [
                  {
                      "plans":  [
@@ -250,7 +250,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Serum 6 en 1",
+                                       "desc":  "Avon Care Sérum Facial Hidratante 6 en 1",
                                        "cod":  "175117"
                                    }
                                ],
@@ -260,12 +260,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Kit Avon depilatorios CB",
+                                       "desc":  "Kit  CB Avon Care depilatorios CB",
                                        "cod":  "276427"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Kit cb serum + crema de manos",
+                                       "desc":  "Kit  CB Avon Care Serum + Crema de manos",
                                        "cod":  "273524"
                                    }
                                ],
