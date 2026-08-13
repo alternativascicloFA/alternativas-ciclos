@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-13T15:43:34Z",
+    "updatedAt":  "2026-08-13T19:45:08Z",
     "site":  [
                  {
                      "plans":  [
@@ -347,6 +347,36 @@
                                        "type":  "B",
                                        "desc":  "Humor meu primeiro",
                                        "cod":  "64746"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Carnaval de puntos ORO",
+                                       "cod":  "275190"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Carnaval de puntos ORO 2",
+                                       "cod":  "273559"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Carnaval de puntos ORO",
+                                       "cod":  "278337"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Carnaval de puntos ORO 2",
+                                       "cod":  "270304"
                                    }
                                ],
                      "marca":  "Natura"
