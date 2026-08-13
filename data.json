@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-13T19:45:08Z",
+    "updatedAt":  "2026-08-13T23:18:25Z",
     "site":  [
                  {
                      "plans":  [
@@ -377,6 +377,21 @@
                                        "type":  "B",
                                        "desc":  "Carnaval de puntos ORO 2",
                                        "cod":  "270304"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Jabones tododia x5 90grs Mora roja y Jabuticaba",
+                                       "cod":  "87512"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Jabones en Barra Puro Vegetal Tododia Avellana y Casis 5 x 90 g c/u",
+                                       "cod":  "74852"
                                    }
                                ],
                      "marca":  "Natura"
