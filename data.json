@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-13T15:23:12Z",
+    "updatedAt":  "2026-08-13T15:29:32Z",
     "site":  [
                  {
                      "plans":  [
@@ -320,6 +320,36 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit oro + Humor propio + Urbe",
+                                       "cod":  "262869"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit oro + Urbe + Humor Meu primeiro",
+                                       "cod":  "270278"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Humor propio",
+                                       "cod":  "64749"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Humor meu primeiro",
+                                       "cod":  "64746"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
