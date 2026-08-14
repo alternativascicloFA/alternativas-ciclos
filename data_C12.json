@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-14T18:10:09Z",
+    "updatedAt":  "2026-08-14T18:24:14Z",
     "site":  [
                  {
                      "plans":  [
@@ -287,6 +287,21 @@
                                        "type":  "B",
                                        "desc":  "CHRONOS LIMPIEZA C12ARG",
                                        "cod":  "270275"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "RDC - HUMOR MINHA VIDA",
+                                       "cod":  "274922"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit humor propio",
+                                       "cod":  "270299"
                                    }
                                ],
                      "marca":  "Natura"
