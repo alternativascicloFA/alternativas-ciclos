@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-14T18:24:14Z",
+    "updatedAt":  "2026-08-14T18:41:50Z",
     "site":  [
                  {
                      "plans":  [
@@ -295,12 +295,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "RDC - HUMOR MINHA VIDA",
+                                       "desc":  "Regalo Humor Minha vida",
                                        "cod":  "274922"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Kit humor propio",
+                                       "desc":  "Regalo Humor proprio",
                                        "cod":  "270299"
                                    }
                                ],
