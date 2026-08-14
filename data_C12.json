@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-14T17:54:33Z",
+    "updatedAt":  "2026-08-14T18:10:09Z",
     "site":  [
                  {
                      "plans":  [
@@ -275,6 +275,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS LIMPIEZA C12ARG",
+                                       "cod":  "263121"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CHRONOS LIMPIEZA C12ARG",
+                                       "cod":  "270275"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
