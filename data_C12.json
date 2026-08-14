@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-14T17:52:02Z",
+    "updatedAt":  "2026-08-14T17:54:33Z",
     "site":  [
                  {
                      "plans":  [
@@ -27,6 +27,11 @@
                                        "type":  "B",
                                        "desc":  "PROMO OPORTUNIDAD 2 C12AR",
                                        "cod":  "272843"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "PROMO OPORTUNIDAD 2 C12AR",
+                                       "cod":  "270301"
                                    }
                                ],
                      "marca":  "Natura"
