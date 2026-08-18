@@ -109,11 +109,11 @@
             <h2 class="text-xl font-bold text-text-main mb-0.5 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-[11px] mb-4 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             <div class="grid grid-cols-2 gap-2.5">
-                <button onclick="selectInitialCiclo('C11')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
-                    Ciclo 11
-                </button>
-                <button onclick="selectInitialCiclo('C12')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                <button onclick="selectInitialCiclo('C12')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 12
+                </button>
+                <button onclick="selectInitialCiclo('C13')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                    Ciclo 13
                 </button>
             </div>
         </div>
@@ -151,8 +151,8 @@
                     </label>
                     <div class="relative">
                         <select id="ciclo-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
-                            <option value="C11">Ciclo 11</option>
                             <option value="C12">Ciclo 12</option>
+                            <option value="C13">Ciclo 13</option>
                         </select>
                         <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
                     </div>
@@ -179,7 +179,7 @@
                 <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
             </div>
 
-            <!-- LOS DOS BOTONES ESTRELLA -->
+            <!-- BOTONES SELECCION Y DESCARGA -->
             <div class="flex flex-wrap items-center gap-2 mb-2 sm:mb-0">
                 <button id="btn-selection-mode" onclick="toggleSelectionMode()" class="py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer shadow-sm active:scale-95">
                     <i data-lucide="check-square" class="w-4 h-4 text-brand-orange"></i>
@@ -242,7 +242,7 @@
 
     <script>
         let db = { site: [], gerencias: [], cuotas: {} };
-        let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C11', searchCode: '' };
+        let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C12', searchCode: '' };
         let currentFilteredItems = [];
         let selectionMode = false;
         let selectedPlansMap = new Map(); 
@@ -293,7 +293,7 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('product-grid').classList.add('hidden');
                 
-                const fileName = state.ciclo === 'C11' ? './data.json' : `./data_${state.ciclo}.json`;
+                const fileName = state.ciclo === 'C12' ? './data.json' : `./data_${state.ciclo}.json`;
                 const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error('No se encontró el archivo de datos');
                 
@@ -353,7 +353,6 @@
                 title.textContent = "Avon";
                 title.className = "text-2xl font-bold tracking-tight text-avon-primary";
             }
-            // Si cambian de solapa, apagamos el modo selección
             toggleSelectionMode(false);
             render();
         }
@@ -411,7 +410,7 @@
                 const blob = await response.blob();
                 const file = new File([blob], `${state.tab}_Cod_${cod}.jpg`, { type: 'image/jpeg' });
 
-                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                if (navigator.canShare && navigator.share({ files: [file] })) {
                     await navigator.share({
                         files: [file],
                         title: `Ampliación ${state.tab}`,
@@ -427,7 +426,6 @@
             window.open(`https://api.whatsapp.com/send?text=${textToShare}`, '_blank');
         }
 
-        // 🌟 BOTÓN ESTRELLA 1: MODO SELECCIÓN MANUAL 🌟
         function toggleSelectionMode(forceValue) {
             selectionMode = forceValue !== undefined ? forceValue : !selectionMode;
             const btn = document.getElementById('btn-selection-mode');
@@ -502,12 +500,11 @@
             toggleSelectionMode(false);
         }
 
-        // 🌟 BOTÓN ESTRELLA 2: DESCARGAR TODAS LAS ALTERNATIVAS (PLAN B, C, D) 🌟
         async function downloadAllAlternativesLoose() {
             const altItems = [];
             currentFilteredItems.forEach(item => {
                 item.plans.forEach(plan => {
-                    if (plan.type !== 'A') { // Solo alternativas (B, C, D...)
+                    if (plan.type !== 'A') {
                         const brandString = item.marca || item.Marca || 'natura';
                         altItems.push({
                             url: getImg(brandString, plan.cod),
@@ -538,7 +535,6 @@
 
             for (let i = 0; i < altItems.length; i++) {
                 await forceDownload(altItems[i].url, altItems[i].fileName);
-                // Pausa para que el navegador no bloquee por spam de descargas
                 await new Promise(r => setTimeout(r, 350));
             }
 
