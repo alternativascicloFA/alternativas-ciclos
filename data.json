@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-18T15:03:54Z",
+    "updatedAt":  "2026-08-18T20:54:07Z",
     "site":  [
                  {
                      "plans":  [
@@ -236,7 +236,7 @@
                                    {
                                        "type":  "A",
                                        "desc":  "Avon Care Crema Depilatoria rostro",
-                                       "cod":  "224604"
+                                       "cod":  "224574"
                                    },
                                    {
                                        "type":  "B",
@@ -251,7 +251,7 @@
                                    {
                                        "type":  "A",
                                        "desc":  "Avon Care Crema Depilatoria Cuerpo 125 g -",
-                                       "cod":  "224574"
+                                       "cod":  "224604"
                                    },
                                    {
                                        "type":  "B",
@@ -335,6 +335,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit insuperables x 2 serums",
+                                       "cod":  "262986"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit insuperable x3 serums",
+                                       "cod":  "273557"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
