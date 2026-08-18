@@ -358,19 +358,21 @@
         }
 
         function getImg(marca, cod) {
-            const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
-            const ciclo = state.ciclo.trim().toUpperCase();
+            const brand = (marca || '').toString().trim().toLowerCase() === 'avon' ? 'Avon' : 'Natura';
+            const ciclo = (state.ciclo || 'C12').trim().toUpperCase();
             return `./Imagenes/${brand}/${ciclo}/${cod}.jpg`;
         }
 
         function handleImageError(img, marca, cod) {
             if (!img.dataset.tryStep) img.dataset.tryStep = "1";
             const step = parseInt(img.dataset.tryStep);
-            const brand = marca.trim() === 'Avon' ? 'Avon' : 'Natura';
-            const ciclo = state.ciclo.trim().toUpperCase();
+            const brand = (marca || '').toString().trim().toLowerCase() === 'avon' ? 'Avon' : 'Natura';
+            const ciclo = (state.ciclo || 'C12').trim().toUpperCase();
             
             const fallbacks = [
                 `./Imagenes/${brand}/${ciclo}/${cod}.png`,
+                `./Imagenes/${brand}/${ciclo}/${cod}.JPG`,
+                `./Imagenes/${brand}/${ciclo}/${cod}.PNG`,
                 `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.jpg`,
                 `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.png`,
                 `./Imagenes/${brand}/${cod}.jpg`,
