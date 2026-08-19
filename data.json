@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-19T13:20:13Z",
+    "updatedAt":  "2026-08-19T14:58:09Z",
     "site":  [
                  {
                      "plans":  [
@@ -362,6 +362,36 @@
                                        "type":  "B",
                                        "desc":  "Imbatible TTA Radiance",
                                        "cod":  "273531"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Imbatible TTA TODAY x2",
+                                       "cod":  "262985"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Imbatible TTA Radiance wonder",
+                                       "cod":  "273523"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Imbatible TTA TODAY x4",
+                                       "cod":  "262984"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Imbatible TTA Radiance wonder this love",
+                                       "cod":  "273547"
                                    }
                                ],
                      "marca":  "Avon"
