@@ -1,7 +1,321 @@
 ﻿{
-    "updatedAt":  "2026-08-19T14:58:09Z",
+    "updatedAt":  "2026-08-19T19:53:30Z",
     "site":  [
-
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA HIDRATACION BASICO C13ARG",
+                                       "cod":  "268002"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Lumina Antiseñales",
+                                       "cod":  "268855"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA COND LISOS 300ML",
+                                       "cod":  "147446"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Acondicionador Antiseñales 300ML",
+                                       "cod":  "174212"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA SH LISOS 300ML",
+                                       "cod":  "147416"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Shampoo Antiseñales 300ML",
+                                       "cod":  "174206"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA SPRAY LISOS 150ML TERC",
+                                       "cod":  "147434"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUMINA COND SPRAY BRI COR 150ML",
+                                       "cod":  "148449"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS RF HAS DN 80 C13ARG",
+                                       "cod":  "268015"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Chronos Mini",
+                                       "cod":  "268788"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS RF HAS DN 70 C13ARG",
+                                       "cod":  "268012"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Chronos 60 + 45 DIA",
+                                       "cod":  "268786"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS RF HAS DN 30 C13ARG",
+                                       "cod":  "268027"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Chronos +30 Dia + Agua Micelar Mini",
+                                       "cod":  "268856"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE LIQ HD RF 25Q 25C 30ML",
+                                       "cod":  "173599"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE SERUM NUDE ME 25Q 25C",
+                                       "cod":  "110190"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS RF SERUM MULTICLAREADOR PS 30ML",
+                                       "cod":  "169235"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CHRONOS RF SERUM PREENCHEDOR PS 30ML",
+                                       "cod":  "168818"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA RF PO COMPACTO NUDE ME 27N",
+                                       "cod":  "110681"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA RF PO COMPACTO NUDE ME 21N",
+                                       "cod":  "110680"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES DEMAQUILANTE LIQ 120ML",
+                                       "cod":  "117124"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "FACES DEMAQUILANTE LIQ 60ML",
+                                       "cod":  "117126"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS ANTISEÑALES 70+ DÍA RF",
+                                       "cod":  "134723"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Chronos Mini Espuma (Lzto Gaia)",
+                                       "cod":  "167237"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS ANTISEÑALES 80+ DÍA RF",
+                                       "cod":  "134694"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Chronos Mini Espuma (Lzto Gaia)",
+                                       "cod":  "167237"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS ANTISEÑALES 30+ NOCHE RF",
+                                       "cod":  "134595"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Chronos Mini Espuma (Lzto Gaia)",
+                                       "cod":  "167237"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS ANTISEÑALES 30+ DÍA RF",
+                                       "cod":  "134591"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Chronos Mini Espuma (Lzto Gaia)",
+                                       "cod":  "167237"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "ERVA DOCE KIT JL RG RF C13ARG",
+                                       "cod":  "268028"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Erva Doce RG x2",
+                                       "cod":  "268787"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Op 3 - 60ptos",
+                                       "cod":  "269203"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Oportunidad 60pts B",
+                                       "cod":  "268339"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Arma tu Kit - Cuerpo",
+                                       "cod":  "272564"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Arma tu Kit - Cuerpo B",
+                                       "cod":  "268307"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AVON SUPERSHOCK REGULAR MASCARA RESTAGE",
+                                       "cod":  "222091"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON OJOS MASCARA LASH GENIUS",
+                                       "cod":  "135234"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Ct Panther Power Mascara Black",
+                                       "cod":  "207494"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CTR MÁSCARA PESTAÑAS EFECTO FELIN MARRON",
+                                       "cod":  "207528"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AC Litro Mothers Day",
+                                       "cod":  "207725"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON CARE AVENA VAINILLA CR CORPORAL 1L",
+                                       "cod":  "207805"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 }
              ],
     "cuotas":  {
                    "300001404":  {
