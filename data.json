@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-18T20:54:07Z",
+    "updatedAt":  "2026-08-19T13:20:13Z",
     "site":  [
                  {
                      "plans":  [
@@ -347,6 +347,21 @@
                                        "type":  "B",
                                        "desc":  "Kit insuperable x3 serums",
                                        "cod":  "273557"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Imbatible TTA TODAY",
+                                       "cod":  "262983"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Imbatible TTA Radiance",
+                                       "cod":  "273531"
                                    }
                                ],
                      "marca":  "Avon"
