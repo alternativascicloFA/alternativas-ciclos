@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-20T17:31:47Z",
+    "updatedAt":  "2026-08-20T17:58:44Z",
     "site":  [
                  {
                      "plans":  [
@@ -410,6 +410,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Refill super serum reductor de arrugas 30ml",
+                                       "cod":  "169234"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Repuesto Sérum Intensivo Reductor de Oleosidad Chronos Derma 30 m",
+                                       "cod":  "169244"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
