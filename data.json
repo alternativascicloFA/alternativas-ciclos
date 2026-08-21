@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-21T15:52:23Z",
+    "updatedAt":  "2026-08-21T16:47:11Z",
     "site":  [
                  {
                      "plans":  [
@@ -422,6 +422,36 @@
                                        "type":  "B",
                                        "desc":  "Repuesto Sérum Intensivo Reductor de Oleosidad Chronos Derma 30 m",
                                        "cod":  "169244"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit faces piel oleosa",
+                                       "cod":  "263081"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit faces limpieza",
+                                       "cod":  "270333"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit faces piel seca",
+                                       "cod":  "263113"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit faces limpieza",
+                                       "cod":  "270333"
                                    }
                                ],
                      "marca":  "Natura"
