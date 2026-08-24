@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-24T17:45:56Z",
+    "updatedAt":  "2026-08-24T18:51:38Z",
     "site":  [
                  {
                      "plans":  [
@@ -315,6 +315,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES MULTI MASCARA TINT PROV DAGUA",
+                                       "cod":  "9833"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "MONTADO FACES MAKEUP (MASCARA + DELI)",
+                                       "cod":  "201473"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
