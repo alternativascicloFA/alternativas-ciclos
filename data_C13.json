@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-24T18:51:38Z",
+    "updatedAt":  "2026-08-25T00:00:18Z",
     "site":  [
                  {
                      "plans":  [
@@ -327,6 +327,21 @@
                                        "type":  "B",
                                        "desc":  "MONTADO FACES MAKEUP (MASCARA + DELI)",
                                        "cod":  "201473"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CPV TOALLA CABELLO 2026 ARG",
+                                       "cod":  "242469"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CPV SET REPASADORES 2026 ARG",
+                                       "cod":  "256678"
                                    }
                                ],
                      "marca":  "Natura"

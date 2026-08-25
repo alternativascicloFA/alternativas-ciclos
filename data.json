@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-24T18:51:38Z",
+    "updatedAt":  "2026-08-25T00:00:18Z",
     "site":  [
                  {
                      "plans":  [
@@ -342,11 +342,6 @@
                                        "type":  "A",
                                        "desc":  "Kit insuperables x 2 serums",
                                        "cod":  "262986"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Kit insuperable x3 serums",
-                                       "cod":  "273557"
                                    }
                                ],
                      "marca":  "Avon"
@@ -455,6 +450,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit x 2 delineador color trend plateado",
+                                       "cod":  "276447"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit x 2 delineador color trend plateado",
+                                       "cod":  "273557"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
