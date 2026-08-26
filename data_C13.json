@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-26T14:42:55Z",
+    "updatedAt":  "2026-08-26T15:09:07Z",
     "site":  [
                  {
                      "plans":  [
@@ -342,6 +342,21 @@
                                        "type":  "B",
                                        "desc":  "CPV SET REPASADORES 2026 ARG",
                                        "cod":  "256678"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CPV PULSERAS DE LA AMISTAD 2024 ARG",
+                                       "cod":  "150087"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CPV CHARM 2026 ARG",
+                                       "cod":  "221275"
                                    }
                                ],
                      "marca":  "Natura"
