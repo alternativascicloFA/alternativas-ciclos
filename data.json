@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-08-26T20:03:29Z",
+    "updatedAt":  "2026-08-27T14:09:02Z",
     "site":  [
                  {
                      "plans":  [
@@ -470,6 +470,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit Tododia Hidratación SH + AC",
+                                       "cod":  "278344"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Detox SH + AC",
+                                       "cod":  "272872"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
