@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-01T20:50:56Z",
+    "updatedAt":  "2026-09-01T22:37:34Z",
     "site":  [
                  {
                      "plans":  [
@@ -397,6 +397,11 @@
                                        "type":  "C",
                                        "desc":  "Regalo Humor 2x25 ml",
                                        "cod":  "276142"
+                                   },
+                                   {
+                                       "type":  "D",
+                                       "desc":  "Regalo Humor + Faces",
+                                       "cod":  "269847"
                                    }
                                ],
                      "marca":  "Natura"
