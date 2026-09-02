@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-02T12:17:39Z",
+    "updatedAt":  "2026-09-02T17:47:53Z",
     "site":  [
                  {
                      "plans":  [
@@ -552,6 +552,26 @@
                                        "type":  "B",
                                        "desc":  "Regalo PPBB",
                                        "cod":  "276109"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kriska Flores Jabón Líquido",
+                                       "cod":  "170804"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kriska Flores EDT",
+                                       "cod":  "174598"
                                    }
                                ],
                      "marca":  "Natura"
