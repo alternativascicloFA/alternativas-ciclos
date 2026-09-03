@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-03T21:18:19Z",
+    "updatedAt":  "2026-09-03T21:21:43Z",
     "site":  [
                  {
                      "plans":  [
@@ -642,6 +642,11 @@
                                        "type":  "A",
                                        "desc":  "PELADOR DOBLE FILO",
                                        "cod":  "208972"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CUCHILLO CUCINA DONNA PEQUENO",
+                                       "cod":  "225942"
                                    }
                                ],
                      "marca":  "Avon"
