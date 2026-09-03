@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-02T17:47:53Z",
+    "updatedAt":  "2026-09-03T18:50:27Z",
     "site":  [
                  {
                      "plans":  [
@@ -500,6 +500,36 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Sabana percal acuarela 2 y media",
+                                       "cod":  "208966"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Sabana oceano 2 y media",
+                                       "cod":  "209047"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KITX2 MOANA SABANA Y MANTA C12AR",
+                                       "cod":  "275960"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Sabana Mickey 1 y 1/2",
+                                       "cod":  "208990"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
