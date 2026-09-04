@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-03T21:21:43Z",
+    "updatedAt":  "2026-09-04T12:10:27Z",
     "site":  [
                  {
                      "plans":  [
@@ -527,6 +527,21 @@
                                        "type":  "B",
                                        "desc":  "Sabana Mickey 1 y 1/2",
                                        "cod":  "208990"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "cuadrado polipropileno beige",
+                                       "cod":  "210151"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Contenedor azul",
+                                       "cod":  "155110"
                                    }
                                ],
                      "marca":  "Avon"
