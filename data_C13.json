@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-04T18:36:11Z",
+    "updatedAt":  "2026-09-04T19:40:35Z",
     "site":  [
                  {
                      "plans":  [
@@ -767,6 +767,51 @@
                                        "type":  "B",
                                        "desc":  "SET X 4 VASOS UNICORNIOS",
                                        "cod":  "209027"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EST FA INFINITY KIT X2 EDT BOLSA CHICA",
+                                       "cod":  "280441"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Far Away Beyond + Bolsa chica",
+                                       "cod":  "268317"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FAR AWAY INFINITY EDP 50ML",
+                                       "cod":  "238130"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Far Away Beyond",
+                                       "cod":  "207566"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Escalonada Kit x5 FA (Infinity x2,Original x1,Splendoriax1,Shinex1) 55%",
+                                       "cod":  "269147"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible Kit x5 Far Away",
+                                       "cod":  "268290"
                                    }
                                ],
                      "marca":  "Avon"
