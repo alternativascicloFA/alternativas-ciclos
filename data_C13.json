@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-04T12:10:27Z",
+    "updatedAt":  "2026-09-04T18:31:03Z",
     "site":  [
                  {
                      "plans":  [
@@ -647,6 +647,126 @@
                                        "type":  "B",
                                        "desc":  "CUCHILLO CUCINA DONNA PEQUENO",
                                        "cod":  "225942"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "HOMEM EAU PARFUM IDENTIDAD 100ML COL",
+                                       "cod":  "200122"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "NATURA HOMEM CLASSICO EDT 100ML ARG MLF",
+                                       "cod":  "57351"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Insuperable Kit x2 AT Hydra (SH+AC)",
+                                       "cod":  "275256"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible Kit x2 Rizos (SH + AC)",
+                                       "cod":  "268316"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Latin Attitude Mystic Edt 50Ml (Good Vibes)",
+                                       "cod":  "207711"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Latin Attitude Festival",
+                                       "cod":  "158890"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Avon Care Coconut Oil Hand Cream 50Gr",
+                                       "cod":  "207456"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AC Silicon Glove COCO 75ml",
+                                       "cod":  "207707"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Avon Care Avocado Oil Hand Cream 50Gr",
+                                       "cod":  "207454"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AC RESTAGE AVOCADO OIL HC 75ML",
+                                       "cod":  "207666"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KIT X3 UNIC VASOS CONT TAZA C13AR",
+                                       "cod":  "275191"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Set Vasos + Taza x2 Unicornio",
+                                       "cod":  "268287"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "BOTELLA MARIPOSAS",
+                                       "cod":  "210180"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "BOTELLA MINNIE",
+                                       "cod":  "210161"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "VASO DOBLE GLOW IN THE DARK CHILDREN PRINCESAS",
+                                       "cod":  "208881"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "SET X 4 VASOS UNICORNIOS",
+                                       "cod":  "209027"
                                    }
                                ],
                      "marca":  "Avon"
