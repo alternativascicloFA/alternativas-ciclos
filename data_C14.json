@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-10T12:55:22Z",
+    "updatedAt":  "2026-09-10T14:05:45Z",
     "site":  [
                  {
                      "plans":  [
@@ -87,6 +87,21 @@
                                        "type":  "B",
                                        "desc":  "Eau de Parfum 679 Ambrette Copaíba 50ml",
                                        "cod":  "151024"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Leave in Lumina",
+                                       "cod":  "148450"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Mascara color y brillo",
+                                       "cod":  "126941"
                                    }
                                ],
                      "marca":  "Natura"
