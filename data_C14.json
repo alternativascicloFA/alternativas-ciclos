@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-10T14:37:47Z",
+    "updatedAt":  "2026-09-10T15:57:14Z",
     "site":  [
                  {
                      "plans":  [
@@ -102,6 +102,21 @@
                                        "type":  "B",
                                        "desc":  "Mascara color y brillo",
                                        "cod":  "126941"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Ekos rutina basica acai",
+                                       "cod":  "275901"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS Cacao Labial + 400ML",
+                                       "cod":  "276065"
                                    }
                                ],
                      "marca":  "Natura"
