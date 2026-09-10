@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-10T15:57:14Z",
+    "updatedAt":  "2026-09-10T20:32:06Z",
     "site":  [
                  {
                      "plans":  [
@@ -80,13 +80,13 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Perfume Aura",
-                                       "cod":  "277129"
+                                       "desc":  "Eau de Parfum 679 Ambrette Copaíba 50ml",
+                                       "cod":  "151024"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "Eau de Parfum 679 Ambrette Copaíba 50ml",
-                                       "cod":  "151024"
+                                       "desc":  "Promoción extra",
+                                       "cod":  "1"
                                    }
                                ],
                      "marca":  "Natura"
@@ -117,6 +117,36 @@
                                        "type":  "B",
                                        "desc":  "EKOS Cacao Labial + 400ML",
                                        "cod":  "276065"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Faces mascara megafantastica",
+                                       "cod":  "67666"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Faces mascara",
+                                       "cod":  "9833"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Repuesto del Acqua Biohidratante Renovador Chronos",
+                                       "cod":  "91819"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Repuesto Sérum Intensivo Lifting y Firmeza Chronos Derma 30 ml",
+                                       "cod":  "168819"
                                    }
                                ],
                      "marca":  "Natura"
