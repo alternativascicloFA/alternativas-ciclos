@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-11T14:33:25Z",
+    "updatedAt":  "2026-09-11T14:51:35Z",
     "site":  [
                  {
                      "plans":  [
@@ -132,6 +132,16 @@
                                        "type":  "B",
                                        "desc":  "Repuesto Sérum Intensivo Lifting y Firmeza Chronos Derma 30 ml",
                                        "cod":  "168819"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promoción extra al ciclo - Mascara CT",
+                                       "cod":  "207589"
                                    }
                                ],
                      "marca":  "Natura"
