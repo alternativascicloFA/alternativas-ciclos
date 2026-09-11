@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-11T15:34:38Z",
+    "updatedAt":  "2026-09-11T15:49:02Z",
     "site":  [
                  {
                      "plans":  [
@@ -145,6 +145,16 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promoción extra al ciclo - Chronos",
+                                       "cod":  "187709"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
