@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-10T20:36:39Z",
+    "updatedAt":  "2026-09-11T12:59:39Z",
     "site":  [
                  {
                      "plans":  [
@@ -72,21 +72,6 @@
                                        "type":  "B",
                                        "desc":  "CPV SET LIBRERIA",
                                        "cod":  "221273"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Eau de Parfum 679 Ambrette Copaíba 50ml",
-                                       "cod":  "151024"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Promoción extra",
-                                       "cod":  "1"
                                    }
                                ],
                      "marca":  "Natura"
