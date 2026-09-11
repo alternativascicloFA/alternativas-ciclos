@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-11T14:26:27Z",
+    "updatedAt":  "2026-09-11T14:29:28Z",
     "site":  [
                  {
                      "plans":  [
@@ -812,6 +812,16 @@
                                        "type":  "B",
                                        "desc":  "Regalo Ilía Jardín Secreto",
                                        "cod":  "276086"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AURA EAU DE PARFUM 75M",
+                                       "cod":  "178907"
                                    }
                                ],
                      "marca":  "Natura"
