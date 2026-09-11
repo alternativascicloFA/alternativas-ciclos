@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-11T15:54:07Z",
+    "updatedAt":  "2026-09-11T16:01:15Z",
     "site":  [
                  {
                      "plans":  [
@@ -160,7 +160,12 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Promoción extra al ciclo - Chronos",
+                                       "desc":  "CHRONOS SERUM PREENCHEDOR PS 30ML",
+                                       "cod":  "169233"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Serum - Chronos",
                                        "cod":  "169245"
                                    }
                                ],
