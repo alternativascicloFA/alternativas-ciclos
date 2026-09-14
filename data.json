@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-14T16:05:46Z",
+    "updatedAt":  "2026-09-14T17:07:06Z",
     "site":  [
                  {
                      "plans":  [
@@ -837,6 +837,21 @@
                                        "type":  "B",
                                        "desc":  "Kit x 3 Far Away",
                                        "cod":  "273537"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Imbatible Far away infinity",
+                                       "cod":  "269151"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo imbatible Far Away Beyond",
+                                       "cod":  "273563"
                                    }
                                ],
                      "marca":  "Avon"
