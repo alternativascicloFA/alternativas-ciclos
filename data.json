@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-16T17:40:57Z",
+    "updatedAt":  "2026-09-16T18:56:31Z",
     "site":  [
                  {
                      "plans":  [
@@ -852,6 +852,21 @@
                                        "type":  "B",
                                        "desc":  "Promo imbatible Far Away Beyond",
                                        "cod":  "273563"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Imbatible  Exclusive Black x2",
+                                       "cod":  "269198"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible  Exclusive Admirable x2",
+                                       "cod":  "273538"
                                    }
                                ],
                      "marca":  "Avon"
