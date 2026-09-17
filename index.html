@@ -653,10 +653,18 @@
 
                                 if (stock !== undefined && stock !== null && String(stock).trim() !== '') {
                                     const numStock = Number(stock);
-                                    quotaText = numStock > 0 ? `Disponibles: ${numStock} un.` : "SIN STOCK";
-                                    quotaClass = numStock > 0 ? (state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold') : "text-[#B91C1C] font-extrabold";
+                                    
+                                    // Umbral de seguridad: si hay menos de 100 unidades se marca como Indisponible
+                                    if (numStock >= 100) {
+                                        quotaText = `Disponible: ${numStock} un.`;
+                                        quotaClass = state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold';
+                                    } else {
+                                        quotaText = "Indisponible";
+                                        quotaClass = "text-[#B91C1C] font-extrabold";
+                                    }
                                 } else {
-                                    quotaText = "CON STOCK";
+                                    // Estado por defecto cuando no hay restricciones de cuota expresas
+                                    quotaText = "Disponible";
                                     quotaClass = "text-green-600 font-bold";
                                 }
                             }
