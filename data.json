@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-17T14:59:16Z",
+    "updatedAt":  "2026-09-17T20:09:17Z",
     "site":  [
                  {
                      "plans":  [
@@ -867,6 +867,21 @@
                                        "type":  "B",
                                        "desc":  "Promo Imbatible  Exclusive Admirable x2",
                                        "cod":  "273538"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Imbatible Musk Air Instintic  x2",
+                                       "cod":  "269193"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible Musk Air  x2",
+                                       "cod":  "273529"
                                    }
                                ],
                      "marca":  "Avon"
