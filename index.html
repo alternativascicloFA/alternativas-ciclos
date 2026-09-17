@@ -241,7 +241,7 @@
     </footer>
 
     <script>
-        let db = { site: [], gerencias: [], cuotas: {} };
+        let db = { site: [], gerencias: [], cuotas: {}, stock: {} };
         let state = { tab: 'Natura', gerenciaId: '', ciclo: 'C13', searchCode: '' };
         let currentFilteredItems = [];
         let selectionMode = false;
@@ -301,6 +301,7 @@
                 db.site = data.site || [];
                 db.gerencias = data.gerencias || [];
                 db.cuotas = data.cuotas || {};
+                db.stock = data.stock || {}; // Carga de saldo Depósito 27 de "Stock grafana"
 
                 updateLastUpdate(data.updatedAt);
                 populateGerencias();
@@ -627,13 +628,32 @@
                         const isMain = plan.type === 'A';
                         const badgeColor = isMain ? (state.tab.trim().toLowerCase() === 'natura' ? 'bg-brand-orange' : 'bg-avon-primary') : 'bg-gray-800';
                         
-                        let quotaText = "Consultar gerencia";
-                        let quotaClass = "text-text-mut";
-                        
-                        if (state.gerenciaId && db.cuotas) { 
+                        const searchDigits = String(plan.cod).replace(/\D/g, '');
+
+                        // 1. EVALUACIÓN DE STOCK GENERAL (DEPÓSITO 27 - STOCK GRAFANA)
+                        let generalStockVal = undefined;
+                        if (db.stock) {
+                            const stockKey = Object.keys(db.stock).find(k => String(k).replace(/\D/g, '') === searchDigits);
+                            if (stockKey !== undefined) generalStockVal = db.stock[stockKey];
+                        }
+
+                        let isGeneralStockOk = true;
+                        if (generalStockVal !== undefined && generalStockVal !== null && String(generalStockVal).trim() !== '') {
+                            if (Number(generalStockVal) < 100) {
+                                isGeneralStockOk = false;
+                            }
+                        }
+
+                        // 2. EVALUACIÓN DE CUOTA POR GERENCIA
+                        let isGerenciaStockOk = true;
+                        let gerenciaStockVal = undefined;
+                        let hasGerenciaSelected = false;
+
+                        if (state.gerenciaId && db.cuotas) {
+                            hasGerenciaSelected = true;
                             const currentGid = String(state.gerenciaId).trim().toLowerCase();
                             const gerenciaObj = db.gerencias.find(g => String(g.id).trim().toLowerCase() === currentGid || String(g.name).trim().toLowerCase() === currentGid);
-                            let gerenciaStock = undefined;
+                            let gerenciaStockMap = undefined;
                             
                             if (gerenciaObj) {
                                 const idKey = String(gerenciaObj.id).trim().toLowerCase();
@@ -642,32 +662,42 @@
                                     const cleanKey = String(k).trim().toLowerCase();
                                     return cleanKey === idKey || cleanKey === nameKey;
                                 });
-                                if (exactKey) gerenciaStock = db.cuotas[exactKey];
+                                if (exactKey) gerenciaStockMap = db.cuotas[exactKey];
                             }
 
-                            if (gerenciaStock) {
-                                const searchDigits = String(plan.cod).replace(/\D/g, '');
-                                let stock = undefined;
-                                const targetKey = Object.keys(gerenciaStock).find(k => String(k).replace(/\D/g, '') === searchDigits);
-                                if (targetKey !== undefined) stock = gerenciaStock[targetKey];
+                            if (gerenciaStockMap) {
+                                const targetKey = Object.keys(gerenciaStockMap).find(k => String(k).replace(/\D/g, '') === searchDigits);
+                                if (targetKey !== undefined) gerenciaStockVal = gerenciaStockMap[targetKey];
 
-                                if (stock !== undefined && stock !== null && String(stock).trim() !== '') {
-                                    const numStock = Number(stock);
-                                    
-                                    // Umbral de seguridad: si hay menos de 100 unidades se marca como Indisponible
-                                    if (numStock >= 100) {
-                                        quotaText = `Disponible: ${numStock} un.`;
-                                        quotaClass = state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold';
-                                    } else {
-                                        quotaText = "Indisponible";
-                                        quotaClass = "text-[#B91C1C] font-extrabold";
+                                if (gerenciaStockVal !== undefined && gerenciaStockVal !== null && String(gerenciaStockVal).trim() !== '') {
+                                    if (Number(gerenciaStockVal) < 100) {
+                                        isGerenciaStockOk = false;
                                     }
-                                } else {
-                                    // Estado por defecto cuando no hay restricciones de cuota expresas
-                                    quotaText = "Disponible";
-                                    quotaClass = "text-green-600 font-bold";
                                 }
                             }
+                        }
+
+                        // 3. DETERMINACIÓN DEL ESTADO FINAL (DOBLE VALIDACIÓN)
+                        let quotaText = "Consultar gerencia";
+                        let quotaClass = "text-text-mut";
+
+                        if (!isGeneralStockOk) {
+                            // Físico en Depósito 27 menor a 100 unidades
+                            quotaText = "Indisponible";
+                            quotaClass = "text-[#B91C1C] font-extrabold";
+                        } else if (hasGerenciaSelected && !isGerenciaStockOk) {
+                            // Cuota asignada a la Gerencia menor a 100 unidades
+                            quotaText = "Indisponible";
+                            quotaClass = "text-[#B91C1C] font-extrabold";
+                        } else if (hasGerenciaSelected && gerenciaStockVal !== undefined && Number(gerenciaStockVal) >= 100) {
+                            quotaText = `Disponible: ${Number(gerenciaStockVal)} un.`;
+                            quotaClass = state.tab.trim().toLowerCase() === 'natura' ? 'text-brand-orange font-bold' : 'text-avon-primary font-bold';
+                        } else if (hasGerenciaSelected) {
+                            quotaText = "Disponible";
+                            quotaClass = "text-green-600 font-bold";
+                        } else if (generalStockVal !== undefined && Number(generalStockVal) >= 100) {
+                            quotaText = "Disponible";
+                            quotaClass = "text-green-600 font-bold";
                         }
 
                         const actionIcon = 'share-2';
