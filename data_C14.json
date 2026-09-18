@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-18T12:39:04Z",
+    "updatedAt":  "2026-09-18T16:41:08Z",
     "site":  [
                  {
                      "plans":  [
@@ -215,6 +215,36 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "SABANA PERCAL ACUARELA ADULTS TONOS BEIGE GRIS",
+                                       "cod":  "208966"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Sábanas de 1 Plaza de Mickey Mouse",
+                                       "cod":  "208990"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AC Men post afeitar splash",
+                                       "cod":  "208694"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Avon care gel de afeitado",
+                                       "cod":  "158846"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
