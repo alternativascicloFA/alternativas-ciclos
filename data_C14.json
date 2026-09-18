@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-17T20:09:17Z",
+    "updatedAt":  "2026-09-18T12:39:04Z",
     "site":  [
                  {
                      "plans":  [
@@ -182,6 +182,36 @@
                                        "type":  "B",
                                        "desc":  "kit chronos reg + refill + balm",
                                        "cod":  "276099"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "MADRES 2026 - TODODIA MONTADO FRAMBUESA Y PIMIENTA ROSA",
+                                       "cod":  "277126"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "MADRES 2026 - TODODIA oleo + exfoliante vainilla y frutilla",
+                                       "cod":  "272837"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "MADRES 2026 - TODODIA FLORES (FLOR DE DURAZNO Y JAZMÍN)",
+                                       "cod":  "277115"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "MADRES 2026 - TODODIA FLORES (FLOR DE DURAZNO Y JAZMÍN)",
+                                       "cod":  "281683"
                                    }
                                ],
                      "marca":  "Natura"
