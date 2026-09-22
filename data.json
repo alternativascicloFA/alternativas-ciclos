@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-22T14:08:25Z",
+    "updatedAt":  "2026-09-22T14:08:36Z",
     "site":  [
                  {
                      "plans":  [
@@ -392,16 +392,6 @@
                                        "type":  "B",
                                        "desc":  "Regalo Kaiak Vital Femenino",
                                        "cod":  "276126"
-                                   },
-                                   {
-                                       "type":  "C",
-                                       "desc":  "Regalo Humor 2x25 ml",
-                                       "cod":  "276142"
-                                   },
-                                   {
-                                       "type":  "D",
-                                       "desc":  "Regalo Humor + Faces",
-                                       "cod":  "269847"
                                    }
                                ],
                      "marca":  "Natura"
