@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-22T13:00:45Z",
+    "updatedAt":  "2026-09-22T13:19:20Z",
     "site":  [
                  {
                      "plans":  [
@@ -897,6 +897,21 @@
                                        "type":  "B",
                                        "desc":  "Kit Tododia Avellana y Casis (RG + RF)",
                                        "cod":  "276068"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA HIDRATACION COMPLETO C13ARG",
+                                       "cod":  "268001"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Lumina Antidecoloración y Brillo (SH + AC + Spray)",
+                                       "cod":  "276089"
                                    }
                                ],
                      "marca":  "Natura"
