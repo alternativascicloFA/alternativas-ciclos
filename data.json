@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-22T13:19:20Z",
+    "updatedAt":  "2026-09-22T14:08:25Z",
     "site":  [
                  {
                      "plans":  [
@@ -915,6 +915,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KIT X2 TOY STORY COLONIAS C13AR",
+                                       "cod":  "282453"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit x2 Colonias Mickey \u0026 Minnie",
+                                       "cod":  "268323"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
