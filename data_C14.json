@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-25T14:00:59Z",
+    "updatedAt":  "2026-09-25T14:40:15Z",
     "site":  [
                  {
                      "plans":  [
@@ -125,13 +125,13 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "CHRONOS COMP HA ACQUA BALM 49.33.36",
+                                       "desc":  "Kit Chronos Derma Serum + Acqua + Balm",
                                        "cod":  "275897"
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "kit chronos reg + refill + balm",
-                                       "cod":  "276099"
+                                       "desc":  "Kit Chronos Serum antiox +Acqua+Balm",
+                                       "cod":  "270286"
                                    }
                                ],
                      "marca":  "Natura"
