@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-25T13:05:14Z",
+    "updatedAt":  "2026-09-25T14:00:59Z",
     "site":  [
                  {
                      "plans":  [
@@ -222,11 +222,6 @@
                                        "type":  "B",
                                        "desc":  "Avon care gel de afeitado",
                                        "cod":  "158846"
-                                   },
-                                   {
-                                       "type":  "C",
-                                       "desc":  "Avon care gel de afeitado",
-                                       "cod":  "158846"
                                    }
                                ],
                      "marca":  "Avon"
@@ -295,26 +290,11 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Kit Chronos Derma Serum + Acqua + Balm",
-                                       "cod":  "275897"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Kit Chronos Serum antiox +Acqua+Balm",
-                                       "cod":  "270286"
-                                   }
-                               ],
-                     "marca":  "Natura"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
                                        "desc":  "Mascara color trend SUPER LOONG",
                                        "cod":  "207589"
                                    }
                                ],
-                     "marca":  "Natura"
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
