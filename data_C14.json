@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-28T18:56:52Z",
+    "updatedAt":  "2026-09-28T20:48:14Z",
     "site":  [
                  {
                      "plans":  [
@@ -330,6 +330,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit lisos basico sh + ac + desodorante",
+                                       "cod":  "275912"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit detox sh + ac y desodorante preobiotico",
+                                       "cod":  "272872"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
