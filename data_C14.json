@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-28T17:33:23Z",
+    "updatedAt":  "2026-09-28T18:56:52Z",
     "site":  [
                  {
                      "plans":  [
@@ -206,7 +206,7 @@
                                    {
                                        "type":  "B",
                                        "desc":  "KIT CB X5 ULTRAV x4 + Loong",
-                                       "cod":  "273555"
+                                       "cod":  "273554"
                                    },
                                    {
                                        "type":  "C",
@@ -326,7 +326,7 @@
                                    {
                                        "type":  "B",
                                        "desc":  "KIT CB X2 ULTRAV ROJA + ULTRAV Azul",
-                                       "cod":  "273554"
+                                       "cod":  "273555"
                                    }
                                ],
                      "marca":  "Avon"
