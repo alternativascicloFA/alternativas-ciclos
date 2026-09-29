@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-29T18:08:48Z",
+    "updatedAt":  "2026-09-29T19:39:08Z",
     "site":  [
                  {
                      "plans":  [
@@ -87,6 +87,11 @@
                                        "type":  "B",
                                        "desc":  "EKOS CACAU (HC 400ML + BALM)",
                                        "cod":  "276065"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "Ekos Acai frescor mini + Hidratante de manos",
+                                       "cod":  "270285"
                                    }
                                ],
                      "marca":  "Natura"
@@ -392,6 +397,36 @@
                                        "type":  "B",
                                        "desc":  "Lumina Shampoo Alisados",
                                        "cod":  "167286"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo oportunidad 4",
+                                       "cod":  "275917"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo oportunidad 4",
+                                       "cod":  "270293"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Ekos acai rutina completa",
+                                       "cod":  "275935"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Ekos Acai frescor 150ml + Hidratante de manos",
+                                       "cod":  "270327"
                                    }
                                ],
                      "marca":  "Natura"
