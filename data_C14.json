@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-29T13:54:26Z",
+    "updatedAt":  "2026-09-29T14:53:59Z",
     "site":  [
                  {
                      "plans":  [
@@ -372,6 +372,26 @@
                                        "type":  "B",
                                        "desc":  "Crema de manos Pitanga 75grs",
                                        "cod":  "95034"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Lumina Acondicionador Alisados",
+                                       "cod":  "167291"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Lumina Shampoo Alisados",
+                                       "cod":  "167286"
                                    }
                                ],
                      "marca":  "Natura"
