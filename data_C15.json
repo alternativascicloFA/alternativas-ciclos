@@ -1,10 +1,294 @@
 ﻿{
-    "updatedAt":  "2026-09-29T20:33:53Z",
+    "updatedAt":  "2026-09-29T22:02:04Z",
     "stock":  {
                   "27":  283941
               },
     "site":  [
-
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KIT CB LUMINA NANO SH AC MASC OL OZD",
+                                       "cod":  "275904"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CB Lumina Antiseñales (SH + AC + Sérum)",
+                                       "cod":  "268851"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUMINA KIT NUT NANO SH AC MASC OLEO",
+                                       "cod":  "275905"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CF Lumina Antiseñales (SH + AC + Sérum)",
+                                       "cod":  "268784"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF POLPA CORPO TUKUMA 400ML",
+                                       "cod":  "203397"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS DES HID CRP CACAU 400ML LTM",
+                                       "cod":  "163707"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CPV BOTELLAS DE VIAJE 2026 ARG",
+                                       "cod":  "242465"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CPV BOTELLA 2025 ARG",
+                                       "cod":  "184266"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CPV SET ESPONJAS 2026 ARG",
+                                       "cod":  "242474"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CPV SET SCRUNCHIES 2023 ARG",
+                                       "cod":  "124548"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CPV LAPICES 2026 ARG",
+                                       "cod":  "242471"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CPV SENALADORES 2025 ARG",
+                                       "cod":  "174155"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE STICK 21Q",
+                                       "cod":  "181515"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE FACIAL TINT 21Q",
+                                       "cod":  "135035"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE STICK 37Q",
+                                       "cod":  "181510"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE SERUM NUDE ME 37Q 37C",
+                                       "cod":  "110199"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE STICK 43N TERC",
+                                       "cod":  "181511"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE LIQ HD RF 43N 30ML",
+                                       "cod":  "173603"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES SERUM HID MULTI",
+                                       "cod":  "118910"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "FACES DEMAQUILANTE BALSAMO TERC",
+                                       "cod":  "128752"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Cumpleaños 2026 - Algodón",
+                                       "cod":  "272068"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Té de manzanilla y lavanda",
+                                       "cod":  "268852"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE STICK 35Q 35C TERC",
+                                       "cod":  "181517"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE LIQ HD RF 35Q 35C 30ML",
+                                       "cod":  "173598"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA CORRET COB EXTR 37N",
+                                       "cod":  "122118"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA CORRETIVO CUSHION NUDE ME 37N",
+                                       "cod":  "107132"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA DES HID CORP OLE UNIF 200ML LTM",
+                                       "cod":  "190397"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA OLEO CORP CEREJA AVEL 120ML",
+                                       "cod":  "21307"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS RF SERUM ANTIOXIDANTE PS 15ML",
+                                       "cod":  "169223"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Chronos Derma Mini Super sérum 10ml",
+                                       "cod":  "179454"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES DELINEADOR RETRAT MARROM POWE",
+                                       "cod":  "109142"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "FACES DELINEADOR RETRATIL BLACK INK",
+                                       "cod":  "109141"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "ESSENCIAL RF EX FL EDP FEM NFV 100ML LTM",
+                                       "cod":  "121947"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "ESSENCIAL RF EXCLU EDP FEM 100ML NFV LTM",
+                                       "cod":  "110251"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES HID SHEET MASK REFRESCANTE 20ML",
+                                       "cod":  "183308"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "FACES HIDRATANTE PIEL NORMAL A SECA",
+                                       "cod":  "189563"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "HOMEM SH ANTICASPA 300ML",
+                                       "cod":  "160210"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "NAT HOMEM AMARELO SHAMPOO 200ML",
+                                       "cod":  "125365"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 }
              ],
     "cuotas":  {
                    "300001404":  {
