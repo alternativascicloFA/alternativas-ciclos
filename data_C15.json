@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-30T20:32:05Z",
+    "updatedAt":  "2026-09-30T20:53:55Z",
     "stock":  {
                   "27":  284333
               },
@@ -375,6 +375,171 @@
                                        "type":  "B",
                                        "desc":  "Descubrí Avon TTA This Love",
                                        "cod":  "275821"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Multiprotector aclarador de manchas FPS 50+",
+                                       "cod":  "247704"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "NATURA SOLAR LOCAO FACIAL NS FPS50 50ML",
+                                       "cod":  "176913"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS PROT SOL FPS50 MAN COR2 ES 50ML",
+                                       "cod":  "183275"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "NATURA SOLAR LOCAO FACIAL NS FPS50 50ML",
+                                       "cod":  "176913"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "LUNA ABSOLUTA 75ML EDT LTM",
+                                       "cod":  "116582"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUNA EDT NUIT 75ML ARG",
+                                       "cod":  "204458"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "CHRONOS REF ESPUMA LIMPEZA GAIA 150ML PS",
+                                       "cod":  "137981"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CHRONOS D SAB PO MULTICL 40G TERC",
+                                       "cod":  "190899"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF SAB LIQ MAOS MARACUJA 250ML NF",
+                                       "cod":  "70388"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS DES HID PITANGA PRETA 250ML",
+                                       "cod":  "174611"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF SAB LIQ MAOS PITANGA 250ML NF",
+                                       "cod":  "70390"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS SAB LIQ MAOS PITANGA 250ML NF",
+                                       "cod":  "70403"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS POLPA HID MAOS TUKUMA 75G LTM",
+                                       "cod":  "19904"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS MANT MAOS UCUUBA 75G TUTOIA LATAM",
+                                       "cod":  "80969"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA SERUM LABIAL INCOLOR",
+                                       "cod":  "106294"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CHRONOS BALM HIDRA LABIAL 15g",
+                                       "cod":  "167236"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Óleo bifásico Nutrición de nano precisión",
+                                       "cod":  "205931"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUMINA SPRAY HIDRA 150ML TERC PS",
+                                       "cod":  "147434"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Shampoo Nutrición de nano precisión",
+                                       "cod":  "200656"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUMINA SH NUTRICAO 300ML ARG",
+                                       "cod":  "147411"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Acondicionador Nutrición de nano precisión",
+                                       "cod":  "200658"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUMINA COND ANTIQUEDA 300ML ES ARG",
+                                       "cod":  "147444"
                                    }
                                ],
                      "marca":  "Avon"
