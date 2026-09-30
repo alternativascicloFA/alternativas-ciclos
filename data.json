@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-30T17:17:59Z",
+    "updatedAt":  "2026-09-30T20:11:57Z",
     "stock":  {
                   "27":  284333
               },
@@ -460,6 +460,21 @@
                                        "type":  "B",
                                        "desc":  "Promo insuperable AT Rizos",
                                        "cod":  "268316"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AC Lichi y Aloe Vera crema para manos silicona 75 g",
+                                       "cod":  "236356"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AC crema para manos silicona 75 g",
+                                       "cod":  "207799"
                                    }
                                ],
                      "marca":  "Avon"
