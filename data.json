@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-30T14:31:27Z",
+    "updatedAt":  "2026-09-30T14:57:57Z",
     "stock":  {
                   "27":  210503
               },
@@ -448,6 +448,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo insuperable AT Extrema",
+                                       "cod":  "273555"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo insuperable AT Rizos",
+                                       "cod":  "268316"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
