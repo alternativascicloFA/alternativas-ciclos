@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-29T22:02:04Z",
+    "updatedAt":  "2026-09-30T12:35:17Z",
     "stock":  {
                   "27":  283941
               },
@@ -430,6 +430,21 @@
                                        "type":  "B",
                                        "desc":  "Ekos Acai frescor 150ml + Hidratante de manos",
                                        "cod":  "270327"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit Tododia Completo(sh+ac+leave in)",
+                                       "cod":  "275936"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Hidratación (Sh+ Ac +Mascara)",
+                                       "cod":  "270309"
                                    }
                                ],
                      "marca":  "Natura"
