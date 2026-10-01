@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-09-30T21:37:33Z",
+    "updatedAt":  "2026-10-01T18:05:26Z",
     "stock":  {
                   "27":  284333
               },
@@ -8,7 +8,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "KIT CB LUMINA NANO SH AC MASC OL OZD",
+                                       "desc":  "Kit CB Lumina Nanoprecision  ZyD",
                                        "cod":  "275904"
                                    },
                                    {
@@ -23,7 +23,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "LUMINA KIT NUT NANO SH AC MASC OLEO",
+                                       "desc":  "Kit CB Lumina Nanoprecision",
                                        "cod":  "275905"
                                    },
                                    {
@@ -43,7 +43,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "EKOS DES HID CRP CACAU 400ML LTM",
+                                       "desc":  "EKOS DES HID CORPO CACAU 400ML",
                                        "cod":  "163707"
                                    }
                                ],
@@ -158,7 +158,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Cumpleaños 2026 - Algodón",
+                                       "desc":  "Kit Tododia  Algodón",
                                        "cod":  "272068"
                                    },
                                    {
@@ -353,22 +353,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "KIT CB X3COFFE DATE 1XCB AR",
-                                       "cod":  "283081"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Kit CB Coffee Date x3",
-                                       "cod":  "275857"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "Arma tu Kit - Perfumeria",
+                                       "desc":  "Descubrí Avon TTA",
                                        "cod":  "282959"
                                    },
                                    {
@@ -383,7 +368,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "Multiprotector aclarador de manchas FPS 50+",
+                                       "desc":  "Chronos Multiprotector aclarador de manchas FPS 50+",
                                        "cod":  "247704"
                                    },
                                    {
@@ -398,7 +383,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "CHRONOS PROT SOL FPS50 MAN COR2 ES 50ML",
+                                       "desc":  "Chronos Protector Solar FPS50",
                                        "cod":  "183275"
                                    },
                                    {
@@ -428,7 +413,7 @@
                      "plans":  [
                                    {
                                        "type":  "A",
-                                       "desc":  "CHRONOS REF ESPUMA LIMPEZA GAIA 150ML PS",
+                                       "desc":  "Chronos Refil Espuma Limpieza 150ml",
                                        "cod":  "137981"
                                    },
                                    {
@@ -508,7 +493,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "LUMINA SPRAY HIDRA 150ML TERC PS",
+                                       "desc":  "Spray Lumina Hidratación 150ml",
                                        "cod":  "147434"
                                    }
                                ],
@@ -523,7 +508,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "LUMINA SH NUTRICAO 300ML ARG",
+                                       "desc":  "Shampoo Lumina Nutricion  300ml",
                                        "cod":  "147411"
                                    }
                                ],
@@ -538,7 +523,7 @@
                                    },
                                    {
                                        "type":  "B",
-                                       "desc":  "LUMINA COND ANTIQUEDA 300ML ES ARG",
+                                       "desc":  "Acondicionar Lumina Anticaida",
                                        "cod":  "147444"
                                    }
                                ],
