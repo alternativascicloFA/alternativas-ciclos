@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-02T13:49:23Z",
+    "updatedAt":  "2026-10-02T18:02:18Z",
     "stock":  {
                   "27":  284333
               },
@@ -478,6 +478,36 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo CB Essencial Oud Femenenino 100ml",
+                                       "cod":  "275908"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Essencial Exclusivo floral Femenenino 100ml",
+                                       "cod":  "270334"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Essencial Oud Femenenino 100ml",
+                                       "cod":  "93641"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Essencial Exclusivo floral Femenenino 100ml",
+                                       "cod":  "93620"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
