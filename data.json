@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-05T14:54:35Z",
+    "updatedAt":  "2026-10-05T15:38:53Z",
     "stock":  {
                   "27":  284333
               },
@@ -513,6 +513,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Tododia Hojas de limón y guanábana HC + RF",
+                                       "cod":  "275900"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Todo dia Hojas de limón y guanábana rf + pies",
+                                       "cod":  "270338"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
