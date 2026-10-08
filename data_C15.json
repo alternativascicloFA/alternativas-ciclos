@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-08T15:48:01Z",
+    "updatedAt":  "2026-10-08T18:14:28Z",
     "stock":  {
                   "27":  284333
               },
@@ -568,6 +568,21 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "SABANAS 1 PLAZA ARCOIRIS PRE-TEENS",
+                                       "cod":  "208988"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "SABANAS 1 PLAZA MICKEY SILUET CHILDREN",
+                                       "cod":  "208990"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
