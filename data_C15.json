@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-08T14:58:29Z",
+    "updatedAt":  "2026-10-08T15:43:21Z",
     "stock":  {
                   "27":  284333
               },
@@ -520,21 +520,6 @@
                                        "type":  "B",
                                        "desc":  "CLEARSKIN MASCARA FAC PONTOS NEGROS 60G",
                                        "cod":  "136040"
-                                   }
-                               ],
-                     "marca":  "Avon"
-                 },
-                 {
-                     "plans":  [
-                                   {
-                                       "type":  "A",
-                                       "desc":  "KIT CB X3COFFE DATE 1XCB AR",
-                                       "cod":  "283081"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "Kit CB Coffee Date x3",
-                                       "cod":  "275857"
                                    }
                                ],
                      "marca":  "Avon"
