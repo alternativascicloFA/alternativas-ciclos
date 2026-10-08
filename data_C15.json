@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-08T14:20:21Z",
+    "updatedAt":  "2026-10-08T14:58:29Z",
     "stock":  {
                   "27":  284333
               },
@@ -565,6 +565,21 @@
                                        "type":  "B",
                                        "desc":  "Kit Lumina Antiseñales (SH + AC)",
                                        "cod":  "268814"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Máscara Nutrición de nano precisión",
+                                       "cod":  "200641"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "LUMINA COND MASC ANTSSI PS 250ML",
+                                       "cod":  "174196"
                                    }
                                ],
                      "marca":  "Natura"
