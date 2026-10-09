@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-09T15:58:48Z",
+    "updatedAt":  "2026-10-09T16:23:00Z",
     "stock":  {
                   "27":  284333
               },
@@ -30,6 +30,11 @@
                                        "type":  "B",
                                        "desc":  "Kit mantenete activa",
                                        "cod":  "276093"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "kit ekos + kaiak mantenete activa",
+                                       "cod":  "270328"
                                    }
                                ],
                      "marca":  "natura"
@@ -525,6 +530,21 @@
                                        "type":  "B",
                                        "desc":  "Todo dia Hojas de limón y guanábana rf + pies",
                                        "cod":  "270338"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit tododia imbatible",
+                                       "cod":  "275934"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit tododia imbatible",
+                                       "cod":  "270298"
                                    }
                                ],
                      "marca":  "Natura"
