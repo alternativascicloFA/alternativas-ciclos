@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T17:51:07Z",
+    "updatedAt":  "2026-10-13T18:14:22Z",
     "stock":  {
                   "27":  284333
               },
@@ -598,6 +598,21 @@
                                    }
                                ],
                      "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "PROMO OPORTUNIDAD 2 C15AR",
+                                       "cod":  "275916"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Oportunidad Natura 120pts B",
+                                       "cod":  "268796"
+                                   }
+                               ],
+                     "marca":  "Natura"
                  }
              ],
     "cuotas":  {
