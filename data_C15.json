@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T18:48:28Z",
+    "updatedAt":  "2026-10-13T22:40:31Z",
     "stock":  {
                   "27":  284333
               },
@@ -655,6 +655,21 @@
                                        "type":  "B",
                                        "desc":  "CONEXAO DE HUMOR EDT COL 75ML",
                                        "cod":  "193839"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KITCB X2 LATIN WISHES EDT Y SPTZ",
+                                       "cod":  "282999"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible Secret Fantasy",
+                                       "cod":  "275823"
                                    }
                                ],
                      "marca":  "Avon"
