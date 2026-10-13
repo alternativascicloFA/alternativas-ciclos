@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T18:14:22Z",
+    "updatedAt":  "2026-10-13T18:28:31Z",
     "stock":  {
                   "27":  284333
               },
@@ -610,6 +610,21 @@
                                        "type":  "B",
                                        "desc":  "Promo Oportunidad Natura 120pts B",
                                        "cod":  "268796"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Beijo de Humor Femenino 75ml EDT",
+                                       "cod":  "1897"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CONEXAO DE HUMOR EDT COL 75ML",
+                                       "cod":  "131492"
                                    }
                                ],
                      "marca":  "Natura"
