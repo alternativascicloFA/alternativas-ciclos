@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T13:09:19Z",
+    "updatedAt":  "2026-10-13T13:28:08Z",
     "stock":  {
                   "27":  214082
               },
@@ -545,6 +545,21 @@
                                        "type":  "B",
                                        "desc":  "Kit tododia imbatible",
                                        "cod":  "270298"
+                                   }
+                               ],
+                     "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kaiak aventura regalo madres",
+                                       "cod":  "277113"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kaiak Sonar regalo madres",
+                                       "cod":  "270337"
                                    }
                                ],
                      "marca":  "Natura"
