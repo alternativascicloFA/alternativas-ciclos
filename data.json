@@ -1,7 +1,7 @@
 ﻿{
-    "updatedAt":  "2026-10-13T13:36:10Z",
+    "updatedAt":  "2026-10-13T17:51:07Z",
     "stock":  {
-                  "27":  214082
+                  "27":  284333
               },
     "site":  [
                  {
@@ -220,6 +220,11 @@
                                        "type":  "B",
                                        "desc":  "Kit Tododia Hidratación (Sh+ Ac +Mascara)",
                                        "cod":  "270309"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "Kit tododia Hidratacion SH + AC + Spray",
+                                       "cod":  "270300"
                                    }
                                ],
                      "marca":  "natura"
