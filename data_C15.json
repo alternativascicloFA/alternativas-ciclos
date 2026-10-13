@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T18:28:31Z",
+    "updatedAt":  "2026-10-13T18:48:28Z",
     "stock":  {
                   "27":  284333
               },
@@ -628,6 +628,36 @@
                                    }
                                ],
                      "marca":  "Natura"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AC Cherry crema corporal litro",
+                                       "cod":  "207710"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON CARE JOJOBA CREMA CORPORAL 1L",
+                                       "cod":  "207813"
+                                   }
+                               ],
+                     "marca":  "Avon"
+                 },
+                 {
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "COFFEE DATE - PALETA DE SOMBRAS PARA PARPADOS 42G",
+                                       "cod":  "244914"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "CONEXAO DE HUMOR EDT COL 75ML",
+                                       "cod":  "193839"
+                                   }
+                               ],
+                     "marca":  "Avon"
                  }
              ],
     "cuotas":  {
