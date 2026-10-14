@@ -105,7 +105,7 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open pb-24">
 
-    <!-- PANTALLA BIENVENIDA MODAL (3 BOTOENS REACTIVOS) -->
+    <!-- PANTALLA BIENVENIDA MODAL -->
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
         <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
@@ -186,7 +186,6 @@
                 <button type="button" onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
             </div>
 
-            <!-- BOTONES SELECCION, EXCEL Y DESCARGA -->
             <div class="flex flex-wrap items-center gap-2 mb-2 sm:mb-0">
                 <button type="button" onclick="exportToExcel()" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
@@ -270,7 +269,7 @@
             if (sel) {
                 sel.onchange = async e => {
                     state.ciclo = e.target.value;
-                    await loadData();
+                    render();
                 };
             }
         }
@@ -290,7 +289,6 @@
             const selectEl = document.getElementById('ciclo-select');
             if (selectEl) selectEl.value = cicloId;
             
-            // Ocultamos el modal de bienvenida garantizado
             const modal = document.getElementById('cycle-modal');
             if (modal) {
                 modal.classList.add('opacity-0', 'pointer-events-none');
@@ -299,7 +297,6 @@
             
             document.body.classList.remove('modal-open');
             
-            // Hacemos visible la página
             const header = document.getElementById('main-header');
             const main = document.getElementById('main-content');
             const footer = document.getElementById('main-footer');
@@ -318,14 +315,8 @@
                 if (loadingEl) loadingEl.classList.remove('hidden');
                 if (gridEl) gridEl.classList.add('hidden');
                 
-                // Intenta primero cargar data.json unificado. Si no existe, busca por ciclo suelto.
-                let response = await fetch(`./data.json?v=${new Date().getTime()}`);
-                if (!response.ok) {
-                    const fallbackName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
-                    response = await fetch(`${fallbackName}?v=${new Date().getTime()}`);
-                }
-                
-                if (!response.ok) throw new Error('No se encontraron los datos del ciclo');
+                const response = await fetch(`./data.json?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error('No se encontró el archivo data.json');
                 
                 const data = await response.json();
                 db.site = data.site || [];
@@ -345,7 +336,7 @@
                 if (loadingEl) loadingEl.classList.add('hidden');
                 Swal.fire({
                     title: 'Aviso de Carga',
-                    text: `No se encontraron datos cargados para ${state.ciclo}. Por favor ejecutá 'Actualizar_Todo.bat'.`,
+                    text: `No se encontraron datos cargados. Por favor ejecutá 'Actualizar_Todo.bat'.`,
                     icon: 'info',
                     confirmButtonColor: '#FF6B00',
                     customClass: { popup: 'rounded-3xl' }
@@ -397,22 +388,22 @@
 
         function getImg(marca, cod) {
             const brand = (marca || '').toString().trim().toLowerCase() === 'avon' ? 'Avon' : 'Natura';
-            const ciclo = (state.ciclo || 'C14').trim().toUpperCase();
-            return `./Imagenes/${brand}/${ciclo}/${cod}.jpg`;
+            const cicloNum = (state.ciclo || 'C14').replace(/\D/g, '');
+            return `./Imagenes/${brand}/C${cicloNum}/${cod}.jpg`;
         }
 
         function handleImageError(img, marca, cod) {
             if (!img.dataset.tryStep) img.dataset.tryStep = "1";
             const step = parseInt(img.dataset.tryStep);
             const brand = (marca || '').toString().trim().toLowerCase() === 'avon' ? 'Avon' : 'Natura';
-            const ciclo = (state.ciclo || 'C14').trim().toUpperCase();
+            const cicloNum = (state.ciclo || 'C14').replace(/\D/g, '');
             
             const fallbacks = [
-                `./Imagenes/${brand}/${ciclo}/${cod}.png`,
-                `./Imagenes/${brand}/${ciclo}/${cod}.JPG`,
-                `./Imagenes/${brand}/${ciclo}/${cod}.PNG`,
-                `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.jpg`,
-                `./imagenes/${brand.toLowerCase()}/${ciclo.toLowerCase()}/${cod}.png`,
+                `./Imagenes/${brand}/C${cicloNum}/${cod}.png`,
+                `./Imagenes/${brand}/C${cicloNum}/${cod}.JPG`,
+                `./Imagenes/${brand}/C${cicloNum}/${cod}.PNG`,
+                `./imagenes/${brand.toLowerCase()}/c${cicloNum}/${cod}.jpg`,
+                `./imagenes/${brand.toLowerCase()}/c${cicloNum}/${cod}.png`,
                 `./Imagenes/${brand}/${cod}.jpg`,
                 `./Imagenes/${brand}/${cod}.png`
             ];
@@ -727,11 +718,18 @@
 
             grid.innerHTML = '';
 
+            // COMPARA CUALQUIER FORMATO DE CICLO DE MANERA FLEXIBLE
+            const selectedCicloDigits = String(state.ciclo || '').replace(/\D/g, '');
+
             currentFilteredItems = db.site.filter(i => {
                 if (i.ciclo) {
-                    const itemCicloNum = String(i.ciclo).replace(/\D/g, '');
-                    const selectedCicloNum = String(state.ciclo).replace(/\D/g, '');
-                    if (itemCicloNum !== selectedCicloNum) return false;
+                    const itemCicloDigits = String(i.ciclo).replace(/\D/g, '');
+                    // Compara solo los números finales para evitar fallo entre C15 y 15 o 202615
+                    if (itemCicloDigits.length > 0 && selectedCicloDigits.length > 0) {
+                        if (!itemCicloDigits.endsWith(selectedCicloDigits) && !selectedCicloDigits.endsWith(itemCicloDigits)) {
+                            return false;
+                        }
+                    }
                 }
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
