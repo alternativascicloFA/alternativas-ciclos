@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-14T20:05:59Z",
+    "updatedAt":  "2026-10-14T21:29:59Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1607,6 +1607,22 @@
                                        "type":  "B",
                                        "desc":  "Pur blanca Essence",
                                        "cod":  "207416"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202614",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TTA Wonder",
+                                       "cod":  "282969"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TTA everlasting imbatible",
+                                       "cod":  "273536"
                                    }
                                ]
                  }
