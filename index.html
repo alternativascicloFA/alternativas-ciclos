@@ -105,20 +105,20 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open pb-24">
 
-    <!-- PANTALLA BIENVENIDA (3 CICLOS) -->
+    <!-- PANTALLA BIENVENIDA MODAL (3 BOTOENS REACTIVOS) -->
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
-        <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-sm w-full text-center animate-fade-in z-10">
+        <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
             <h2 class="text-xl font-bold text-text-main mb-0.5 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-[11px] mb-4 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
             <div class="grid grid-cols-3 gap-2">
-                <button onclick="selectInitialCiclo('C14')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                <button type="button" onclick="selectInitialCiclo('C14')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 14
                 </button>
-                <button onclick="selectInitialCiclo('C15')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                <button type="button" onclick="selectInitialCiclo('C15')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 15
                 </button>
-                <button onclick="selectInitialCiclo('C16')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                <button type="button" onclick="selectInitialCiclo('C16')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 16
                 </button>
             </div>
@@ -182,23 +182,23 @@
         <!-- BOTONERA INFERIOR DEL HEADER -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4 mt-2">
             <div class="flex gap-8">
-                <button onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
-                <button onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
+                <button type="button" onclick="setTab('Natura')" id="tab-natura" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300">Natura</button>
+                <button type="button" onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
             </div>
 
             <!-- BOTONES SELECCION, EXCEL Y DESCARGA -->
             <div class="flex flex-wrap items-center gap-2 mb-2 sm:mb-0">
-                <button onclick="exportToExcel()" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
+                <button type="button" onclick="exportToExcel()" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
                     <span>Descargar en excel</span>
                 </button>
 
-                <button id="btn-selection-mode" onclick="toggleSelectionMode()" class="py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer shadow-sm active:scale-95">
+                <button type="button" id="btn-selection-mode" onclick="toggleSelectionMode()" class="py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer shadow-sm active:scale-95">
                     <i data-lucide="check-square" class="w-4 h-4 text-brand-orange"></i>
                     <span id="selection-btn-text">Selección manual</span>
                 </button>
 
-                <button onclick="downloadAllAlternativesLoose()" class="py-2 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
+                <button type="button" onclick="downloadAllAlternativesLoose()" class="py-2 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
                     <i data-lucide="download-cloud" class="w-4 h-4 text-brand-orange"></i>
                     Descargar TODAS (Plan B)
                 </button>
@@ -230,17 +230,17 @@
     <div id="selection-bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden bg-gray-900/95 backdrop-blur-md text-white px-5 py-3 rounded-full shadow-2xl border border-white/10 flex-col sm:flex-row items-center gap-3 sm:gap-5 transition-all duration-300 w-[90%] sm:w-auto">
         
         <div class="flex items-center gap-4 justify-between w-full sm:w-auto">
-            <button onclick="selectAllInGrid()" class="text-[10px] uppercase font-bold text-brand-orange hover:text-white transition-colors underline whitespace-nowrap">
+            <button type="button" onclick="selectAllInGrid()" class="text-[10px] uppercase font-bold text-brand-orange hover:text-white transition-colors underline whitespace-nowrap cursor-pointer">
                 Marcar todas
             </button>
             <span id="selected-count" class="text-xs font-bold tracking-wider uppercase text-gray-300 whitespace-nowrap">0 sel.</span>
         </div>
 
         <div class="flex items-center gap-2 w-full sm:w-auto justify-center">
-            <button onclick="downloadSelectedBatch()" class="py-2 px-6 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-1.5 uppercase tracking-wider w-full sm:w-auto justify-center">
+            <button type="button" onclick="downloadSelectedBatch()" class="py-2 px-6 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-1.5 uppercase tracking-wider w-full sm:w-auto justify-center">
                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Bajar
             </button>
-            <button onclick="toggleSelectionMode(false)" class="p-2 text-gray-400 hover:text-white transition-colors cursor-pointer bg-white/10 rounded-full" title="Cancelar">
+            <button type="button" onclick="toggleSelectionMode(false)" class="p-2 text-gray-400 hover:text-white transition-colors cursor-pointer bg-white/10 rounded-full" title="Cancelar">
                 <i data-lucide="x" class="w-4 h-4"></i>
             </button>
         </div>
@@ -260,22 +260,19 @@
         let selectedPlansMap = new Map(); 
 
         function init() {
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
             setupCicloSelect();
             setupCodeSearch();
         }
 
         function setupCicloSelect() {
             const sel = document.getElementById('ciclo-select');
-            sel.onchange = async e => {
-                state.ciclo = e.target.value;
-                if (db.site && db.site.length > 0) {
-                    toggleSelectionMode(false);
-                    render();
-                } else {
+            if (sel) {
+                sel.onchange = async e => {
+                    state.ciclo = e.target.value;
                     await loadData();
-                }
-            };
+                };
+            }
         }
 
         function setupCodeSearch() {
@@ -290,33 +287,45 @@
 
         async function selectInitialCiclo(cicloId) {
             state.ciclo = cicloId;
-            document.getElementById('ciclo-select').value = cicloId;
+            const selectEl = document.getElementById('ciclo-select');
+            if (selectEl) selectEl.value = cicloId;
             
-            document.getElementById('cycle-modal').classList.add('opacity-0', 'pointer-events-none');
+            // Ocultamos el modal de bienvenida garantizado
+            const modal = document.getElementById('cycle-modal');
+            if (modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => { modal.style.display = 'none'; }, 400);
+            }
+            
             document.body.classList.remove('modal-open');
-            document.getElementById('main-header').classList.remove('invisible');
-            document.getElementById('main-content').classList.remove('invisible');
-            document.getElementById('main-footer').classList.remove('invisible');
             
-            setTimeout(() => {
-                document.getElementById('cycle-modal').classList.add('hidden');
-            }, 500);
+            // Hacemos visible la página
+            const header = document.getElementById('main-header');
+            const main = document.getElementById('main-content');
+            const footer = document.getElementById('main-footer');
+            
+            if (header) header.classList.remove('invisible');
+            if (main) main.classList.remove('invisible');
+            if (footer) footer.classList.remove('invisible');
 
             await loadData();
         }
 
         async function loadData() {
             try {
-                document.getElementById('loading').classList.remove('hidden');
-                document.getElementById('product-grid').classList.add('hidden');
+                const loadingEl = document.getElementById('loading');
+                const gridEl = document.getElementById('product-grid');
+                if (loadingEl) loadingEl.classList.remove('hidden');
+                if (gridEl) gridEl.classList.add('hidden');
                 
-                // Lee el data.json unificado (o retrocompatibilidad con archivos por ciclo)
+                // Intenta primero cargar data.json unificado. Si no existe, busca por ciclo suelto.
                 let response = await fetch(`./data.json?v=${new Date().getTime()}`);
                 if (!response.ok) {
-                    const fileName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
-                    response = await fetch(`${fileName}?v=${new Date().getTime()}`);
+                    const fallbackName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
+                    response = await fetch(`${fallbackName}?v=${new Date().getTime()}`);
                 }
-                if (!response.ok) throw new Error('No se encontró el archivo de datos');
+                
+                if (!response.ok) throw new Error('No se encontraron los datos del ciclo');
                 
                 const data = await response.json();
                 db.site = data.site || [];
@@ -327,15 +336,16 @@
                 updateLastUpdate(data.updatedAt);
                 populateGerencias();
                 
-                document.getElementById('loading').classList.add('hidden');
+                if (loadingEl) loadingEl.classList.add('hidden');
                 render();
 
             } catch (err) {
                 console.error(err);
-                document.getElementById('loading').classList.add('hidden');
+                const loadingEl = document.getElementById('loading');
+                if (loadingEl) loadingEl.classList.add('hidden');
                 Swal.fire({
                     title: 'Aviso de Carga',
-                    text: `Detalle: ${err.message}. Si recién corriste el actualizador, aguarda 1 minuto y recarga.`,
+                    text: `No se encontraron datos cargados para ${state.ciclo}. Por favor ejecutá 'Actualizar_Todo.bat'.`,
                     icon: 'info',
                     confirmButtonColor: '#FF6B00',
                     customClass: { popup: 'rounded-3xl' }
@@ -345,15 +355,19 @@
 
         function populateGerencias() {
             const sel = document.getElementById('gerencia-select');
+            if (!sel) return;
             const currentSel = state.gerenciaId;
             sel.innerHTML = '<option value="">Seleccionar Gerencia...</option>';
-            db.gerencias.sort((a,b) => a.name.localeCompare(b.name)).forEach(g => {
-                const opt = document.createElement('option');
-                opt.value = g.id;
-                opt.textContent = g.name;
-                if(String(g.id).trim() === String(currentSel).trim()) opt.selected = true;
-                sel.appendChild(opt);
-            });
+            
+            if (db.gerencias && db.gerencias.length > 0) {
+                db.gerencias.sort((a,b) => a.name.localeCompare(b.name)).forEach(g => {
+                    const opt = document.createElement('option');
+                    opt.value = g.id;
+                    opt.textContent = g.name;
+                    if(String(g.id).trim() === String(currentSel).trim()) opt.selected = true;
+                    sel.appendChild(opt);
+                });
+            }
             sel.onchange = e => { state.gerenciaId = e.target.value; render(); };
         }
 
@@ -364,16 +378,18 @@
             const btnA = document.getElementById('tab-avon');
             const title = document.getElementById('brand-title');
             
-            if(isNatura) {
-                btnN.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300";
-                btnA.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300";
-                title.textContent = "Natura";
-                title.className = "text-2xl font-bold tracking-tight text-brand-orange";
-            } else {
-                btnA.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-avon-primary border-b-[3px] border-avon-primary transition-all duration-300";
-                btnN.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-brand-orange transition-all duration-300";
-                title.textContent = "Avon";
-                title.className = "text-2xl font-bold tracking-tight text-avon-primary";
+            if (btnN && btnA && title) {
+                if(isNatura) {
+                    btnN.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-brand-orange border-b-[3px] border-brand-orange transition-all duration-300 cursor-pointer";
+                    btnA.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300 cursor-pointer";
+                    title.textContent = "Natura";
+                    title.className = "text-2xl font-bold tracking-tight text-brand-orange";
+                } else {
+                    btnA.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-avon-primary border-b-[3px] border-avon-primary transition-all duration-300 cursor-pointer";
+                    btnN.className = "py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-brand-orange transition-all duration-300 cursor-pointer";
+                    title.textContent = "Avon";
+                    title.className = "text-2xl font-bold tracking-tight text-avon-primary";
+                }
             }
             toggleSelectionMode(false);
             render();
@@ -456,18 +472,20 @@
             const text = document.getElementById('selection-btn-text');
             const bar = document.getElementById('selection-bar');
 
-            if (selectionMode) {
-                btn.className = "py-2 px-4 bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2 cursor-pointer active:scale-95";
-                text.textContent = "Cancelar selección";
-                bar.classList.remove('hidden');
-                bar.classList.add('flex');
-            } else {
-                btn.className = "py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer active:scale-95";
-                text.textContent = "Selección manual";
-                bar.classList.add('hidden');
-                bar.classList.remove('flex');
-                selectedPlansMap.clear();
-                updateSelectionCount();
+            if (btn && text && bar) {
+                if (selectionMode) {
+                    btn.className = "py-2 px-4 bg-brand-orange text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2 cursor-pointer active:scale-95";
+                    text.textContent = "Cancelar selección";
+                    bar.classList.remove('hidden');
+                    bar.classList.add('flex');
+                } else {
+                    btn.className = "py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition-all border border-gray-200 flex items-center gap-2 cursor-pointer active:scale-95";
+                    text.textContent = "Selección manual";
+                    bar.classList.add('hidden');
+                    bar.classList.remove('flex');
+                    selectedPlansMap.clear();
+                    updateSelectionCount();
+                }
             }
             render();
         }
@@ -483,7 +501,8 @@
 
         function updateSelectionCount() {
             const count = selectedPlansMap.size;
-            document.getElementById('selected-count').textContent = `${count} sel.`;
+            const countEl = document.getElementById('selected-count');
+            if (countEl) countEl.textContent = `${count} sel.`;
         }
 
         function selectAllInGrid() {
@@ -586,7 +605,9 @@
             const rows = [];
             let allItems = db.site.filter(i => {
                 if (i.ciclo) {
-                    return String(i.ciclo).replace(/\D/g, '') === String(state.ciclo).replace(/\D/g, '');
+                    const itemCicloNum = String(i.ciclo).replace(/\D/g, '');
+                    const selectedCicloNum = String(state.ciclo).replace(/\D/g, '');
+                    return itemCicloNum === selectedCicloNum;
                 }
                 return true;
             });
@@ -665,9 +686,9 @@
             XLSX.writeFile(workbook, `Alternativas_Natura_y_Avon_${state.ciclo}_${dateStr}.xlsx`);
         }
 
-        async function shareImage(btn, itemIdx) {
+        function shareImage(btn, itemIdx) {
             const container = btn.closest('.relative');
-            const img = container.querySelector('img');
+            const img = container ? container.querySelector('img') : null;
             
             const url = img ? img.src : window.location.origin + window.location.pathname + getImg(state.tab, btn.getAttribute('data-cod'));
             const cod = btn.getAttribute('data-cod');
@@ -688,9 +709,7 @@
                 `,
                 showConfirmButton: false,
                 showCloseButton: true,
-                customClass: {
-                    popup: 'rounded-3xl p-6'
-                }
+                customClass: { popup: 'rounded-3xl p-6' }
             });
         }
 
@@ -704,10 +723,11 @@
         function render() {
             const grid = document.getElementById('product-grid');
             const empty = document.getElementById('empty-state');
+            if (!grid || !empty) return;
+
             grid.innerHTML = '';
 
             currentFilteredItems = db.site.filter(i => {
-                // FILTRO INTELIGENTE POR CICLO
                 if (i.ciclo) {
                     const itemCicloNum = String(i.ciclo).replace(/\D/g, '');
                     const selectedCicloNum = String(state.ciclo).replace(/\D/g, '');
@@ -716,6 +736,7 @@
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
                 if (!matchesBrand) return false;
+                
                 if (state.searchCode) {
                     const searchDigits = state.searchCode.replace(/\D/g, '');
                     return i.plans.some(plan => String(plan.cod).replace(/\D/g, '').includes(searchDigits));
@@ -839,7 +860,7 @@
                                         <input type="checkbox" ${isChecked} onchange="togglePlanSelection('${uniqueKey}', '${imgUrl}', '${fileName}', this)" class="w-5 h-5 text-brand-orange rounded-md border-gray-300 focus:ring-brand-orange cursor-pointer">
                                     </label>
                                 ` : `
-                                    <button onclick="shareImage(this, ${itemIdx})" data-cod="${plan.cod}" data-desc="${safeDesc}" title="Opciones de Placa" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
+                                    <button type="button" onclick="shareImage(this, ${itemIdx})" data-cod="${plan.cod}" data-desc="${safeDesc}" title="Opciones de Placa" class="absolute top-2 right-2 z-20 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-text-main shadow-sm hover:bg-white cursor-pointer">
                                          <i data-lucide="${actionIcon}" class="w-4 h-4"></i>
                                     </button>
                                 `}
@@ -849,14 +870,43 @@
                                 </div>
 
                                 ${totalPlans > 1 ? `
-                                    <button onclick="scrollCarousel(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-md shadow-md rounded-full border border-gray-200 text-gray-800 hover:bg-white active:scale-95 transition-all cursor-pointer">
+                                    <button type="button" onclick="scrollCarousel(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-md shadow-md rounded-full border border-gray-200 text-gray-800 hover:bg-white active:scale-95 transition-all cursor-pointer">
                                         <i data-lucide="chevron-left" class="w-5 h-5 stroke-[2.5]"></i>
                                     </button>
-                                    <button onclick="scrollCarousel(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center ${badgeColor} text-white shadow-md rounded-full hover:opacity-90 active:scale-95 transition-all cursor-pointer animate-pulse">
+                                    <button type="button" onclick="scrollCarousel(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center ${badgeColor} text-white shadow-md rounded-full hover:opacity-90 active:scale-95 transition-all cursor-pointer animate-pulse">
                                         <i data-lucide="chevron-right" class="w-5 h-5 stroke-[3]"></i>
                                     </button>
                                 ` : ''}
                             </div>
                             <div class="flex-1 flex flex-col">
                                 <span class="text-[10px] text-text-mut font-bold tracking-widest uppercase mb-1">Cód: ${plan.cod}</span>
-                                <h4 class="text-sm font-bold text-text-main leading-
+                                <h4 class="text-sm font-bold text-text-main leading-tight mb-4 flex-1 line-clamp-2">${plan.desc}</h4>
+                                <div class="pt-4 border-t border-gray-50 flex items-center justify-between">
+                                    <span class="text-[11px] uppercase tracking-wider ${quotaClass}">${quotaText}</span>
+                                </div>
+                            </div>
+                        `;
+                        carousel.appendChild(slide);
+                    });
+                    
+                    card.appendChild(carousel);
+                    grid.appendChild(card);
+                });
+            }
+            if (window.lucide) lucide.createIcons();
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        }
+
+        function updateLastUpdate(isoDate) {
+            const d = isoDate ? new Date(isoDate) : new Date();
+            const lastUpdateEl = document.getElementById('last-update');
+            if (lastUpdateEl) {
+                lastUpdateEl.textContent = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
