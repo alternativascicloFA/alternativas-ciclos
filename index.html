@@ -105,18 +105,21 @@
 
 <body class="bg-ui-app text-text-main font-sans antialiased min-h-screen flex flex-col modal-open pb-24">
 
-    <!-- PANTALLA BIENVENIDA -->
+    <!-- PANTALLA BIENVENIDA (3 CICLOS) -->
     <div id="cycle-modal" class="fixed inset-0 z-[100] bg-cover bg-center p-2 transition-all duration-500 flex justify-center items-center" style="background-image: url('https://i.ytimg.com/vi/nB0ozLVYQUI/maxresdefault.jpg');">
         <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"></div>
-        <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-xs w-full text-center animate-fade-in z-10">
+        <div class="relative bg-white/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-xl border border-white/20 max-w-sm w-full text-center animate-fade-in z-10">
             <h2 class="text-xl font-bold text-text-main mb-0.5 tracking-tight">¡Hola!</h2>
             <p class="text-text-sec text-[11px] mb-4 leading-relaxed">¿En qué ciclo comercial te encontrás?</p>
-            <div class="grid grid-cols-2 gap-2.5">
-                <button onclick="selectInitialCiclo('C14')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="selectInitialCiclo('C14')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 14
                 </button>
                 <button onclick="selectInitialCiclo('C15')" class="py-2.5 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
                     Ciclo 15
+                </button>
+                <button onclick="selectInitialCiclo('C16')" class="py-2.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold rounded-lg transition-all shadow-sm active:scale-95 cursor-pointer text-[11px] uppercase tracking-wider">
+                    Ciclo 16
                 </button>
             </div>
         </div>
@@ -156,6 +159,7 @@
                         <select id="ciclo-select" class="w-full appearance-none bg-brand-gray border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-text-main focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors cursor-pointer shadow-none">
                             <option value="C14">Ciclo 14</option>
                             <option value="C15">Ciclo 15</option>
+                            <option value="C16">Ciclo 16</option>
                         </select>
                         <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec pointer-events-none stroke-[2.5]"></i>
                     </div>
@@ -265,7 +269,12 @@
             const sel = document.getElementById('ciclo-select');
             sel.onchange = async e => {
                 state.ciclo = e.target.value;
-                await loadData();
+                if (db.site && db.site.length > 0) {
+                    toggleSelectionMode(false);
+                    render();
+                } else {
+                    await loadData();
+                }
             };
         }
 
@@ -301,8 +310,12 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('product-grid').classList.add('hidden');
                 
-                const fileName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
-                const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
+                // Lee el data.json unificado (o retrocompatibilidad con archivos por ciclo)
+                let response = await fetch(`./data.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    const fileName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
+                    response = await fetch(`${fileName}?v=${new Date().getTime()}`);
+                }
                 if (!response.ok) throw new Error('No se encontró el archivo de datos');
                 
                 const data = await response.json();
@@ -571,7 +584,12 @@
             }
 
             const rows = [];
-            let allItems = db.site;
+            let allItems = db.site.filter(i => {
+                if (i.ciclo) {
+                    return String(i.ciclo).replace(/\D/g, '') === String(state.ciclo).replace(/\D/g, '');
+                }
+                return true;
+            });
 
             const selectedGerenciaId = state.gerenciaId;
             const gerenciasToProcess = selectedGerenciaId 
@@ -689,6 +707,12 @@
             grid.innerHTML = '';
 
             currentFilteredItems = db.site.filter(i => {
+                // FILTRO INTELIGENTE POR CICLO
+                if (i.ciclo) {
+                    const itemCicloNum = String(i.ciclo).replace(/\D/g, '');
+                    const selectedCicloNum = String(state.ciclo).replace(/\D/g, '');
+                    if (itemCicloNum !== selectedCicloNum) return false;
+                }
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
                 if (!matchesBrand) return false;
@@ -835,29 +859,4 @@
                             </div>
                             <div class="flex-1 flex flex-col">
                                 <span class="text-[10px] text-text-mut font-bold tracking-widest uppercase mb-1">Cód: ${plan.cod}</span>
-                                <h4 class="text-sm font-bold text-text-main leading-tight mb-4 flex-1 line-clamp-2">${plan.desc}</h4>
-                                <div class="pt-4 border-t border-gray-50 flex items-center justify-between">
-                                    <span class="text-[11px] uppercase tracking-wider ${quotaClass}">${quotaText}</span>
-                                </div>
-                            </div>
-                        `;
-                        carousel.appendChild(slide);
-                    });
-                    
-                    card.appendChild(carousel);
-                    grid.appendChild(card);
-                });
-            }
-            lucide.createIcons();
-            document.getElementById('year').textContent = new Date().getFullYear();
-        }
-
-        function updateLastUpdate(isoDate) {
-            const d = isoDate ? new Date(isoDate) : new Date();
-            document.getElementById('last-update').textContent = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
-        }
-
-        window.onload = init;
-    </script>
-</body>
-</html>
+                                <h4 class="text-sm font-bold text-text-main leading-
