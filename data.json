@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-14T19:21:28Z",
+    "updatedAt":  "2026-10-14T20:05:59Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1575,6 +1575,38 @@
                                        "type":  "B",
                                        "desc":  "KIT TODODIA MANGO PRODUCTIVO (HC +JB + BS)",
                                        "cod":  "268801"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202614",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Body splash hojas de limon y guanabana",
+                                       "cod":  "72198"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Body splash frutos rojos",
+                                       "cod":  "72197"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202614",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Pur blanca grateful",
+                                       "cod":  "207527"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Pur blanca Essence",
+                                       "cod":  "207416"
                                    }
                                ]
                  }
