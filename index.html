@@ -306,13 +306,13 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('product-grid').classList.add('hidden');
                 
-                // MAPEO EXPLÍCITO POR CICLO (Evita desfasajes con data.json viejo)
-                let fileName = `./data_${state.ciclo}.json`;
+                // Mapeo dinámico directo: data_C14.json, data_C15.json, data_C16.json
+                const fileName = `./data_${state.ciclo}.json`;
                 
-                // Petición con parámetro de fecha/hora para eliminar la caché del navegador
+                // Parámetro v=Date.now() para romper el caché del navegador
                 const response = await fetch(`${fileName}?v=${Date.now()}`);
                 
-                // Si no encuentra data_C14.json, busca el fallback data.json
+                // Fallback a data.json solo si data_C14.json no existiera en el servidor
                 if (!response.ok && state.ciclo === 'C14') {
                     const fallbackResponse = await fetch(`./data.json?v=${Date.now()}`);
                     if (!fallbackResponse.ok) throw new Error(`No se encontró el archivo de datos para ${state.ciclo}`);
