@@ -186,6 +186,7 @@
                 <button type="button" onclick="setTab('Avon')" id="tab-avon" class="py-3 px-1 text-sm font-bold uppercase tracking-widest text-text-mut border-b-[3px] border-transparent hover:text-avon-primary transition-all duration-300">Avon</button>
             </div>
 
+            <!-- BOTONES SELECCION, EXCEL Y DESCARGA -->
             <div class="flex flex-wrap items-center gap-2 mb-2 sm:mb-0">
                 <button type="button" onclick="exportToExcel()" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer">
                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
@@ -315,8 +316,13 @@
                 if (loadingEl) loadingEl.classList.remove('hidden');
                 if (gridEl) gridEl.classList.add('hidden');
                 
-                const response = await fetch(`./data.json?v=${new Date().getTime()}`);
-                if (!response.ok) throw new Error('No se encontró el archivo data.json');
+                let response = await fetch(`./data.json?v=${new Date().getTime()}`);
+                if (!response.ok) {
+                    const fallbackName = state.ciclo === 'C14' ? './data.json' : `./data_${state.ciclo}.json`;
+                    response = await fetch(`${fallbackName}?v=${new Date().getTime()}`);
+                }
+                
+                if (!response.ok) throw new Error('No se encontraron los datos del ciclo');
                 
                 const data = await response.json();
                 db.site = data.site || [];
@@ -598,7 +604,7 @@
                 if (i.ciclo) {
                     const itemCicloNum = String(i.ciclo).replace(/\D/g, '');
                     const selectedCicloNum = String(state.ciclo).replace(/\D/g, '');
-                    return itemCicloNum === selectedCicloNum;
+                    return itemCicloNum.endsWith(selectedCicloNum);
                 }
                 return true;
             });
@@ -677,7 +683,7 @@
             XLSX.writeFile(workbook, `Alternativas_Natura_y_Avon_${state.ciclo}_${dateStr}.xlsx`);
         }
 
-        function shareImage(btn, itemIdx) {
+        async function shareImage(btn, itemIdx) {
             const container = btn.closest('.relative');
             const img = container ? container.querySelector('img') : null;
             
@@ -718,18 +724,13 @@
 
             grid.innerHTML = '';
 
-            // COMPARA CUALQUIER FORMATO DE CICLO DE MANERA FLEXIBLE
             const selectedCicloDigits = String(state.ciclo || '').replace(/\D/g, '');
 
             currentFilteredItems = db.site.filter(i => {
                 if (i.ciclo) {
                     const itemCicloDigits = String(i.ciclo).replace(/\D/g, '');
-                    // Compara solo los números finales para evitar fallo entre C15 y 15 o 202615
-                    if (itemCicloDigits.length > 0 && selectedCicloDigits.length > 0) {
-                        if (!itemCicloDigits.endsWith(selectedCicloDigits) && !selectedCicloDigits.endsWith(itemCicloDigits)) {
-                            return false;
-                        }
-                    }
+                    // ESTA ES LA CORRECCIÓN: Busca que termine en "16" (lee el "202616")
+                    if (!itemCicloDigits.endsWith(selectedCicloDigits)) return false;
                 }
                 const m = i.marca || i.Marca || i.MARCA || '';
                 const matchesBrand = m.trim().toLowerCase() === state.tab.trim().toLowerCase();
@@ -769,7 +770,6 @@
                         
                         const searchDigits = String(plan.cod).replace(/\D/g, '');
 
-                        // 1. EVALUACIÓN DE STOCK GENERAL (DEPÓSITO 27 - STOCK GRAFANA)
                         let generalStockVal = undefined;
                         if (db.stock) {
                             const stockKey = Object.keys(db.stock).find(k => String(k).replace(/\D/g, '') === searchDigits);
@@ -783,7 +783,6 @@
                             }
                         }
 
-                        // 2. EVALUACIÓN DE CUOTA POR GERENCIA
                         let isGerenciaStockOk = true;
                         let gerenciaStockVal = undefined;
                         let hasGerenciaSelected = false;
@@ -816,7 +815,6 @@
                             }
                         }
 
-                        // 3. DETERMINACIÓN DEL ESTADO FINAL (DOBLE VALIDACIÓN)
                         let quotaText = "Consultar gerencia";
                         let quotaClass = "text-text-mut";
 
