@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-13T22:40:31Z",
+    "updatedAt":  "2026-10-14T00:44:27Z",
     "stock":  {
                   "27":  284333
               },
@@ -400,6 +400,11 @@
                                        "type":  "B",
                                        "desc":  "EKOS MANT MAOS UCUUBA 75G TUTOIA LATAM",
                                        "cod":  "80969"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "EKOS HID MAOS CUPUACU 75G",
+                                       "cod":  "203476"
                                    }
                                ],
                      "marca":  "Natura"
