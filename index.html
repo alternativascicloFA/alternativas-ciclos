@@ -306,18 +306,23 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('product-grid').classList.add('hidden');
                 
-                // Mapeo dinámico de archivos por ciclo (C14 -> data.json, C15 -> data_C15.json, C16 -> data_C16.json)
-                let fileName = './data.json';
-                if (state.ciclo === 'C15') {
-                    fileName = './data_C15.json';
-                } else if (state.ciclo === 'C16') {
-                    fileName = './data_C16.json';
+                // MAPEO EXPLÍCITO POR CICLO (Evita desfasajes con data.json viejo)
+                let fileName = `./data_${state.ciclo}.json`;
+                
+                // Petición con parámetro de fecha/hora para eliminar la caché del navegador
+                const response = await fetch(`${fileName}?v=${Date.now()}`);
+                
+                // Si no encuentra data_C14.json, busca el fallback data.json
+                if (!response.ok && state.ciclo === 'C14') {
+                    const fallbackResponse = await fetch(`./data.json?v=${Date.now()}`);
+                    if (!fallbackResponse.ok) throw new Error(`No se encontró el archivo de datos para ${state.ciclo}`);
+                    var data = await fallbackResponse.json();
+                } else if (!response.ok) {
+                    throw new Error(`No se encontró el archivo ${fileName}`);
+                } else {
+                    var data = await response.json();
                 }
-                
-                const response = await fetch(`${fileName}?v=${new Date().getTime()}`);
-                if (!response.ok) throw new Error(`No se encontró el archivo ${fileName}`);
-                
-                const data = await response.json();
+
                 db.site = data.site || [];
                 db.gerencias = data.gerencias || [];
                 db.cuotas = data.cuotas || {};
