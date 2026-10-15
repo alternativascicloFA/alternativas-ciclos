@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T15:52:23Z",
+    "updatedAt":  "2026-10-15T17:44:58Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1671,6 +1671,27 @@
                                        "type":  "B",
                                        "desc":  "Homem identidad 100ml",
                                        "cod":  "200122"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Tododia Flor de durazno y Jazmin Jabones en barra 2x90g",
+                                       "cod":  "215532"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TDIA ROMÃ E FLOR DE AMORA SAB BARRA 90G",
+                                       "cod":  "174172"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "TODODIA JABONES 4X90 DECORADOS",
+                                       "cod":  "200637"
                                    }
                                ]
                  }
