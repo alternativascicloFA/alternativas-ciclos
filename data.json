@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T14:55:39Z",
+    "updatedAt":  "2026-10-15T14:58:47Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1623,6 +1623,22 @@
                                        "type":  "B",
                                        "desc":  "TTA everlasting imbatible",
                                        "cod":  "273536"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Promo Op 3 - 60ptos",
+                                       "cod":  "283044"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Oportunidad 60pts 3B",
+                                       "cod":  "275866"
                                    }
                                ]
                  }
