@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T15:14:38Z",
+    "updatedAt":  "2026-10-15T15:30:08Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1266,11 +1266,6 @@
                                        "type":  "A",
                                        "desc":  "Beijo de Humor Femenino 75ml EDT",
                                        "cod":  "1897"
-                                   },
-                                   {
-                                       "type":  "B",
-                                       "desc":  "CONEXAO DE HUMOR EDT COL 75ML",
-                                       "cod":  "131492"
                                    }
                                ]
                  },
@@ -1639,6 +1634,22 @@
                                        "type":  "B",
                                        "desc":  "Promo Oportunidad 60pts 3B",
                                        "cod":  "275866"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Kit CB Beijo Humor 50% C15AR",
+                                       "cod":  "275930"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Promo Imbatible Conexión de Humor",
+                                       "cod":  "268812"
                                    }
                                ]
                  }
