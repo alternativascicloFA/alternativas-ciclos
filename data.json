@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T15:37:21Z",
+    "updatedAt":  "2026-10-15T15:52:23Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1655,6 +1655,22 @@
                                        "type":  "B",
                                        "desc":  "Promo Imbatible Conexión de Humor",
                                        "cod":  "268812"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202614",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Homem potence 100ml",
+                                       "cod":  "81950"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Homem identidad 100ml",
+                                       "cod":  "200122"
                                    }
                                ]
                  }
