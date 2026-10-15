@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T15:30:08Z",
+    "updatedAt":  "2026-10-15T15:37:21Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1266,6 +1266,11 @@
                                        "type":  "A",
                                        "desc":  "Beijo de Humor Femenino 75ml EDT",
                                        "cod":  "1897"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "HUMOR EDT IZA VIBRACOES 25ML ARG",
+                                       "cod":  "206238"
                                    }
                                ]
                  },
