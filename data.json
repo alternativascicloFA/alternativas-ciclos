@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T20:38:37Z",
+    "updatedAt":  "2026-10-15T20:40:47Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1680,16 +1680,21 @@
                      "plans":  [
                                    {
                                        "type":  "A",
+                                       "desc":  "SABONETE EM BARRA PURO VEGETAL AMORA VERMELHA E JABUTICABA",
+                                       "cod":  "87512"
+                                   },
+                                   {
+                                       "type":  "B",
                                        "desc":  "Tododia Flor de durazno y Jazmin Jabones en barra 2x90g",
                                        "cod":  "215532"
                                    },
                                    {
-                                       "type":  "B",
+                                       "type":  "C",
                                        "desc":  "TDIA ROMÃ E FLOR DE AMORA SAB BARRA 90G",
                                        "cod":  "174172"
                                    },
                                    {
-                                       "type":  "C",
+                                       "type":  "D",
                                        "desc":  "TODODIA JABONES 4X90 DECORADOS",
                                        "cod":  "200637"
                                    }
