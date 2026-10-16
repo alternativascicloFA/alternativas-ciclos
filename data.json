@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-16T13:09:58Z",
+    "updatedAt":  "2026-10-16T19:03:21Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1750,6 +1750,54 @@
                                        "type":  "B",
                                        "desc":  "Kit Tododia Frutilla y Vainilla Dorada",
                                        "cod":  "268822"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF EDT PITANGA 150ML LTM",
+                                       "cod":  "119000"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS RF EDT CASTANHA 150ML LTM",
+                                       "cod":  "118996"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF EDT MARACUJA 150ML LTM",
+                                       "cod":  "118997"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS EDT FRESCOR CACAU 150ML LTM",
+                                       "cod":  "162209"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS RF EDT PITANGA PT 150ML LTM",
+                                       "cod":  "119001"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS EDT FRESCOR CUPUACU 150ML LTM",
+                                       "cod":  "199394"
                                    }
                                ]
                  }
