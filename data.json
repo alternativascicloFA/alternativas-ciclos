@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-16T00:05:15Z",
+    "updatedAt":  "2026-10-16T12:52:13Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1713,6 +1713,54 @@
                                        "type":  "B",
                                        "desc":  "Tododia RF Avellana y Cassis 400ml",
                                        "cod":  "74849"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA MANGO CB HC JB BS + KAIAK C16AR",
+                                       "cod":  "281712"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CB Tododia + Kaiak",
+                                       "cod":  "268840"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA MANGO BASICO HC DEO CREMA C16AR",
+                                       "cod":  "281713"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Frutilla y Vainilla Dorada",
+                                       "cod":  "268822"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA MANGO PRODUCTIVO HC JB JL BS C16AR",
+                                       "cod":  "281742"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Frutilla y Vainilla Dorada Productivo",
+                                       "cod":  "268844"
                                    }
                                ]
                  }
