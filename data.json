@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-15T20:40:47Z",
+    "updatedAt":  "2026-10-16T00:05:15Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1697,6 +1697,22 @@
                                        "type":  "D",
                                        "desc":  "TODODIA JABONES 4X90 DECORADOS",
                                        "cod":  "200637"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Tododia RF Mango y Agua de Coco 400ml",
+                                       "cod":  "103382"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Tododia RF Avellana y Cassis 400ml",
+                                       "cod":  "74849"
                                    }
                                ]
                  }
