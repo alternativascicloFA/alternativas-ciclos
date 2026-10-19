@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-19T13:37:56Z",
+    "updatedAt":  "2026-10-19T15:20:49Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1798,6 +1798,22 @@
                                        "type":  "B",
                                        "desc":  "EKOS EDT FRESCOR CUPUACU 150ML LTM",
                                        "cod":  "199394"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA RF DES HID CORP PIEL 400ML LTM",
+                                       "cod":  "206232"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA RF HID DES CORP FLIMAO 400ML PM",
+                                       "cod":  "71596"
                                    }
                                ]
                  }
