@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-19T15:20:49Z",
+    "updatedAt":  "2026-10-19T15:27:10Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1814,6 +1814,22 @@
                                        "type":  "B",
                                        "desc":  "TODODIA RF HID DES CORP FLIMAO 400ML PM",
                                        "cod":  "71596"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "FACES MASCARA VOLUME FEVER",
+                                       "cod":  "86642"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "FACES NEW MASCARA FANTASTICA INCOLOR",
+                                       "cod":  "67647"
                                    }
                                ]
                  }
