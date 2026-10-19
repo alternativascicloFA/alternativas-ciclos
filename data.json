@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-19T15:27:10Z",
+    "updatedAt":  "2026-10-19T15:50:04Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1830,6 +1830,54 @@
                                        "type":  "B",
                                        "desc":  "FACES NEW MASCARA FANTASTICA INCOLOR",
                                        "cod":  "67647"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Attraction Para Ella Edp (Reform)",
+                                       "cod":  "158971"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "ATTRACTION AWAKEN EDP PARA ELLA 50ML",
+                                       "cod":  "207525"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Attraction Game Edp For Her 50Ml",
+                                       "cod":  "158867"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "ATTRACTION AWAKEN EDP PARA ELLA 50ML",
+                                       "cod":  "207525"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "AT Nutrición Completa Acondicionador 300ml",
+                                       "cod":  "135121"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AT HYDRA CONDITIONER LATAM 250ML",
+                                       "cod":  "135123"
                                    }
                                ]
                  }
