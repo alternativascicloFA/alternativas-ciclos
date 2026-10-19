@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-19T15:50:04Z",
+    "updatedAt":  "2026-10-19T19:17:48Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1878,6 +1878,54 @@
                                        "type":  "B",
                                        "desc":  "AT HYDRA CONDITIONER LATAM 250ML",
                                        "cod":  "135123"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "RDC - Tododia",
+                                       "cod":  "274920"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit Tododia Mora Roja y Jabuticaba",
+                                       "cod":  "268825"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE MATTE 20N",
+                                       "cod":  "108130"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE SERUM NUDE ME 20N",
+                                       "cod":  "110186"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE MATTE 25Q 25C",
+                                       "cod":  "108135"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE STICK 25Q 25C TERC",
+                                       "cod":  "181514"
                                    }
                                ]
                  }
