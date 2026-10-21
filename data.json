@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-21T18:21:27Z",
+    "updatedAt":  "2026-10-21T18:42:19Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1979,6 +1979,22 @@
                                        "type":  "B",
                                        "desc":  "SET DE PICOS DE REPOSTERIA",
                                        "cod":  "282615"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA MRJ KIT CB HC JB BS RF C15AR",
+                                       "cod":  "275927"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CB Tododia Mora Roja y Jabuticaba",
+                                       "cod":  "268848"
                                    }
                                ]
                  }
