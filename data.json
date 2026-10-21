@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-21T18:57:17Z",
+    "updatedAt":  "2026-10-21T19:13:27Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -1995,6 +1995,22 @@
                                        "type":  "B",
                                        "desc":  "Kit CB Tododia Mora Roja y Jabuticaba",
                                        "cod":  "268848"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KIT X2 CB CHERRY AR",
+                                       "cod":  "282968"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CB x2 Frutos Rojos",
+                                       "cod":  "275869"
                                    }
                                ]
                  }
