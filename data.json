@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-22T19:13:13Z",
+    "updatedAt":  "2026-10-22T22:30:01Z",
     "site":  [
                  {
                      "ciclo":  "202614",
@@ -988,6 +988,11 @@
                                        "type":  "C",
                                        "desc":  "EKOS HID MAOS CUPUACU 75G",
                                        "cod":  "203476"
+                                   },
+                                   {
+                                       "type":  "D",
+                                       "desc":  "EKOS HID MAOS CASTANHA 75G ARG",
+                                       "cod":  "70983"
                                    }
                                ]
                  },
