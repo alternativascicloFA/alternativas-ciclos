@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-27T12:02:46Z",
+    "updatedAt":  "2026-10-27T14:53:46Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1350,6 +1350,22 @@
                                        "type":  "B",
                                        "desc":  "CPV SENALADORES 2025 ARG",
                                        "cod":  "174155"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "EKOS COL FRESCOR MARACUJA 150ML MEX",
+                                       "cod":  "73574"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "EKOS EDT FRESCOR CUPUACU 150ML",
+                                       "cod":  "199394"
                                    }
                                ]
                  }
