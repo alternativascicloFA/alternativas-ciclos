@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-28T17:01:51Z",
+    "updatedAt":  "2026-10-28T17:38:13Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1366,6 +1366,11 @@
                                        "type":  "B",
                                        "desc":  "EKOS EDT FRESCOR CUPUACU 150ML",
                                        "cod":  "199394"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "EKOS EDT ANDIROBA FRESCOR 150ML",
+                                       "cod":  "218360"
                                    }
                                ]
                  },
@@ -1382,6 +1387,11 @@
                                        "type":  "B",
                                        "desc":  "TODODIA DES ROLLON AMEIXA 70ML",
                                        "cod":  "189447"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "TODODIA DES ROLLON ALGODAO 70ML",
+                                       "cod":  "189443"
                                    }
                                ]
                  },
@@ -1414,6 +1424,22 @@
                                        "type":  "B",
                                        "desc":  "Kit CB x8 RollOn Masculino",
                                        "cod":  "275852"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA SAB LIQ MANGA E COCO 300ML AVN",
+                                       "cod":  "91192"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA SAB LIQ CEREJA E AVELA 300ML",
+                                       "cod":  "95843"
                                    }
                                ]
                  }
