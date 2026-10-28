@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-28T17:38:13Z",
+    "updatedAt":  "2026-10-28T19:11:13Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1440,6 +1440,22 @@
                                        "type":  "B",
                                        "desc":  "TODODIA SAB LIQ CEREJA E AVELA 300ML",
                                        "cod":  "95843"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "UNA BASE MATTE 40Q 40C",
+                                       "cod":  "108153"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "UNA BASE STICK 40Q",
+                                       "cod":  "181519"
                                    }
                                ]
                  }
