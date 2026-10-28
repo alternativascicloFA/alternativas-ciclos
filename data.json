@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-28T15:27:18Z",
+    "updatedAt":  "2026-10-28T17:01:51Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1398,6 +1398,22 @@
                                        "type":  "B",
                                        "desc":  "Kit x3 Scent Femenino",
                                        "cod":  "275828"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "KIT CB X8 ROLLLONES MASC AR",
+                                       "cod":  "283138"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CB x8 RollOn Masculino",
+                                       "cod":  "275852"
                                    }
                                ]
                  }
