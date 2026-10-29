@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-29T12:20:51Z",
+    "updatedAt":  "2026-10-29T15:32:49Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1445,6 +1445,22 @@
                                        "type":  "B",
                                        "desc":  "UNA BASE STICK 40Q",
                                        "cod":  "181519"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "Segno Impact Edp",
+                                       "cod":  "135896"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Segno Visionary Edp",
+                                       "cod":  "135897"
                                    }
                                ]
                  }
