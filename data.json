@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-29T19:49:52Z",
+    "updatedAt":  "2026-10-29T20:25:24Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1323,6 +1323,11 @@
                                        "type":  "B",
                                        "desc":  "Kit CB Tododia Mora Roja y Jabuticaba",
                                        "cod":  "268848"
+                                   },
+                                   {
+                                       "type":  "C",
+                                       "desc":  "Kit CB Tododia Mora Roja y Jabuticaba + Frambuesa",
+                                       "cod":  "268789"
                                    }
                                ]
                  },
@@ -1477,6 +1482,22 @@
                                        "type":  "B",
                                        "desc":  "Kit Mantenete Activa C15",
                                        "cod":  "268829"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202615",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA MRJ KIT HC JB BS C15AR",
+                                       "cod":  "275899"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "Kit CF Tododia Mora Roja y Jabuticaba + Frambuesa",
+                                       "cod":  "268847"
                                    }
                                ]
                  }
