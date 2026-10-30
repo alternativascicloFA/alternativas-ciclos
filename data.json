@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-30T15:46:39Z",
+    "updatedAt":  "2026-10-30T15:53:16Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1536,6 +1536,54 @@
                                        "type":  "B",
                                        "desc":  "TODODIA ESSENCIA CABELOS 60ML",
                                        "cod":  "174032"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "MKUP CARE GLOSS NUDE ROSADO 7ML",
+                                       "cod":  "244433"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON ULTRA Lip Gloss SA CELEBRATE COLLECTION Forbidden Fig",
+                                       "cod":  "214100"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "MKUP CARE GLOSS ROSA ENCANTO 7ML",
+                                       "cod":  "244435"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON ULTRA Lip Gloss SA CELEBRATE COLLECTION Forbidden Fig",
+                                       "cod":  "214100"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Avon",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "MKUP CARE GLOSS CERZA CRISTAL 7ML",
+                                       "cod":  "244434"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "AVON ULTRA Lip Gloss SA CELEBRATE COLLECTION Forbidden Fig",
+                                       "cod":  "214100"
                                    }
                                ]
                  }
