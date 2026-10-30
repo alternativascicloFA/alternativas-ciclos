@@ -1,5 +1,5 @@
 ﻿{
-    "updatedAt":  "2026-10-30T15:32:21Z",
+    "updatedAt":  "2026-10-30T15:36:54Z",
     "site":  [
                  {
                      "ciclo":  "202615",
@@ -1520,6 +1520,22 @@
                                        "type":  "B",
                                        "desc":  "MUSK RAIN EDT 75ML",
                                        "cod":  "236362"
+                                   }
+                               ]
+                 },
+                 {
+                     "ciclo":  "202616",
+                     "marca":  "Natura",
+                     "plans":  [
+                                   {
+                                       "type":  "A",
+                                       "desc":  "TODODIA ESSENC CABELOS CEREJA AVELA 60ML",
+                                       "cod":  "176406"
+                                   },
+                                   {
+                                       "type":  "B",
+                                       "desc":  "TODODIA ESSENCIA CABELOS 60ML",
+                                       "cod":  "174032"
                                    }
                                ]
                  }
